@@ -21,21 +21,116 @@ operación en un ciclo básico de vapor. Este involucrará un compresión
 con un rendimento isentrópico fijo, una transformación isobárica en 
 cada intercambiador de calor y una expansión isentálpica en la válvula 
 de expansión. Cada simulación se lleva a cabo en cuatro escenarios 
-diferentes que tipifica la normativa \#\#\#\# PONER NORMATIVA \#\#\#\# 
+diferentes que tipifica la normativa UNE-EN 14511-3 
 para ensayos de máquinas de calor agua-agua.
 
-Para el cálculo termodinámico del ciclo se asumirán los siguientes valores 
-para las siguientes variables: 
+Para el cálculo termodinámico del ciclo las principales variables tomarán 
+los siguientes valores para cada uno de los escenarios:
+
+Para todos los ensayos: 
 \[
-SH = 5\,^{\circ}\mathrm{C} \qquad SUB = 1\,^{\circ}\mathrm{C} \qquad
-Ap_{k} = 6.5\,^{\circ}\mathrm{C} \qquad Ap_{0} = 3\,^{\circ}\mathrm{C}
+SUB = 1\,^{\circ}\mathrm{C},\ SH = 5\,^{\circ}\mathrm{C},\
+Ap_{k} = 6.5\,^{\circ}\mathrm{C}, \ Ap_{O} = 3\,^{\circ}\mathrm{C}
+\]
+\[
+T_{cw\_in} = 0\,^{\circ}\mathrm{C},\ T_{cw\_out} = -3\,^{\circ}\mathrm{C},\ 
+\eta_{s} = 60\%
+\]
+Dependiendo del ensayo:
+\begin{itemize}
+    \item \textbf{Temperatura baja:} $T_{hw\_in} = 30\,^{\circ}\mathrm{C},\ 
+    T_{hw\_out} = 35\,^{\circ}\mathrm{C}$
+    \item \textbf{Temperatura intermedia:} $T_{hw\_in} = 40\,^{\circ}\mathrm{C},\ 
+    T_{hw\_out} = 45\,^{\circ}\mathrm{C}$
+    \item \textbf{Temperatura media:} $T_{hw\_in} = 47\,^{\circ}\mathrm{C},\ 
+    T_{hw\_out} = 55\,^{\circ}\mathrm{C}$
+    \item \textbf{Temperatura alta:} $T_{hw\_in} = 55\,^{\circ}\mathrm{C},\ 
+    T_{hw\_out} = 65\,^{\circ}\mathrm{C}$
+\end{itemize}
+
+La presión de condensación se ha encontrado usando tanto la temperatura de 
+entrada del fluido, como el approach de temperatura y el subcooling:
+\[
+p_{k} = f(t = t_{hw\_in} + Ap_{k} + SUB,\ x_{v} = 0)
+\]
+Una vez conocido el punto termodinámico de la salida del condensador se puede 
+hallar de forma similar el punto posterior a la válvula de expansión:
+\[
+p_{O} = f(t = t_{cw\_out} - Ap_{O},\ h = h_{k,out})
+\]
+A partir de estas presiones se pueden hallar un par de magnitudes que definan 
+termodinámicamente los puntos de salida del condensador y de entrada del 
+evaporador.
+\[
+\mathrm{Point}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + Ap_{k})
+\]
+\[
+\mathrm{Point}_{O,in} = f(p = p_{O},\ h = h_{k,out})
+\]
+Obteniendo la temperatura de vapor saturado en el evaporador se puede hallar 
+el punto de salida del evaporador:
+\[
+t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
+\]
+\[
+\mathrm{Point}_{O,out} = f(p = p_{O},\ t = t_{vap,sat})
+\]
+Sabiendo el rendimiento isentrópico del compresor se puede hallar el punto 
+a la salida de este, que el mismo que el de la entrada del condensador:
+\[
+h_{c,out,s} = f(p = p_{k},\ s = s_{c,in}),\quad
+h_{c,out} = h_{c,in} + \frac{h_{c,out,s} - h_{c,in}}{\eta_{s}}
+\]
+\[
+\mathrm{Point}_{k,in} = f(p = p_{k},\ h = h_{c,out})
+\]
+El proceso incluye filtros que excluyen las mezclas que no cumplen los 
+siguientes requisitos:
+\begin{itemize}
+    \item Glide de condensación ($Glide_{k}$) y glide efectivo de evaporación 
+    ($Glide_{O}$) menor a $10\,^{\circ}\mathrm{C}$ ya que la transferencia de 
+    calor se reduce al pasar estos umbrales.
+    \item Temperatura de descarga del compresor menor a $130\,^{\circ}\mathrm{C}$
+    ya que este no está pensado para soportar temperaturas tan elevadas.
+    \item Presión de descarga del compresor menor a $25\ \mathrm{bar}$ ya que esta es
+    su presión máxima de operación.
+    \item Valores de $VCC$ que estén en el intervalo $\pm 30\%\ VCC_{R-290}$  
+    para ser compatibles con los compresores de propano.
+\end{itemize}
+Además, si la diferencia de temperatura entre el fluido y el agua en el 
+\textit{pinch point} es menor a $1\,^{\circ}\mathrm{C}$
+se volverá a calcular el ciclo pero aumentando en $0.5\,^{\circ}\mathrm{C}$ el 
+valor del approach de temperatura del condensador hasta que el ciclo cumpla 
+este criterio.
+
+Posteriormente, todas las mezclas que superen los filtros se reevaluarán pero ahora 
+con una variación del 1\% en su composición para encontrar la composición que maximiza 
+el $COP$
+
+A continuación se muestran las expresiones que se usan para calcular los 
+parámetros del ciclo termodinámico:
+\[
+Glide_{O}=t(p = p_{O},\ x_{v} = 1) - t(p = p_{O},\ x_{v} = x_{v},O,in)
+\]
+\[
+Glide_{k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
+\]
+\[
+VCC = \frac{h_{O,out} - h_{O,in}}{\nu_{suc}}
+\]
+\[
+COP = \frac{h_{O,out}-h_{O,in}}{h_{k,in}-h_{k,out}}
+\]
+\[
+\frac{\dot{m}_{hw}}{\dot{m}_{ref}}=\frac{h_{O,in}-h_{O,out}}
+{c_{p}\cdot \left( t_{hw,out}-t_{hw,in} \right)}
+\]
+\[
+t_{hw,pinch} = t_{hw,out} - \frac{\dot{m}_{ref}}{\dot{m}_{hw}\cdot c_{p}} \cdot 
+\left( h_{k,in} - h(p = p_{k},\ x_{v} = 1)\right)
+\]
+\[
+pinch = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
 \]
 
-
-
-
-
-
-\section{Identificación}
-Identificación
 \end{document}
