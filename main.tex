@@ -13,6 +13,7 @@
 \usepackage{biblatex}       % Bibliografía
 \usepackage[scaled]{helvet} % Cargar fuente helvetica
 \usepackage{setspace}       % Cambiar interlineados
+\usepackage{subfiles}       % Para llamar a otros archivos
 
 % Cambiar de fuente a helvética
 \renewcommand{\familydefault}{\sfdefault}
@@ -36,17 +37,29 @@
 
 \begin{titlepage}
     \begin{center}
-    \includegraphics[width = 400pt]{imagenes/logo_uji.png} \\[1cm]
-    {\Huge \textbf{UNIVERSITAT JAUME I}} \\[1cm]
+    {\large ESTUDIO Y ANÁLISIS DE MEZCLAS DE REFRIGERANTES ALTERNATIVAS AL PROPANO
+    (R-290) PARA MEJORAR LA EFICIENCIA ENERGÉTICA} \\[1.5cm]
+    \includegraphics[width = 200pt]{imagenes/logo_uji.png} \\[1cm]
     {\Large \textbf{ESCOLA SUPERIOR DE TECNOLOGIA 
     I CIÈNCIES EXPERIMENTALS}} \\[0.5cm]
     {\Large \textbf{GRADO EN INGENIERÍA MECÁNICA}} \\[1.5CM]
 
-    {\huge MEZCLAS DE REFRIGERANTES ALTERNATIVAS AL PROPANO
-    (R-290) PARA MEJORAR LA EFICIENCIA ENERGÉTICA}
+    
     \end{center}
+    \vfill
+    AUTOR: Marc Villamón Gómez\\[0.7cm]
+    TUTOR: Rodrigo Llopis Doménech\\[0.7cm]
+    CODIRECTOR: Manel Enric Martínez Ángeles
 \end{titlepage}
 
+\thispagestyle{empty} % Dejar una página en blanco
+\null
+\newpage
+
+\setcounter{page}{1} % Empezar a numerar a partir de esta página
+\pagestyle{plain}
+
+\subfile{capitulos/resumen.tex}
 
 
 
