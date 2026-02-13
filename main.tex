@@ -18,8 +18,14 @@
 % Cambiar de fuente a helvética
 \renewcommand{\familydefault}{\sfdefault}
 
-% Interlineado doble
-\doublespacing
+% Quitar sangría de primera línea
+\setlength{\parindent}{0pt}
+
+% Añadir espacio entre parrafos
+\setlength{\parskip}{1em}
+
+% Interlineado 1.5
+\onehalfspacing
 
 % Configurar márgenes
 \geometry{
@@ -59,8 +65,7 @@
 \setcounter{page}{1} % Empezar a numerar a partir de esta página
 \pagestyle{plain}
 
-\subfile{capitulos/resumen.tex}
-
+\subfile{capitulos/simulacion.tex}
 
 
 \end{document}
