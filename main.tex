@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{report}
+\documentclass[a4paper, 12pt, fleqn]{article}
 
 % Paquetes  
 \usepackage{graphicx}       % Para imágenes
@@ -10,10 +10,24 @@
 \usepackage{geometry}       % Configurar márgenes
 \usepackage{amsmath, amssymb} % Símbolos y funciones
 \usepackage{caption, subcaption}% Títulos en figuras y subfiguras
-\usepackage{biblatex}       % Bibliografía
+\usepackage[backend=biber]{biblatex} % Bibliografía
+\addbibresource{bibliografia/referencias.bib}
 \usepackage[scaled]{helvet} % Cargar fuente helvetica
 \usepackage{setspace}       % Cambiar interlineados
 \usepackage{subfiles}       % Para llamar a otros archivos
+\usepackage[spanish]{cleveref} % Gestión de referencias
+
+% Cambia formate de ecuaciones
+\setlength{\mathindent}{0pt} % Sangrado
+\setlength{\jot}{0.6cm} % Distancia entre estas
+\allowdisplaybreaks % Permitir corte por nueva página
+
+% Nombre ecuaciones cambiado
+\numberwithin{equation}{section} % Reiniciar contador al empezar sección
+\renewcommand{\theequation}{Eq.(\thesection.\arabic{equation})}
+\makeatletter 
+\def\tagform@#1{\maketag@@@{#1\hspace{1cm}}}
+\makeatother
 
 % Cambiar de fuente a helvética
 \renewcommand{\familydefault}{\sfdefault}
@@ -41,7 +55,7 @@
 
 \begin{document}
 
-\begin{titlepage}
+\begin{titlepage} % Título
     \begin{center}
     {\large ESTUDIO Y ANÁLISIS DE MEZCLAS DE REFRIGERANTES ALTERNATIVAS AL PROPANO
     (R-290) PARA MEJORAR LA EFICIENCIA ENERGÉTICA} \\[1.5cm]
@@ -65,7 +79,9 @@
 \setcounter{page}{1} % Empezar a numerar a partir de esta página
 \pagestyle{plain}
 
+\subfile{capitulos/alcance.tex}
+
 \subfile{capitulos/simulacion.tex}
 
-
+\printbibliography
 \end{document}

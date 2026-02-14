@@ -1,9 +1,11 @@
+% !TeX root = ../main.tex
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
+\section{Simulación teórica}
+El software usado para el cálculo de las propiedades termodinámicas 
+ha sido Refprop v.10.0
 
-
-\section{Identificación de mezclas}
 El primer paso en este Trabajo de Final de Grado (TFG) involucra 
 realizar un \textit{screening} termodinámico para identificar las 
 posibles mezclas que superen al propano (R-290) en rendimiento 
@@ -21,21 +23,22 @@ operación en un ciclo básico de vapor. Este involucrará un compresión
 con un rendimento isentrópico fijo, una transformación isobárica en 
 cada intercambiador de calor y una expansión isentálpica en la válvula 
 de expansión. Cada simulación se lleva a cabo en cuatro escenarios 
-diferentes que tipifica la normativa UNE-EN 14511-3 
+diferentes que tipifica la normativa UNE-EN 14511-3 \cite{une14511}
 para ensayos de máquinas de calor agua-agua.
 
 Para el cálculo termodinámico del ciclo las principales variables tomarán 
 los siguientes valores para cada uno de los escenarios:
 
 Para todos los ensayos: 
-\[
+\begin{equation*}
 SUB = 1\,^{\circ}\mathrm{C},\ SH = 5\,^{\circ}\mathrm{C},\
 Ap_{k} = 6.5\,^{\circ}\mathrm{C}, \ Ap_{O} = 3\,^{\circ}\mathrm{C}
-\]
-\[
+\end{equation*}
+\begin{equation*}
 T_{cw\_in} = 0\,^{\circ}\mathrm{C},\ T_{cw\_out} = -3\,^{\circ}\mathrm{C},\ 
 \eta_{s} = 60\%
-\]
+\end{equation*}
+
 Dependiendo del ensayo:
 \begin{itemize}
     \item \textbf{Temperatura baja:} $T_{hw\_in} = 30\,^{\circ}\mathrm{C},\ 
@@ -50,40 +53,41 @@ Dependiendo del ensayo:
 
 La presión de condensación se ha encontrado usando tanto la temperatura de 
 entrada del fluido, como el approach de temperatura y el subcooling:
-\[
+\begin{equation}
 p_{k} = f(t = t_{hw\_in} + Ap_{k} + SUB,\ x_{v} = 0)
-\]
+\end{equation}
 Una vez conocido el punto termodinámico de la salida del condensador se puede 
 hallar de forma similar el punto posterior a la válvula de expansión:
-\[
+\begin{equation}
 p_{O} = f(t = t_{cw\_out} - Ap_{O},\ h = h_{k,out})
-\]
+\end{equation}
 A partir de estas presiones se pueden hallar un par de magnitudes que definan 
 termodinámicamente los puntos de salida del condensador y de entrada del 
 evaporador.
-\[
+\begin{gather}
 \mathrm{Point}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + Ap_{k})
-\]
-\[
+\label{eq:point_k,out} \\
 \mathrm{Point}_{O,in} = f(p = p_{O},\ h = h_{k,out})
-\]
+\label{eq:point_O,in}
+\end{gather}
 Obteniendo la temperatura de vapor saturado en el evaporador se puede hallar 
 el punto de salida del evaporador:
-\[
+\begin{gather}
 t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
-\]
-\[
+\label{eq:t_vap_sat} \\
 \mathrm{Point}_{O,out} = f(p = p_{O},\ t = t_{vap,sat})
-\]
+\label{eq:point_O,out}
+\end{gather}
 Sabiendo el rendimiento isentrópico del compresor se puede hallar el punto 
 a la salida de este, que el mismo que el de la entrada del condensador:
-\[
+\begin{gather}
 h_{c,out,s} = f(p = p_{k},\ s = s_{c,in}),\quad
+\label{eq:h_c,out,s} \\
 h_{c,out} = h_{c,in} + \frac{h_{c,out,s} - h_{c,in}}{\eta_{s}}
-\]
-\[
+\label{eq:h_c,out} \\
 \mathrm{Point}_{k,in} = f(p = p_{k},\ h = h_{c,out})
-\]
+\label{eq:point_k,in}
+\end{gather}
 El proceso incluye filtros que excluyen las mezclas que no cumplen los 
 siguientes requisitos:
 \begin{itemize}
@@ -109,28 +113,25 @@ el $COP$
 
 A continuación se muestran las expresiones que se usan para calcular los 
 parámetros del ciclo termodinámico:
-\[
-Glide_{O}=t(p = p_{O},\ x_{v} = 1) - t(p = p_{O},\ x_{v} = x_{v},O,in)
-\]
-\[
+\begin{gather}
+Glide_{O}=t(p = p_{O},\ x_{v} = 1) - t(p = p_{O},\ x_{v} = x_{v,O,in})
+\label{eq:glide_O} \\
 Glide_{k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
-\]
-\[
+\label{eq:glide_k} \\
 VCC = \frac{h_{O,out} - h_{O,in}}{\nu_{suc}}
-\]
-\[
+\label{eq:VCC} \\
 COP = \frac{h_{O,out}-h_{O,in}}{h_{k,in}-h_{k,out}}
-\]
-\[
+\label{eq:COP} \\
 \frac{\dot{m}_{hw}}{\dot{m}_{ref}}=\frac{h_{O,in}-h_{O,out}}
 {c_{p}\cdot \left( t_{hw,out}-t_{hw,in} \right)}
-\]
-\[
+\label{eq:caudales} \\
 t_{hw,pinch} = t_{hw,out} - \frac{\dot{m}_{ref}}{\dot{m}_{hw}\cdot c_{p}} \cdot 
 \left( h_{k,in} - h(p = p_{k},\ x_{v} = 1)\right)
-\]
-\[
-pinch = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
-\]
+\label{eq:t_hw_pinch} \\
+t_{pinch} = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
+\label{t_pinch}
+\end{gather}
+
+
 
 \end{document}
