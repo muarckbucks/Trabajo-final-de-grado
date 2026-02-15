@@ -4,7 +4,7 @@
 
 \section{Simulación teórica}
 El software usado para el cálculo de las propiedades termodinámicas 
-ha sido Refprop v.10.0
+ha sido Refprop v.10.0 \cite{refprop}
 
 El primer paso en este Trabajo de Final de Grado (TFG) involucra 
 realizar un \textit{screening} termodinámico para identificar las 
@@ -65,28 +65,32 @@ A partir de estas presiones se pueden hallar un par de magnitudes que definan
 termodinámicamente los puntos de salida del condensador y de entrada del 
 evaporador.
 \begin{gather}
-\mathrm{Point}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + Ap_{k})
-\label{eq:point_k,out} \\
-\mathrm{Point}_{O,in} = f(p = p_{O},\ h = h_{k,out})
-\label{eq:point_O,in}
+\mathrm{Punto}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + Ap_{k})
+\label{eq:punto_k,out}
+\\
+\mathrm{Punto}_{O,in} = f(p = p_{O},\ h = h_{k,out})
+\label{eq:punto_O,in}
 \end{gather}
 Obteniendo la temperatura de vapor saturado en el evaporador se puede hallar 
 el punto de salida del evaporador:
 \begin{gather}
 t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
-\label{eq:t_vap_sat} \\
-\mathrm{Point}_{O,out} = f(p = p_{O},\ t = t_{vap,sat})
-\label{eq:point_O,out}
+\label{eq:t_vap_sat}
+\\
+\mathrm{Punto}_{O,out} = f(p = p_{O},\ t = t_{vap,sat})
+\label{eq:punto_O,out}
 \end{gather}
 Sabiendo el rendimiento isentrópico del compresor se puede hallar el punto 
 a la salida de este, que el mismo que el de la entrada del condensador:
 \begin{gather}
 h_{c,out,s} = f(p = p_{k},\ s = s_{c,in}),\quad
-\label{eq:h_c,out,s} \\
+\label{eq:h_c,out,s}
+\\
 h_{c,out} = h_{c,in} + \frac{h_{c,out,s} - h_{c,in}}{\eta_{s}}
-\label{eq:h_c,out} \\
-\mathrm{Point}_{k,in} = f(p = p_{k},\ h = h_{c,out})
-\label{eq:point_k,in}
+\label{eq:h_c,out}
+\\
+\mathrm{Punto}_{k,in} = f(p = p_{k},\ h = h_{c,out})
+\label{eq:punto_k,in}
 \end{gather}
 El proceso incluye filtros que excluyen las mezclas que no cumplen los 
 siguientes requisitos:
@@ -115,19 +119,25 @@ A continuación se muestran las expresiones que se usan para calcular los
 parámetros del ciclo termodinámico:
 \begin{gather}
 Glide_{O}=t(p = p_{O},\ x_{v} = 1) - t(p = p_{O},\ x_{v} = x_{v,O,in})
-\label{eq:glide_O} \\
+\label{eq:glide_O}
+\\
 Glide_{k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
-\label{eq:glide_k} \\
+\label{eq:glide_k}
+\\
 VCC = \frac{h_{O,out} - h_{O,in}}{\nu_{suc}}
-\label{eq:VCC} \\
+\label{eq:VCC}
+\\
 COP = \frac{h_{O,out}-h_{O,in}}{h_{k,in}-h_{k,out}}
-\label{eq:COP} \\
+\label{eq:COP}
+\\
 \frac{\dot{m}_{hw}}{\dot{m}_{ref}}=\frac{h_{O,in}-h_{O,out}}
 {c_{p}\cdot \left( t_{hw,out}-t_{hw,in} \right)}
-\label{eq:caudales} \\
+\label{eq:caudales}
+\\
 t_{hw,pinch} = t_{hw,out} - \frac{\dot{m}_{ref}}{\dot{m}_{hw}\cdot c_{p}} \cdot 
 \left( h_{k,in} - h(p = p_{k},\ x_{v} = 1)\right)
-\label{eq:t_hw_pinch} \\
+\label{eq:t_hw_pinch}
+\\
 t_{pinch} = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
 \label{t_pinch}
 \end{gather}

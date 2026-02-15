@@ -10,8 +10,8 @@
 \usepackage{geometry}       % Configurar márgenes
 \usepackage{amsmath, amssymb} % Símbolos y funciones
 \usepackage{caption, subcaption}% Títulos en figuras y subfiguras
-\usepackage[backend=biber]{biblatex} % Bibliografía
-\addbibresource{bibliografia/referencias.bib}
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex} % Bibliografía
+\addbibresource{bibliografia.bib}
 \usepackage[scaled]{helvet} % Cargar fuente helvetica
 \usepackage{setspace}       % Cambiar interlineados
 \usepackage{subfiles}       % Para llamar a otros archivos
@@ -57,8 +57,7 @@
 
 \begin{titlepage} % Título
     \begin{center}
-    {\large ESTUDIO Y ANÁLISIS DE MEZCLAS DE REFRIGERANTES ALTERNATIVAS AL PROPANO
-    (R-290) PARA MEJORAR LA EFICIENCIA ENERGÉTICA} \\[1.5cm]
+    {\large TÍTOL TFG} \\[1.5cm]
     \includegraphics[width = 200pt]{imagenes/logo_uji.png} \\[1cm]
     {\Large \textbf{ESCOLA SUPERIOR DE TECNOLOGIA 
     I CIÈNCIES EXPERIMENTALS}} \\[0.5cm]
@@ -78,6 +77,8 @@
 
 \setcounter{page}{1} % Empezar a numerar a partir de esta página
 \pagestyle{plain}
+
+\tableofcontents % Añadir tabla de contenido
 
 \subfile{capitulos/alcance.tex}
 
