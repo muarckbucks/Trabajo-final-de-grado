@@ -1,8 +1,8 @@
-% !TeX root = ../main.tex
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\section{Simulación teórica}
+\section{Screening termodinámico}
+\subsection{Descripción del modelo}
 El software usado para el cálculo de las propiedades termodinámicas 
 ha sido Refprop v.10.0 \cite{refprop}
 
@@ -26,6 +26,8 @@ de expansión. Cada simulación se lleva a cabo en cuatro escenarios
 diferentes que tipifica la normativa UNE-EN 14511-3 \cite{une14511}
 para ensayos de máquinas de calor agua-agua.
 
+% CONDICIONES DE SIMULACIÓN
+\subsection{Condiciones de simulación}
 Para el cálculo termodinámico del ciclo las principales variables tomarán 
 los siguientes valores para cada uno de los escenarios:
 
@@ -51,6 +53,8 @@ Dependiendo del ensayo:
     T_{hw\_out} = 65\,^{\circ}\mathrm{C}$
 \end{itemize}
 
+% ECUACIONES DE CÁLCULO
+\subsection{Ecuaciones de cálculo}
 La presión de condensación se ha encontrado usando tanto la temperatura de 
 entrada del fluido, como el approach de temperatura y el subcooling:
 \begin{equation}
@@ -92,28 +96,6 @@ h_{c,out} = h_{c,in} + \frac{h_{c,out,s} - h_{c,in}}{\eta_{s}}
 \mathrm{Punto}_{k,in} = f(p = p_{k},\ h = h_{c,out})
 \label{eq:punto_k,in}
 \end{gather}
-El proceso incluye filtros que excluyen las mezclas que no cumplen los 
-siguientes requisitos:
-\begin{itemize}
-    \item Glide de condensación ($Glide_{k}$) y glide efectivo de evaporación 
-    ($Glide_{O}$) menor a $10\,^{\circ}\mathrm{C}$ ya que la transferencia de 
-    calor se reduce al pasar estos umbrales.
-    \item Temperatura de descarga del compresor menor a $130\,^{\circ}\mathrm{C}$
-    ya que este no está pensado para soportar temperaturas tan elevadas.
-    \item Presión de descarga del compresor menor a $25\ \mathrm{bar}$ ya que esta es
-    su presión máxima de operación.
-    \item Valores de $VCC$ que estén en el intervalo $\pm 30\%\ VCC_{R-290}$  
-    para ser compatibles con los compresores de propano.
-\end{itemize}
-Además, si la diferencia de temperatura entre el fluido y el agua en el 
-\textit{pinch point} es menor a $1\,^{\circ}\mathrm{C}$
-se volverá a calcular el ciclo pero aumentando en $0.5\,^{\circ}\mathrm{C}$ el 
-valor del approach de temperatura del condensador hasta que el ciclo cumpla 
-este criterio.
-
-Posteriormente, todas las mezclas que superen los filtros se reevaluarán pero ahora 
-con una variación del 1\% en su composición para encontrar la composición que maximiza 
-el $COP$
 
 A continuación se muestran las expresiones que se usan para calcular los 
 parámetros del ciclo termodinámico:
@@ -141,6 +123,40 @@ t_{hw,pinch} = t_{hw,out} - \frac{\dot{m}_{ref}}{\dot{m}_{hw}\cdot c_{p}} \cdot
 t_{pinch} = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
 \label{t_pinch}
 \end{gather}
+
+% RESTRICCIONES
+\subsection{Restricciones}
+El proceso incluye filtros que excluyen las mezclas que no cumplen los 
+siguientes requisitos:
+\begin{itemize}
+    \item Glide de condensación ($Glide_{k}$) y glide efectivo de evaporación 
+    ($Glide_{O}$) menor a $10\,^{\circ}\mathrm{C}$ ya que la transferencia de 
+    calor se reduce al pasar estos umbrales.
+    \item Temperatura de descarga del compresor menor a $130\,^{\circ}\mathrm{C}$
+    ya que este no está pensado para soportar temperaturas tan elevadas.
+    \item Presión de descarga del compresor menor a $25\ \mathrm{bar}$ ya que esta es
+    su presión máxima de operación.
+    \item Valores de $VCC$ que estén en el intervalo $\pm 30\%\ VCC_{R-290}$  
+    para ser compatibles con los compresores de propano.
+\end{itemize}
+Además, si la diferencia de temperatura entre el fluido y el agua en el 
+\textit{pinch point} es menor a $1\,^{\circ}\mathrm{C}$
+se volverá a calcular el ciclo pero aumentando en $0.5\,^{\circ}\mathrm{C}$ el 
+valor del approach de temperatura del condensador hasta que el ciclo cumpla 
+este criterio.
+
+Posteriormente, todas las mezclas que superen los filtros se reevaluarán pero ahora 
+con una variación del 1\% en su composición para encontrar la composición que maximiza 
+el $COP$
+
+% Resultado bruto
+\subsection{Resultado bruto}
+
+% Resultado refinado
+\subsection{Resultado refinado}
+
+% Análisis de resultados
+\subsection{Análisis de resultados}
 
 
 

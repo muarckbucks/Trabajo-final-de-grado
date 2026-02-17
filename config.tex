@@ -1,0 +1,78 @@
+% Paquetes  
+\usepackage{graphicx}       % Para imágenes
+\usepackage[utf8]{inputenc} % Para aceptar tildes
+\usepackage[T1]{fontenc}    % Trabajar bien en español
+\usepackage[spanish]{babel} % Configurar idioma
+\usepackage{csquotes}       % Se necesita al usar babel
+\usepackage{hyperref}       % Enlaces clicables
+\usepackage{geometry}       % Configurar márgenes
+\usepackage{amsmath, amssymb} % Símbolos y funciones
+\usepackage{caption, subcaption}% Títulos en figuras y subfiguras
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex} % Bibliografía
+\addbibresource{bibliografia.bib}
+\usepackage[scaled]{helvet} % Cargar fuente helvetica
+\usepackage{setspace}       % Cambiar interlineados
+\usepackage{subfiles}       % Para llamar a otros archivos
+\usepackage[spanish]{cleveref} % Gestión de referencias
+\usepackage{titlesec}       % Cambiar la estructura de capítulos
+\usepackage{tocloft}        % Quitar numeración capítulos
+\usepackage[nottoc]{tocbibind}
+
+% Quitar el número del capítulo en el TOC
+\makeatletter
+\renewcommand{\cftchappresnum}{\begin{lrbox}{\@tempboxa}}
+\renewcommand{\cftchapaftersnum}{\end{lrbox}}
+\makeatother
+\setlength{\cftchapnumwidth}{0pt}
+
+% Cambiar formato de capítulos
+% Formato \chapter
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries\centering}
+    {\vspace*{\fill}} 
+    {20pt} 
+    {\fontsize{50}{60}\selectfont} 
+    [\vspace*{\fill}\clearpage\mbox{}\thispagestyle{empty}\newpage]
+
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+
+% Formato \chapter*
+\titleformat{name=\chapter, numberless}[display]
+    {\normalfont\Huge\bfseries}
+    {}
+    {0pt}
+    {}
+
+\titlespacing*{name=\chapter, numberless}{0pt}{0pt}{0pt}
+
+% Obviar el capítulo en las etiquetas
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+% Cambia formato de ecuaciones
+\setlength{\mathindent}{0pt} % Sangrado
+\setlength{\jot}{0.6cm} % Distancia entre estas
+\allowdisplaybreaks % Permitir corte por nueva página
+
+% Nombre ecuaciones cambiado
+\numberwithin{equation}{section} % Reiniciar contador al empezar sección
+\renewcommand{\theequation}{Eq.(\thesection.\arabic{equation})}
+\makeatletter 
+\def\tagform@#1{\maketag@@@{#1\hspace{1cm}}}
+\makeatother
+
+% Cambiar de fuente a helvética
+\renewcommand{\familydefault}{\sfdefault}
+
+% Quitar sangría de primera línea
+\setlength{\parindent}{0pt}
+
+% Añadir espacio entre parrafos
+\setlength{\parskip}{1em}
+
+% Interlineado 1.5
+\onehalfspacing
+
+% Configurar márgenes
+\geometry{margin = 2.5cm}
