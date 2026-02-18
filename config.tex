@@ -17,6 +17,12 @@
 \usepackage{titlesec}       % Cambiar la estructura de capítulos
 \usepackage{tocloft}        % Quitar numeración capítulos
 \usepackage[nottoc]{tocbibind}
+\usepackage{array}
+\usepackage{float}
+
+% Cambiar el formato de TOC
+\setlength{\cftbeforetoctitleskip}{-20pt}
+\setlength{\cftaftertoctitleskip}{20pt}
 
 % Quitar el número del capítulo en el TOC
 \makeatletter
@@ -25,27 +31,39 @@
 \makeatother
 \setlength{\cftchapnumwidth}{0pt}
 
-% Cambiar formato de capítulos
+% Macro para capítulos en página impar
+\makeatletter
+\newcommand{\imparchapter}[1]{
+    \cleardoublepage
+    \ifodd\value{page}
+        % Ya estamos en impar
+    \else
+        \hbox{}\thispagestyle{empty}\newpage
+    \fi
+    \chapter{#1}
+}
+\makeatother
+
 % Formato \chapter
 \titleformat{\chapter}[display]
-    {\normalfont\bfseries\centering}
-    {\vspace*{\fill}} 
-    {20pt} 
-    {\fontsize{50}{60}\selectfont} 
-    [\vspace*{\fill}\clearpage\mbox{}\thispagestyle{empty}\newpage]
+        {\normalfont\bfseries\centering}
+        {\vspace*{\fill}} 
+        {20pt} 
+        {\fontsize{50}{60}\selectfont} 
+        [\vspace*{\fill}\clearpage\mbox{}\thispagestyle{empty}\newpage]
 
 \titlespacing*{\chapter}{0pt}{0pt}{0pt}
 
 % Formato \chapter*
 \titleformat{name=\chapter, numberless}[display]
-    {\normalfont\Huge\bfseries}
-    {}
-    {0pt}
-    {}
+        {\normalfont\Huge\bfseries}
+        {}
+        {0pt}
+        {}
 
-\titlespacing*{name=\chapter, numberless}{0pt}{0pt}{0pt}
+\titlespacing*{name=\chapter, numberless}{0pt}{-80pt}{20pt}
 
-% Obviar el capítulo en las etiquetas
+% Quitar el capítulo en las etiquetas
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
