@@ -1,3 +1,5 @@
+# DEFINICIONS
+- [ ] Canviar de magnituts a unitats
 # INTRODUCCIÓ
 - [ ] Taula refrigerants a probar (incloure flamabilitat)
 # SCREENING
