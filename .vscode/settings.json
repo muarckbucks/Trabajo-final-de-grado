@@ -20,5 +20,5 @@
         "output/*.bib": true,
         "output/capitulos": true,
         "output/*.toc": true,
-    }
+    },
 }
