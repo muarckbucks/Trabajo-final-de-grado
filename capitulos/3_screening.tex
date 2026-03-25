@@ -3,30 +3,15 @@
 
 \section{\textit{Screening} termodinámico}
 \subsection{Descripción del modelo}
-El primer paso en este TFG es 
-realizar un \textit{screening} termodinámico para identificar las 
-posibles mezclas que superen al propano (R-290) en rendimiento 
-energético.
+El primer paso en este TFG es realizar un \textit{screening} termodinámico para identificar las posibles mezclas que superen al propano (R-290) en rendimiento energético.
 
-El \textit{screening} consistirá en la combinación de los posibles 
-refrigerantes de trabajo en mezclas de tres en tres. Con cada mezcla 
-se calcularán las propiedades termodinámicas del ciclo de compresión 
-básico con incrementos y decrementos en las proporciones de los 
-refrigerantes de un 5\%, resultando en un total de 231 posibles 
-combinaciones para cada tres refrigerantes.
+El \textit{screening} consistirá en la combinación de los posibles refrigerantes de trabajo en mezclas de tres en tres. on cada mezcla se calcularán las propiedades termodinámicas del iclo de compresión básico con incrementos y decrementos en las proporciones de los refrigerantes de un 5\%, resultando en un total de 231 posibles combinaciones para cada tres refrigerantes.
 
-El comportamiento de cada combinación se simulará considerando su 
-operación en un ciclo básico de vapor. Este involucrará una compresión 
-con un rendimiento isentrópico fijo, una transformación isobárica en 
-cada intercambiador de calor y una expansión isoentálpica en la válvula 
-de expansión. Cada simulación se lleva a cabo en cuatro escenarios 
-diferentes que tipifica la normativa UNE-EN 14511-3 \cite{une14511}
-para ensayos de máquinas de calor agua-agua.
+El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento isentrópico fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada simulación se lleva a cabo en cuatro escenarios diferentes que tipifica la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de máquinas de calor agua-agua.
 
 % CONDICIONES DE SIMULACIÓN
 \subsection{Condiciones de simulación}
-Para el cálculo termodinámico del ciclo las principales variables tomarán 
-los siguientes valores para cada uno de los escenarios:
+Para el cálculo termodinámico del ciclo las principales variables tomarán los siguientes valores para cada uno de los escenarios:
 
 Para todos los ensayos: 
 \begin{equation*}
@@ -52,19 +37,15 @@ Dependiendo del ensayo:
 
 % ECUACIONES DE CÁLCULO
 \subsection{Ecuaciones de cálculo}
-La presión de condensación se ha encontrado usando tanto la temperatura de 
-entrada del fluido, como el approach de temperatura y el subcooling:
+La presión de condensación se ha encontrado usando tanto la temperatura de entrada del fluido, como el approach de temperatura y el subcooling:
 \begin{equation}
 p_{k} = f(t = t_{hw\_in} + Ap_{k} + SUB,\ x_{v} = 0)
 \end{equation}
-Una vez conocido el punto termodinámico de la salida del condensador se puede 
-hallar de forma similar el punto posterior a la válvula de expansión:
+Una vez conocido el punto termodinámico de la salida del condensador se puede hallar de forma similar el punto posterior a la válvula de expansión:
 \begin{equation}
 p_{O} = f(t = t_{cw\_out} - Ap_{O},\ h = h_{k,out})
 \end{equation}
-A partir de estas presiones se pueden hallar un par de magnitudes que definan 
-termodinámicamente los puntos de salida del condensador y de entrada del 
-evaporador.
+A partir de estas presiones se pueden hallar un par de magnitudes que definan termodinámicamente los puntos de salida del condensador y de entrada del evaporador.
 \begin{gather}
 \mathrm{Punto}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + Ap_{k})
 \label{eq:punto_k,out}
@@ -72,8 +53,7 @@ evaporador.
 \mathrm{Punto}_{O,in} = f(p = p_{O},\ h = h_{k,out})
 \label{eq:punto_O,in}
 \end{gather}
-Obteniendo la temperatura de vapor saturado en el evaporador se puede hallar 
-el punto de salida del evaporador:
+Obteniendo la temperatura de vapor saturado en el evaporador se puede hallar el punto de salida del evaporador:
 \begin{gather}
 t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
 \label{eq:t_vap_sat}
@@ -81,8 +61,7 @@ t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
 \mathrm{Punto}_{O,out} = f(p = p_{O},\ t = t_{vap,sat})
 \label{eq:punto_O,out}
 \end{gather}
-Sabiendo el rendimiento isentrópico del compresor se puede hallar el punto 
-a la salida de este, que el mismo que el de la entrada del condensador:
+Sabiendo el rendimiento isentrópico del compresor se puede hallar el punto a la salida de este, que el mismo que el de la entrada del condensador:
 \begin{gather}
 h_{c,out,s} = f(p = p_{k},\ s = s_{c,in}),\quad
 \label{eq:h_c,out,s}
@@ -94,8 +73,7 @@ h_{c,out} = h_{c,in} + \frac{h_{c,out,s} - h_{c,in}}{\eta_{s}}
 \label{eq:punto_k,in}
 \end{gather}
 
-A continuación se muestran las expresiones que se usan para calcular los 
-parámetros del ciclo termodinámico:
+A continuación se muestran las expresiones que se usan para calcular los parámetros del ciclo termodinámico:
 \begin{gather}
 Glide_{O}=t(p = p_{O},\ x_{v} = 1) - t(p = p_{O},\ x_{v} = x_{v,O,in})
 \label{eq:glide_O}
@@ -121,12 +99,10 @@ t_{pinch} = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
 \label{t_pinch}
 \end{gather}
 
-El software usado para el cálculo de las propiedades termodinámicas 
-ha sido Refprop v.10.0 \cite{refprop}
+El software usado para el cálculo de las propiedades termodinámicas ha sido Refprop v.10.0 \cite{refprop}
 % RESTRICCIONES
 \subsection{Restricciones}
-El proceso incluye filtros que excluyen las mezclas que no cumplen los 
-siguientes requisitos:
+El proceso incluye filtros que excluyen las mezclas que no cumplen los siguientes requisitos:
 \begin{itemize}
     \item Glide de condensación ($Glide_{k}$) y glide efectivo de evaporación 
     ($Glide_{O}$) menor a $10\,^{\circ}\mathrm{C}$ ya que la transferencia de 
@@ -138,15 +114,9 @@ siguientes requisitos:
     \item Valores de $VCC$ que estén en el intervalo $\pm 30\%\ VCC_{R-290}$  
     para ser compatibles con los compresores de propano.
 \end{itemize}
-Además, si la diferencia de temperatura entre el fluido y el agua en el 
-\textit{pinch point} es menor a $1\,^{\circ}\mathrm{C}$
-se volverá a calcular el ciclo pero aumentando en $0.5\,^{\circ}\mathrm{C}$ el 
-valor del approach de temperatura del condensador hasta que el ciclo cumpla 
-este criterio.
+Además, si la diferencia de temperatura entre el fluido y el agua en el \textit{pinch point} es menor a $1\,^{\circ}\mathrm{C}$ se volverá a calcular el ciclo pero aumentando en $0.5\,^{\circ}\mathrm{C}$ el valor del approach de temperatura del condensador hasta que el ciclo cumpla este criterio.
 
-Posteriormente, todas las mezclas que superen los filtros se reevaluarán pero ahora 
-con una variación del 1\% en su composición para encontrar la composición que maximiza 
-el $COP$
+Posteriormente, todas las mezclas que superen los filtros se reevaluarán pero ahora con una variación del 1\% en su composición para encontrar la composición que maximiza el $COP$
 
 % Resultado bruto
 \subsection{Resultado bruto}
