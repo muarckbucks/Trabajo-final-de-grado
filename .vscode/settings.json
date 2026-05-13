@@ -21,4 +21,9 @@
         "output/capitulos": true,
         "output/*.toc": true,
     },
+    "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+    }
 }
