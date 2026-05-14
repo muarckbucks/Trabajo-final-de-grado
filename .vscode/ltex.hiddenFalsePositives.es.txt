@@ -1,0 +1,5 @@
+{"rule":"ES_SIMPLE_REPLACE_SIMPLE_CO_","sentence":"^\\QPor ello, los refrigerantes empleados eran principalmente sustancias disponibles de forma natural o fácilmente accesibles, como el amoníaco (NH3), el dióxido de carbono (CO2), el propano (CH3CH2CH3), el dióxido de azufre (SO2) y el dimetil éter (CH3OCH3).\\E$"}
+{"rule":"MORFOLOGIK_RULE_ES","sentence":"^\\QAlgunos refrigerantes que dominaron esta etapa fueron el R11 (CCl3F), el R12 (CCl2F2), el R22 (CHClF2) y el R502 (mezcla de HCFC y CFC).\\E$"}
+{"rule":"MORFOLOGIK_RULE_ES","sentence":"^\\QDebido a la prohibición de los CFC y HCFC, esta generación empezó con el desarrollo de los hidrofluorocarburos (HFC) que no contienen moléculas de cloro, entre ellos destacan el R134a (CF3CH2F), el R404A (mezcla de HFC) y el R507A (mezcla de HFCs).\\E$"}
+{"rule":"MORFOLOGIK_RULE_ES","sentence":"^\\QDebido a la prohibición de los CFC y HCFC, esta generación empezó con el desarrollo de los hidrofluorocarburos (HFC) que no contienen moléculas de cloro, entre ellos destacan el R134a (CF3CH2F), el R404A (mezcla de HFC) y el R507A (mezcla de HFC).\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qtermodinámico.\\E$"}

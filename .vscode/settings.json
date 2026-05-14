@@ -25,5 +25,9 @@
     "other": false,
     "comments": false,
     "strings": false
-    }
+    },
+    "ltex.language": "es",
+    "ltex.enabled": [
+        "latex"
+    ]
 }
