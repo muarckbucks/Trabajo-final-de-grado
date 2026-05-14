@@ -24,3 +24,10 @@
 - [ ] Incertesa de mesura
 - [ ] Fotos de tota la planta
 - [ ] Explicar components
+## ANEXES
+- [ ] Dades compresor
+- [ ] Control velocitat compresor
+- [ ] Configuració valvula
+- [ ] Rang aplicació compresor
+- [ ] Comprobació aïllament tèrmic?????
+- [ ] Calibració sondes de pressió
