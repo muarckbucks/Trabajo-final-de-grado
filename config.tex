@@ -20,6 +20,13 @@
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{float}
+
+% Hacer que el subtexto de las tablas ponga "Tabla" en vez de "Cuadro"
+\addto\captionsspanish{
+  \renewcommand{\tablename}{Tabla}
+}
 
 % Sub/Super índices abreviados
 \newcommand{\tsub}[1]{\textsubscript{#1}}

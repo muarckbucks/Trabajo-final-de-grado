@@ -12,14 +12,17 @@ Una vez obtenidos los resultados de las mezclas de fluidos de trabajo, se llevar
 \subsection{Descripción de las instalaciones experimentales}
 
 \subsubsection{Ciclo de compresión}
-El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa, este consiste de un compresor hermético de velocidad variable, dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos el refrigerante circula por dentro y el fluido secundario por fuera, un caudalímetro coriolis y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes.
+El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa, este consiste de un compresor hermético de velocidad variable, dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos el refrigerante circula por dentro y el fluido secundario por fuera, un caudalímetro coriolis y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes, estos componentes se pueden observar más en detalle en la \autoref{tab:componentes_compresion}.
 
-\#\#\# Afegir taula amb dades principals dels components \#\#\#
+\newpage
+
+% Meter tabla de los componentes
+\input{capitulos/tablas/componentes_ciclo_comp.tex}
 
 \subsubsection{Fluidos secundarios}
 Como se ha mencionado anteriormente, no se conocen con exactitud las propiedades termodinámicas de las mezclas de fluidos de trabajo. Esto hace que sea necesario un sistema de fluidos secundarios con el que medir la absorción y cesión de calor del sistema principal.
 
-Estos ciclos consisten en depósitos de agua para el condensador y una mezcla de glicol y agua al 50\% para el evaporador, que mediante unas resistencias en el evaporador y unas resistencias y una motocondesadora en el condensador son capaces de llevar al fliudo secundario a las condiciones de ensayo requeridas y enviarlo a los intercambiadores de calor como se ve en la \autoref{fig:fluidos_secundarios}.
+Estos ciclos se componen de un depósito de agua destilada en el condensador y un depósito de una mezcla de propilenglicol (CH\tsub{3}-CHOH-CH\tsub{2}OH) y agua destilada (50\!\%/50\!\%) para el evaporador, que mediante unas resistencias en el evaporador y unas resistencias y una motocondesadora en el condensador son capaces de llevar al fliudo secundario a las condiciones de ensayo requeridas y enviarlo a los intercambiadores de calor mediante unas bombas como se ve en la \autoref{fig:fluidos_secundarios}. Además, ambos sistemas están equipados con caudalímetros para poder calcular la capacidad calorífica y frigorífica, el caudalímetro en el evaporador es coriolis y en el condensador es electromagnético.
 
 \begin{figure}[ht]
 \centering
@@ -29,6 +32,9 @@ Estos ciclos consisten en depósitos de agua para el condensador y una mezcla de
 \end{figure}
 
 \#\#\# Afegir taula amb dades principals dels componentes \#\#\#
+
+\subsubsection{Sistema de adquisición de datos}
+
 
 % Condiciones de ensayo
 \subsection{Condiciones de ensayo}
