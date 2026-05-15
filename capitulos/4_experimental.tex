@@ -12,10 +12,16 @@ Una vez obtenidos los resultados de las mezclas de fluidos de trabajo, se llevar
 \subsection{Descripción de las instalaciones experimentales}
 
 \subsubsection{Ciclo de compresión}
-El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa, este consiste de un compresor hermético de velocidad variable; dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos, el refrigerante circula por dentro y el fluido secundario por fuera; y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes, estos componentes se pueden observar más en detalle en la \autoref{tab:componentes_compresion}.
+El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa, este consiste de un compresor hermético de velocidad variable; dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos, el refrigerante circula por dentro y el fluido secundario por fuera; y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes, los detalles de estos componentes se pueden observar en la \autoref{tab:componentes_compresion}.
 
 Se pueden ver fotografías de los componentes en las siguientes figuras: \autoref{fig:intercambiadores} y \autoref{fig:compresor}: 
 
+
+
+\newpage
+
+% Meter tabla de los componentes
+\input{capitulos/tablas/componentes_ciclo_comp.tex}
 \begin{figure}[ht]
 \centering
 
@@ -42,18 +48,58 @@ Se pueden ver fotografías de los componentes en las siguientes figuras: \autore
 \hfill
 
 \end{figure}
-
-\newpage
-
-% Meter tabla de los componentes
-\input{capitulos/tablas/componentes_ciclo_comp.tex}
-
 \subsubsection{Fluidos secundarios}
 Como se ha mencionado anteriormente, no se conocen con exactitud las propiedades termodinámicas de las mezclas de fluidos de trabajo. Esto hace que sea necesario un sistema de fluidos secundarios con el que medir la absorción y cesión de calor del sistema principal.
 
-Estos ciclos se componen de un depósito de agua destilada en el condensador y un depósito de una mezcla de propilenglicol (CH\tsub{3}-CHOH-CH\tsub{2}OH) y agua (50\!\%/50\!\%) para el evaporador que, mediante unas resistencias en el evaporador y unas resistencias y una motocondesadora en el condensador, son capaces de llevar el fluido secundario hasta las condiciones de ensayo requeridas y enviarlo a los intercambiadores de calor mediante unas bombas como se ve en la \autoref{fig:fluidos_secundarios}. Además, ambos sistemas están equipados con caudalímetros para poder calcular la capacidad calorífica y frigorífica, el caudalímetro en el evaporador es coriolis y en el condensador es electromagnético.
+Estos ciclos se componen de un depósito de agua destilada en el condensador (\autoref{fig:deposito_agua}) y un depósito de una mezcla de propilenglicol (CH\tsub{3}-CHOH-CH\tsub{2}OH) y agua (50\!\%/50\!\%)  (\autoref{fig:deposito_glicol}) para el evaporador que, mediante unas resistencias en el evaporador y unas resistencias y una motocondesadora en el condensador, son capaces de llevar el fluido secundario hasta las condiciones de ensayo requeridas y enviarlo a los intercambiadores de calor mediante unas bombas (\autoref{fig:bomba_agua} y \autoref{fig:bomba_glicol}). Se puede observar el esquema de este ciclo en la \autoref{fig:fluidos_secundarios}. 
 
-\#\#\# Añadir sondas en apartado de toma de datos \#\#\#
+\begin{figure}[ht]
+\centering
+
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/deposito_agua_1.jpg}
+    \caption{\centering Depósito de agua}
+    \label{fig:deposito_agua}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/compresor_1.jpg}
+    \caption{\centering Depósito de mezcla glicol/agua}
+    \label{fig:deposito_glicol}
+\end{minipage}
+\hfill
+
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/bomba_agua.jpg}
+    \caption{\centering Bomba de agua}
+    \label{fig:bomba_agua}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/compresor_1.jpg}
+    \caption{\centering Bomba de glicol/agua}
+    \label{fig:bomba_glicol}
+\end{minipage}
+\hfill
+
+\end{figure}
+
+\#\#\# Esto va en el apartado de toma de datos
+
+Además, ambos sistemas están equipados con caudalímetros para poder calcular la capacidad calorífica y frigorífica, el caudalímetro en el evaporador es coriolis y en el condensador es electromagnético.
+
+\#\#\#
 
 \begin{figure}[ht]
 \centering
