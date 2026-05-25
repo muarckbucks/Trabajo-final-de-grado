@@ -8,20 +8,34 @@
 
 Una vez obtenidos los resultados de las mezclas de fluidos de trabajo, se llevará a cabo un estudio experimental. Esto es de vital importancia, ya que, el software usado (REFPROP v10.0), al no tener datos precisos de la interacción entre las mezclas de los diferentes fluidos, proporciona una aproximación de sus propiedades termodinámicas.
 
+El estudio experimental se realizará con una máquina completamente equipada perteneciente al grupo de ingeniería térmica (GIT) de la UJI, esta máquina está dentro de una cámara aclimatada a 24 $^\circ$C y se puede observar en la \autoref{fig:maquina_experimental}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.55\textwidth]{imagenes/maquina.jpg}
+    \caption{Máquina experimental}
+    \label{fig:maquina_experimental}
+\end{figure}
+
+\FloatBarrier
 % Descripción de las instalaciones experimentales
 \subsection{Descripción de las instalaciones experimentales}
 
 \subsubsection{Ciclo de compresión}
-El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa, este consiste de un compresor hermético de velocidad variable; dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos, el refrigerante circula por dentro y el fluido secundario por fuera; y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes, los detalles de estos componentes se pueden observar en la \autoref{tab:componentes_compresion}.
+El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa (véase el esquema en la \autoref{fig:esquema_ciclo}), este consiste de un compresor hermético de velocidad variable; dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos, el refrigerante circula por dentro y el fluido secundario por fuera; y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes, los detalles de estos componentes se pueden observar en la \autoref{tab:componentes_compresion}.
 
 Se pueden ver fotografías de los componentes en las siguientes figuras: \autoref{fig:intercambiadores} y \autoref{fig:compresor}: 
 
-
-
 \newpage
 
-% Meter tabla de los componentes
-\input{capitulos/tablas/componentes_ciclo_comp.tex}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagenes/esquema ciclo.png}
+    \caption{Esquema del ciclo}
+    \label{fig:esquema_ciclo}
+\end{figure}
+
+
 \begin{figure}[ht]
 \centering
 
@@ -48,6 +62,13 @@ Se pueden ver fotografías de los componentes en las siguientes figuras: \autore
 \hfill
 
 \end{figure}
+
+\newpage
+% Meter tabla de los componentes
+\input{capitulos/tablas/componentes_ciclo_comp.tex}
+
+\FloatBarrier
+
 \subsubsection{Fluidos secundarios}
 Como se ha mencionado anteriormente, no se conocen con exactitud las propiedades termodinámicas de las mezclas de fluidos de trabajo. Esto hace que sea necesario un sistema de fluidos secundarios con el que medir la absorción y cesión de calor del sistema principal.
 
@@ -127,13 +148,24 @@ Estos ciclos se componen de un depósito de agua destilada en el condensador (\a
 
 \FloatBarrier
 
-\subsubsection{Sistema de adquisición de datos}
+\subsection{Sistema de adquisición de datos}
 
-\#\#\# Esto va en el apartado de toma de datos
+Para poder adquirir los datos para su posterior análisis, la instalación está dotada de diferentes sensores de temperatura, presión y caudal a lo largo de los diferentes elementos de los ciclos tanto principales como secundarios (véase la \autoref{fig:esquema_ciclo}), además, también está equipada con un wattímetro para controlar el consumo de electricidad del compresor y de un termopar y un termohigrómetro para determinar las condiciones de la cámara climática.
 
-Además, ambos sistemas están equipados con caudalímetros para poder calcular la capacidad calorífica y frigorífica, el caudalímetro en el evaporador es coriolis y en el condensador es electromagnético.
+\subsubsection{Termopares}
 
-\#\#\#
+Los termopares que se han usado en la instalación son de tipo T, además, los que se han usado para el cálculo de las propiedades del fluido son de inmersión, lo que significa que miden la temperatura directamente.
+
+\subsubsection{Transductores de Presión}
+
+Los transductores de presión usados sólamente en el ciclo principal proporcionan una señal de 4-20 mA adecuándose a su rango de medida, que en esta instalación se han usado 3 tipos: en la parte de baja presión, el rango de los transductores es de 0 a 9 bar y en el rango de alta presión, hay sensores con rangos de 0 a 16 bar y de 1 a 31 bar.
+
+Estos fueron calibrados al principio de la experimentación experimental usando un transductor de presión absoluta calibrado a lo largo de todo su rango de medida.
+\#\#\# Posar fotos de la calibració \#\#\#
+
+\subsection{Termohigrómetro combinado}
+
+Este sensor es capaz de medir tanto la temperatura de la cámara como la humedad relativa para asegurar que totdos los ensayoso se realizan en las mismas condiciones (25 $^\circ$C y 50\% HR)
 
 
 % Condiciones de ensayo
