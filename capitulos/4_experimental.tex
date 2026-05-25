@@ -64,8 +64,12 @@ Se pueden ver fotografías de los componentes en las siguientes figuras: \autore
 \end{figure}
 
 \newpage
-% Meter tabla de los componentes
-\input{capitulos/tablas/componentes_ciclo_comp.tex}
+
+\begin{table}[!ht]
+    \input{capitulos/tablas/componentes_ciclo_comp.tex}
+    \caption{Componentes principales del ciclo de compresión}
+    \label{tab:componentes_compresion}
+\end{table}
 
 \FloatBarrier
 
@@ -144,7 +148,11 @@ Estos ciclos se componen de un depósito de agua destilada en el condensador (\a
 \label{fig:fluidos_secundarios}
 \end{figure}
 
-\input{capitulos/tablas/componentes_ciclos_agua.tex}
+\begin{table}[ht]
+    \input{capitulos/tablas/componentes_ciclos_agua.tex}
+    \caption{Características de los componentes de los ciclos secundarios}
+    \label{tab:ciclos_secundarios}
+\end{table}
 
 \FloatBarrier
 
@@ -181,7 +189,12 @@ Los caudalímetros se han usado para detrminar la potencia calorífica de la ins
 A continuación, en la \autoref{tab:incertidumbres} se muestra una tabla con las diferentes incertidumbres de medida de cada aparato:
 
 % Tabla incertidumbre
-\input{capitulos/tablas/incertidumbres.tex}
+
+\begin{table}[H]
+    \input{capitulos/tablas/incertidumbres.tex}
+    \caption{Incertidumbres de medida de los diferentes aparatos}
+    \label{tab:incertidumbres}
+\end{table}
 
 \subsubsection{Controlador de adquisición de datos}
 
@@ -204,7 +217,12 @@ Todas las señales de los diferentes dispositivos de medida son recogidas por el
 
 Las temperaturas de ensayo serán las mismas que se han aplicado en el \textit{screening} teórico, que son las que exige la normativa UNE-EN 14511-3 \cite{une14511} para ensayos para bombas de calor agua-agua:
 
-\input{capitulos/tablas/temperaturas_une.tex}
+\begin{table}[ht]
+    \centering
+    \input{capitulos/tablas/temperaturas_une.tex}
+    \caption{Temperaturas de los ciclos secundarios según UNE-EN 14511-3}
+    \label{fig:cond_une_experimental}
+\end{table}
 
 Cabe destacar que las condiciones que marca UNE solo contemplan los ensayos tipo 1 y tipo 4 pero se han añadido los ensayos tipo 2 y tipo 3, ya que, con estas temperaturas se podrá obtener una incertidumbre derivada mucho menor.
 
