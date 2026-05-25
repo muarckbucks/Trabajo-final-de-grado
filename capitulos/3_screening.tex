@@ -7,28 +7,26 @@ El primer paso de este TFG es realizar un \textit{screening} termodinámico para
 
 El \textit{screening} consistirá en la combinación de los posibles refrigerantes de trabajo en mezclas de tres en tres. Con cada mezcla se calcularán las propiedades termodinámicas del ciclo de compresión básico con incrementos y decrementos en las proporciones de los refrigerantes de un 5\%, resultando en un total de 231 posibles combinaciones para cada tres refrigerantes.
 
-El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento isentrópico fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada simulación se lleva a cabo en cuatro escenarios diferentes, como tipifica la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de máquinas de calor agua-agua.
+El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento isentrópico fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada simulación se lleva a cabo en cuatro escenarios diferentes, como tipifica la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua.
 
 % CONDICIONES DE SIMULACIÓN
 \subsection{Condiciones de simulación}
 Para el cálculo termodinámico del ciclo las principales variables tomarán los siguientes valores para cada uno de los escenarios:
 
-Se mantienen constantes: 
-\begin{equation*}
-SUB = 1\,^{\circ}\mathrm{C},\ SH = 5\,^{\circ}\mathrm{C},\
-Ap_{k} = 6.5\,^{\circ}\mathrm{C}, \ Ap_{O} = 3\,^{\circ}\mathrm{C}
-\end{equation*}
-\begin{equation*}
-T_{cw\_in} = 0\,^{\circ}\mathrm{C},\ T_{cw\_out} = -3\,^{\circ}\mathrm{C},\ 
-\eta_{s} = 60\%
-\end{equation*}
+El ciclo termodinámico tiene muchos grados de libertad así que es necesario fijar algunas variables para su análisis. En la \autoref{fig:condiciones_constantes} se muestran las variables que son constantes para todos los ensayos y en la \autoref{fig:cond_UNE-EN 14511-3} se muestran las condiciones que varian en función de los 4 diferentes escenarios que se analizan.
 
-Varían en función del ensayo:
+\input{capitulos/tablas/temperaturas_une.tex}
 
-\begin{alignat}{2}
-    & \textbf{Temperatura media:} \      && T_{hw\_in} = 47\,^{\circ}\mathrm{C}, \ T_{hw\_out} = 55\,^{\circ}\mathrm{C} \\
-    & \textbf{Temperatura alta:} \       && T_{hw\_in} = 55\,^{\circ}\mathrm{C}, \ T_{hw\_out} = 65\,^{\circ}\mathrm{C}
-\end{alignat}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{SUB} & \textbf{SH} & $\textbf{Ap}_\textbf{k}$ & $\textbf{Ap}_{o}$ \\ \hline
+1 ºC & 6 ºC& 6.5 ºC& 3 ºC\\ \hline
+\end{tabular}
+\caption{Condiciones constantes en los ensayos}
+\label{fig:condiciones_constantes}
+\end{table}
 
 % ECUACIONES DE CÁLCULO
 \subsection{Ecuaciones de cálculo}
