@@ -11,3 +11,6 @@
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Qname= numberless.[display] .\\E$"}
 {"rule":"ESPACIO_DESPUES_DE_PUNTO","sentence":"^\\Q.\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-|Dummy\\+|Dummy's\\+)[0-9]+\\Q.\\E$"}
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q#1#1 .\\E$"}
+{"rule":"SINGLE_CHARACTER","sentence":"^\\QPotser fer figura de assaig de referencia i després assigs derivats Análisis de resultados experimentales.\\E$"}
+{"rule":"SINGLE_CHARACTER","sentence":"^\\QPotser fer figura de assaig de referencia i després assigs derivats per a que se entenga millor Análisis de resultados experimentales.\\E$"}
+{"rule":"SINGLE_CHARACTER","sentence":"^\\QPotser fer figura de assaig de referencia i després assigs derivats per a que se entenga millor\\E$"}

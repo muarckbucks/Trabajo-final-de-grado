@@ -217,7 +217,7 @@ Todas las señales de los diferentes dispositivos de medida son recogidas por el
 
 Las temperaturas de ensayo serán las mismas que se han aplicado en el \textit{screening} teórico, que son las que exige la normativa UNE-EN 14511-3 \cite{une14511} para ensayos para bombas de calor agua-agua:
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \input{capitulos/tablas/temperaturas_une.tex}
     \caption{Temperaturas de los ciclos secundarios según UNE-EN 14511-3}
@@ -226,7 +226,74 @@ Las temperaturas de ensayo serán las mismas que se han aplicado en el \textit{s
 
 Cabe destacar que las condiciones que marca UNE solo contemplan los ensayos tipo 1 y tipo 4 pero se han añadido los ensayos tipo 2 y tipo 3, ya que, con estas temperaturas se podrá obtener una incertidumbre derivada mucho menor.
 
-Para que el análisis sea lo más equitativo posible, se analizarán las mezclas de los diferentes fluidos de trabajo para una misma potencia calorífica. Para ello, se ralizará un ensayo inicial del propano a una frecuencia determinada y a un caudal determinado y para los ensayos con las mezclas \#\#\# continuar aquí \#\#\#
+Para que el análisis sea lo más equitativo posible, se analizarán las mezclas de los diferentes fluidos de trabajo para una misma potencia calorífica y a un caudal del circuito de agua del condensador constante. Para ello, se ralizará un ensayo inicial del propano a una frecuencia de commpresor de 35 Hz, el caudal del circuito de agua de este primer ensayo, será la referencia que se toma en los siguientes ensayos para poder mantener constante la potencia calorífica.
+
+\#\#\# Potser fer figura de assaig de referencia i després assigs derivats per a que se entenga millor \#\#\#
+
+\subsection{Variables e incertidumbres derivadas}
+
+\subsubsection{Variables derivadas}
+
+Las principales variables que se van a calcular a partir de las variables de medida son el $COP$, la capacidad calorífica volumétrica ($VHC$) y la potencia calorífica ($\dot{Q}_{k}$). Estos se calculan mediante las ecuaciones \ref{eq:pot_term_exp}, \ref{eq:vhc_exp} y \ref{eq:cop_exp}.
+
+\begin{gather}
+    \dot{Q}_{k} = \dot{V}_{w} \cdot \rho_{w} \cdot c_{p, w} \cdot \left( h_{w, k, out} - h_{w, k, in} \right)
+    \label{eq:pot_term_exp}  \\
+    VHC = \rho_{asp} \cdot \left( h_{k, in} - h_{k, out} \right)
+    \label{eq:vhc_exp} \\
+    COP = \frac{\dot{Q}_{k}}{P_{c}}
+    \label{eq:cop_exp}
+\end{gather}
+
+Cabe destacar que tanto las densidades ($\rho$) como las entalpías ($h_{k}$) tanto del agua como del refrigerante no son medidas directas, también son variables derivadas a partir de las siguientes variables de medida:
+\begin{align}
+    \rho_{asp} &= f(p = p_{asp}, t = t_{asp})
+    \label{eq:dens_asp_exp} \\
+    h_{k, in} &= f(p = p_{k, in}, t = t_{k, in})
+    \label{eq:h_k_in_exp} \\
+    h_{k, out} &= f(p = p_{k, out}, t = t_{k, out})
+    \label{eq:h_k_out_exp} \\
+    \rho_{w} &= f(p = p_{dep}, t = t_{w, k, in})
+    \label{eq:dens_agua_exp} \\
+    h_{w, k, in} &= f(p = p_{dep}, t = t_{w, k, in})
+    \label{eq:h_w_k_in_exp} \\
+    h_{w, k, out} &= f(p = p_{dep}, t = t_{w, k, out})
+    \label{eq:h_w_k_out_exp}
+\end{align}
+
+\subsubsection{Incertidumbres acumuladas}
+
+La propagación de la incertidumbre de medida se ha calculado mediante la \ref{eq:incertidumbres}, que se basa en la raíz de la suma de los cuadrados de las derivadas parciales de la función respecto a cada variable, ponderada por su incertidumbre asociada.
+\begin{equation}
+    \varepsilon(f) = \sqrt{\left( \frac{\partial f}{\partial a} \cdot \varepsilon(a) \right)^{2} + \left( \frac{\partial f}{\partial b} \cdot \varepsilon(b) \right)^{2} + \left( \frac{\partial f}{\partial c} \cdot \varepsilon(c) \right)^{2} + ...}
+    \label{eq:incertidumbres}
+\end{equation}
+
+Por tanto, las incertidumbres de las variables principales vendrán dadas por las ecuaciones: \ref{eq:incert_qk}, \ref{eq:incert_vhc} y \ref{eq:incert_cop}.
+
+\begin{equation}
+    \begin{split}
+    \varepsilon_{\dot{Q}_{k}} \ = & \sqrt{\left( \rho_{w} \cdot \Delta h \cdot \varepsilon_{\dot{V}_{w}}\right)^{2} + \left(\dot{V}_{w} \cdot \varepsilon_{t_{in}}\right)^{2} \cdot \left(\frac{\partial \rho_{w}}{\partial t} \cdot \Delta h - \rho_{w} \cdot c_{p, w, in}\right)^{2} +} \\
+    & \overline{ + \left(\dot{V}_{w} \cdot \rho_{w} \cdot c_{p, w, out} \cdot \varepsilon_{t, out}\right)^{2}}
+    \end{split}
+    \label{eq:incert_qk}
+\end{equation}
+\begin{equation}
+    \begin{split}
+    \varepsilon_{VHC} = &\sqrt{\Delta h^{2} \cdot \Biggl[ \left( \frac{\partial \rho_{asp}}{\partial p} \cdot \varepsilon_{p, asp}\right)^{2} + \left( \frac{\partial \rho_{asp}}{\partial t} \cdot \varepsilon_{t, asp} \right)^{2}
+    \Biggr] + } \\
+    & \overline{ + \rho_{asp}^{2} \cdot \Biggl[ \left( \frac{\partial h_{k, in}}{\partial p} \cdot \varepsilon_{p, k, in} \right)^{2} + \left( \frac{\partial h_{k, out}}{\partial p} \cdot \varepsilon_{p, k, in}\right)^{2} \Biggr] + } \\
+    & \overline{ + \rho_{asp}^{2} \cdot \Biggl[ \left( c_{p, k, in} \cdot \varepsilon_{t, k, in} \right)^2 + \left(
+        c_{p, k, out} \cdot \varepsilon_{t, k, out}
+     \right)^2 \Biggr]}
+    \end{split}
+    \label{eq:incert_vhc}
+\end{equation}
+\begin{equation}
+    \varepsilon_{COP} = \sqrt{\left(\frac{\varepsilon_{\dot{Q}_{k}}}{P_{c}}\right)^2+\left(\frac{\dot{Q}_{k}}{P_{c}^{2}}\cdot\varepsilon_{P_{c}}\right)^2}
+    \label{eq:incert_cop}
+\end{equation}
+
 % Análisis de resultados experimentales
 \subsection{Análisis de resultados experimentales}
 
