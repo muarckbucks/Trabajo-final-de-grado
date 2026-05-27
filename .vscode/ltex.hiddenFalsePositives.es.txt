@@ -14,3 +14,7 @@
 {"rule":"SINGLE_CHARACTER","sentence":"^\\QPotser fer figura de assaig de referencia i després assigs derivats Análisis de resultados experimentales.\\E$"}
 {"rule":"SINGLE_CHARACTER","sentence":"^\\QPotser fer figura de assaig de referencia i després assigs derivats per a que se entenga millor Análisis de resultados experimentales.\\E$"}
 {"rule":"SINGLE_CHARACTER","sentence":"^\\QPotser fer figura de assaig de referencia i després assigs derivats per a que se entenga millor\\E$"}
+{"rule":"PUNTO_EN_ABREVIATURAS","sentence":"^\\QPosar la grafica de COP_ref vs COP_w\\E$"}
+{"rule":"DIACRITICS_VERB_N_ADJ","sentence":"^\\QPosar la grafica de COP_ref vs COP_w\\E$"}
+{"rule":"PUNTO_EN_ABREVIATURAS","sentence":"^\\QPosar la grafica de COP ref vs COP w\\E$"}
+{"rule":"DIACRITICS_VERB_N_ADJ","sentence":"^\\QPosar la grafica de COP ref vs COP w\\E$"}
