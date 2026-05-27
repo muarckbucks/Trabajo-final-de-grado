@@ -20,6 +20,9 @@
         "output/*.bib": true,
         "output/capitulos": true,
         "output/*.toc": true,
+        "node_modules": true,
+        "package-lock.json": true,
+        "package.json": true
     },
     "editor.quickSuggestions": {
     "other": false,
