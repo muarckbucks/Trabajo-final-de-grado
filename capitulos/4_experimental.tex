@@ -168,9 +168,16 @@ Los termopares que se han usado en la instalación son de tipo T, además, los q
 
 Los transductores de presión usados sólamente en el ciclo principal proporcionan una señal de 4-20 mA adecuándose a su rango de medida, que en esta instalación se han usado 3 tipos: en la parte de baja presión, el rango de los transductores es de 0 a 9 bar y en el rango de alta presión, hay sensores con rangos de 0 a 16 bar y de 1 a 31 bar.
 
-Estos fueron calibrados al principio de la experimentación experimental usando un transductor de presión absoluta calibrado a lo largo de todo su rango de medida.
+Estos fueron calibrados al principio del proceso experimental a lo largo de todo su rango de medida usando un transductor de presión absoluta calibrado (véase \autoref{fig:calibracion_presion}) y realizando una regresión lineal.
 
-\#\#\# Posar fotos de la calibració \#\#\#
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagenes/calibrar_presion.jpg}
+    \caption{Calibración de los transductores de presión}
+    \label{fig:calibracion_presion}
+\end{figure}
+
+\FloatBarrier
 
 \subsubsection{Termohigrómetro combinado}
 
@@ -215,6 +222,8 @@ Todas las señales de los diferentes dispositivos de medida son recogidas por el
 
 \subsubsection{Condiciones de ensayo}
 
+\label{subsec:cond_ensayos}
+
 Las temperaturas de ensayo serán las mismas que se han aplicado en el \textit{screening} teórico, que son las que exige la normativa UNE-EN 14511-3 \cite{une14511} para ensayos para bombas de calor agua-agua:
 
 \begin{table}[H]
@@ -228,7 +237,14 @@ Cabe destacar que las condiciones que marca UNE solo contemplan los ensayos tipo
 
 Para que el análisis sea lo más equitativo posible, se analizarán las mezclas de los diferentes fluidos de trabajo para una misma potencia calorífica y a un caudal del circuito de agua del condensador constante. Para ello, se ralizará un ensayo inicial del propano a una frecuencia de commpresor de 35 Hz, el caudal del circuito de agua de este primer ensayo, será la referencia que se toma en los siguientes ensayos para poder mantener constante la potencia calorífica.
 
-\#\#\# Potser fer figura de assaig de referencia i després assigs derivats per a que se entenga millor \#\#\#
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/metodologia_ensayo.pdf}
+    \caption{Diagrama de metodología de ensayo}
+    \label{fig:metodologia_ensayo}
+\end{figure}
+
+\FloatBarrier
 
 \subsection{Variables e incertidumbres derivadas}
 
@@ -296,6 +312,9 @@ Por tanto, las incertidumbres de las variables principales vendrán dadas por la
 
 % Análisis de resultados experimentales
 \subsection{Análisis de resultados experimentales}
+
+\subsubsection{Propano}
+Como se ha explicado previamente, el primer paso en el procedimiento experimental es realizar los cuatros ensayos mencionados (\cref{subsec:cond_ensayos}) con el propano para tener los valores de referencia.
 
 
 \end{document}
