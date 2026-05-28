@@ -9,7 +9,7 @@ El \textit{screening} consistirá en la combinación de los posibles refrigerant
 
 Si la mezcla resulta mejor que el propano en cuento a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (0.5\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de la VHC. Véase la \autoref{fig:diagrama_screening} donde se representa el diagrama de flujo del \textit{scrrening}.
 
-El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento isentrópico fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada simulación se lleva a cabo en cuatro escenarios diferentes, como tipifica la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua.
+El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada simulación se lleva a cabo en cuatro escenarios diferentes, como tipifica la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua.
 
 \newpage
 
@@ -28,10 +28,10 @@ El ciclo termodinámico tiene muchos grados de libertad así que es necesario fi
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{SUB} & \textbf{SH} & $\textbf{Ap}_\textbf{k}$ & $\textbf{Ap}_{o}$ \\ \hline
-1 ºC & 6 ºC& 6.5 ºC& 3 ºC\\ \hline
+\textbf{SUB} & \textbf{SH} & $\textbf{Ap}_\textbf{k}$ & $\textbf{Ap}_\textbf{o}$  & $\mathbf{\eta}_\textbf{comp}$\\ \hline
+1 ºC & 6 ºC& 6.5 ºC& 3 ºC&0.6\\ \hline
 \end{tabular}
 \caption{Condiciones constantes en los ensayos}
 \label{fig:condiciones_constantes}
@@ -70,12 +70,12 @@ t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
 \mathrm{h}_{O,out} = f(p = p_{O},\ t = t_{vap,sat})
 \label{eq:punto_O,out}
 \end{gather}
-Conociendo el rendimiento isentrópico del compresor, se puede hallar el punto a la salida de este, que es el mismo que el de la entrada del condensador:
+Conociendo el rendimiento del compresor, se puede hallar el punto a la salida de este, que es el mismo que el de la entrada del condensador:
 \begin{gather}
 h_{c,out,s} = f(p = p_{k},\ s = s_{c,in}),\quad
 \label{eq:h_c,out,s}
 \\
-h_{c,out} = h_{c,in} + \frac{h_{c,out,s} - h_{c,in}}{\eta_{s}}
+h_{c,out} = h_{c,in} + \frac{h_{c,out,s} - h_{c,in}}{\eta_{comp}}
 \label{eq:h_c,out}
 \\
 \mathrm{h}_{k,in} = f(p = p_{k},\ h = h_{c,out})
@@ -90,7 +90,7 @@ Glide_{O}=t(p = p_{O},\ x_{v} = 1) - t(p = p_{O},\ x_{v} = x_{v,O,in})
 Glide_{k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
 \label{eq:glide_k}
 \\
-VHC = \frac{h_{c,out} - h_{c,in}}{\nu_{suc}}
+VHC = \frac{h_{k,in} - h_{k,ou}}{\nu_{suc}}
 \label{eq:VHC}
 \\
 COP = \frac{h_{O,out}-h_{O,in}}{h_{k,in}-h_{k,out}}
@@ -119,7 +119,7 @@ El proceso incluye filtros que excluyen las mezclas que no cumplen los siguiente
     calor se reduce al pasar estos umbrales.
     \item Temperatura de descarga del compresor menor a $130\,^{\circ}\mathrm{C}$,
     ya que este no está pensado para soportar temperaturas tan elevadas.
-    \item Presión de descarga del compresor menor a $25\ \mathrm{bar}$, ya que esta es
+    \item Presión de descarga del compresor menor a $28\ \mathrm{bar}$, ya que esta es
     su presión máxima de operación.
     \item Valores de $VHC$ que estén en el intervalo $\pm 30\%\ VHC_{R290}$,  
     para ser compatibles con los compresores de propano y no afecar significativamente a su capacidad calorífica.
