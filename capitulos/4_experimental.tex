@@ -250,18 +250,20 @@ Para que el análisis sea lo más equitativo posible, se analizarán las mezclas
 
 \subsubsection{Variables derivadas}
 
-Las principales variables que se van a calcular a partir de las variables de medida son el $COP$, la capacidad calorífica volumétrica ($VHC$) y la potencia calorífica ($\dot{Q}_{k}$). Estos se calculan mediante las ecuaciones \ref{eq:pot_term_exp}, \ref{eq:vhc_exp} y \ref{eq:cop_exp}.
+Las principales variables que se van a calcular a partir de las variables de medida son el $COP$, la capacidad calorífica volumétrica ($VHC$) y la potencia calorífica medida tanto en el agua como en el refrigerante ($\dot{Q}_{k,w}$ y $\dot{Q}_{k,ref}$). Estos se calculan mediante las ecuaciones \ref{eq:pot_term_w_exp}, \ref{eq:pot_term_ref_exp}, \ref{eq:vhc_exp} y \ref{eq:cop_exp}. Posteriormente (\cref{subsec:validacion_experimental}) se explcará por qué el $COP$ se calcula usando solamente la potencia calorífica calculada respecto al ciclo de agua.
 
 \begin{gather}
-    \dot{Q}_{k} = \dot{V}_{w} \cdot \rho_{w} \cdot c_{p, w} \cdot \left( h_{w, k, out} - h_{w, k, in} \right)
-    \label{eq:pot_term_exp}  \\
-    VHC = \rho_{asp} \cdot \left( h_{k, in} - h_{k, out} \right)
+    \dot{Q}_{k,w} = \dot{V}_{w} \cdot \rho_{w} \cdot \left( h_{w, k, out} - h_{w, k, in} \right)
+    \label{eq:pot_term_w_exp}  \\
+    \dot{Q}_{k,ref} = \dot{m}_{ref} \cdot \left( h_{ref,k,in} - h_{ref,k,out} \right)
+    \label{eq:pot_term_ref_exp} \\
+    VHC = \rho_{asp} \cdot \left( h_{ref,k, in} - h_{ref,k, out} \right)
     \label{eq:vhc_exp} \\
-    COP = \frac{\dot{Q}_{k}}{P_{c}}
+    COP = \frac{\dot{Q}_{k,w}}{P_{c}}
     \label{eq:cop_exp}
 \end{gather}
 
-Cabe destacar que tanto las densidades ($\rho$) como las entalpías ($h_{k}$) tanto del agua como del refrigerante no son medidas directas, también son variables derivadas a partir de las siguientes variables de medida:
+Cabe destacar que tanto las densidades ($\rho$) como las entalpías ($h_{k}$) tanto del agua como del refrigerante no son medidas directas, también son variables derivadas a partir de las siguientes variables de medida, estas vienen dadas por funciones que proporciona la herramienta REFPROP:
 \begin{align}
     \rho_{asp} &= f(p = p_{asp}, t = t_{asp})
     \label{eq:dens_asp_exp} \\
@@ -312,15 +314,28 @@ Por tanto, las incertidumbres de las variables principales vendrán dadas por la
 
 
 \subsection{Validación experimental}
+\label{subsec:validacion_experimental}
 
-\#\#\# Posar la grafica de COP ref vs COP w \#\#\#
+La herramienta usada para realizar los cálculos de los estados termodinámicos ha sido REFPROP, aunque, esta solo proporciona valores correctos para los fluidos puros, es decir, los que no estén mezclados. Es por esta razón por la que se ha decidido depender exclusivamente del ciclo secundario de agua para calcular el $COP$, ya que las propiedades del agua son bien conocidas.
 
+Para depender exclusivamente del agua es necesario comprobar que la potencia medida en el condensador tanto del fluido de trabajo como del agua sean la misma, esta comprobación se realizará con dos fluidos cuyas propiedades termodinámicas se conocen correctamente: Dimetil-éter (RE170) y propano (R290) como se puede observar en la \autoref{fig:validacion_qk}. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/validacion_qk.png}
+    \caption{Validación de la potencia térmica}
+    \label{fig:validacion_qk}
+\end{figure}
+
+\FloatBarrier
+
+Como se muestra en la anterior figura, la diferencia entre las potencias térmicas no supera nunca el 10\%, esto indica que las medidas tomadas en el circuito de agua son fiables y se pueden comparar entre ellas.
 
 % Análisis de resultados experimentales
 \subsection{Análisis de resultados experimentales}
 
 \subsubsection{Propano}
-Como se ha explicado previamente, el primer paso en el procedimiento experimental es realizar los cuatros ensayos mencionados (\cref{subsec:cond_ensayos}) con el propano para tener los valores de referencia.
+Como se ha explicado previamente, el primer paso en el procedimiento experimental es realizar los cuatros tipos de ensayos diferentes (\cref{subsec:cond_ensayos}) con el propano para tener los valores de referencia.
 
 
 \end{document}
