@@ -25,6 +25,8 @@
 \usepackage[section]{placeins}       % Para floatbarrier
 \usepackage{mathtools}
 \usepackage{bm} % Para negritas polivalentes
+\usepackage{fancyhdr}       % Encabezados
+
 
 % Hacer que el subtexto de las tablas ponga "Tabla" en vez de "Cuadro"
 \addto\captionsspanish{
@@ -34,7 +36,6 @@
 % Sub/Super índices abreviados
 \newcommand{\tsub}[1]{\textsubscript{#1}}
 \newcommand{\tsup}[1]{\textsuperscript{#1}}
-
 
 % Tablas más espaciadas
 \renewcommand{\arraystretch}{1.3}
@@ -69,8 +70,7 @@
         {\vspace*{\fill}} 
         {20pt} 
         {\fontsize{50}{60}\selectfont} 
-        [\vspace*{\fill}\clearpage\mbox{}\thispagestyle{empty}\newpage]
-
+        [\vspace*{\fill}\clearpage\mbox{}\thispagestyle{plain}\newpage]
 \titlespacing*{\chapter}{0pt}{0pt}{0pt}
 
 % Formato \chapter*
@@ -79,7 +79,6 @@
         {}
         {0pt}
         {}
-
 \titlespacing*{name=\chapter, numberless}{0pt}{-80pt}{20pt}
 
 % Quitar el capítulo en las etiquetas
@@ -114,4 +113,19 @@
 \onehalfspacing
 
 % Configurar márgenes
-\geometry{margin = 2.5cm}
+\geometry{margin = 2.5cm, headheight = 15pt}
+
+% ── Configurar fancyhdr ───────────────────────────────────────────────
+\fancyhf{}
+\fancyhead[R]{\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% Estilo plain: primera página de capítulo (sin encabezado, con página)
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
