@@ -2,6 +2,11 @@
 \begin{document}
 
 \section{\textit{Screening} termodinámico}
+
+% ===============================================
+% DESCRIPCIÓN DEL MODELO
+% ===============================================
+
 \subsection{Descripción del modelo}
 El primer paso de este TFG es realizar un \textit{screening} termodinámico para identificar las posibles mezclas que superen al propano (R290) en rendimiento energético.
 
@@ -20,7 +25,10 @@ El comportamiento de cada combinación se simulará considerando su operación e
     \label{fig:diagrama_screening}
 \end{figure}
 
+% ===============================================
 % CONDICIONES DE SIMULACIÓN
+% ===============================================
+
 \subsection{Condiciones de simulación}
 Para el cálculo termodinámico del ciclo las principales variables tomarán los siguientes valores para cada uno de los escenarios:
 
@@ -44,7 +52,10 @@ El ciclo termodinámico tiene muchos grados de libertad así que es necesario fi
     \label{fig:cond_une_teorico}
 \end{table}
 
+% ===============================================
 % ECUACIONES DE CÁLCULO
+% ===============================================
+
 \subsection{Ecuaciones de cálculo}
 La presión de condensación se ha encontrado usando tanto la temperatura de entrada del fluido como el approach de temperatura y el subcooling:
 \begin{equation}
@@ -109,7 +120,11 @@ t_{pinch} = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
 \end{gather}
 
 El software usado para el cálculo de las propiedades termodinámicas ha sido REFPROP v.10.0 \cite{refprop}
+
+% ===============================================
 % RESTRICCIONES
+% ===============================================
+
 \subsection{Restricciones}
 \label{subsec:restricciones}
 El proceso incluye filtros que excluyen las mezclas que no cumplen los siguientes requisitos:
@@ -129,13 +144,22 @@ Además, si la diferencia de temperatura entre el fluido y el agua en el \textit
 
 Posteriormente, todas las mezclas que superen los filtros se reevaluarán pero ahora con una variación del 1\% en su composición para encontrar la composición que maximiza el $COP$.
 
-% Resultado bruto
+% ===============================================
+% RESULTADO BRUTO
+% ===============================================
+
 \subsection{Resultado bruto}
 
-% Resultado refinado
+% ===============================================
+% RESULTADO REFINADO
+% ===============================================
+
 \subsection{Resultado refinado}
 
-% Análisis de resultados
+% ===============================================
+% ANÁLISIS DE RESULTADOS TEÓRICOS
+% ===============================================
+
 \subsection{Análisis de resultados}
 
 
