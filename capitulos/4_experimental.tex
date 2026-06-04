@@ -216,7 +216,7 @@ A continuación, en la \autoref{tab:incertidumbres} se muestra una tabla con las
 
 \subsubsection{Controlador de adquisición de datos}
 
-Todas las señales de los diferentes dispositivos de medida son recogidas por el controlador cRIO-9074 (véase la figura \autoref{fig:rio}) para su análisis en tiempo real desde el software LabVIEW \cite{LabVIEW}, almacenamiento en archivos de texto y posterior análisis con Excel \cite{Excel} y Refprop \cite{refprop}.
+Todas las señales de los diferentes dispositivos de medida son recogidas por el controlador cRIO-9074 (véase la figura \autoref{fig:rio}) a una frecuencia de muestreo de 0.2 Hz para su análisis en tiempo real desde el software LabVIEW \cite{LabVIEW}. Posteriormente se podrá realizar el almacenamiento de la información en archivos de texto para su posterior análisis con Excel \cite{Excel} y REFPROP \cite{refprop}.
 
 \begin{figure}[ht]
     \centering
@@ -226,7 +226,7 @@ Todas las señales de los diferentes dispositivos de medida son recogidas por el
 \end{figure}
 
 % ===============================================
-PROCEDIMIENTO EXPERIMENTAL
+% PROCEDIMIENTO EXPERIMENTAL
 % ===============================================
 
 \subsection{Procedimiento experimental}
@@ -256,6 +256,16 @@ Para que el análisis sea lo más equitativo posible, se analizarán las mezclas
 \end{figure}
 
 \FloatBarrier
+
+\subsubsection{Metodología de ensayo}
+
+Los ensayos se realizarán siguiendo una metodología estricta que se repetirá para todos estos.
+
+Cuando se quiera realizar un cambio de fluido se vaciará la planta con una bomba de vacío durante al menos dos horas para asegurar que esté completamente vacía. Después se cargará con nitrógeno durante media hora y se volverá a vaciar, esto se hace ya que el nitrógeno ayuda a arrastrar cualquier resto de refrigerante, aceite o humedad que haya quedado atascado.
+
+Si se quiere ensayar una mezcla, esta se realizará dentro de una bombona, para ello, primero se cargará el fluido menos volátil para luego cargar en orden ascendente los restantes. Para controlar las proporciones másicas de los fluidos dentro de la bombona se usará una báscula con incertidumbre de medida de 1g.
+
+Una vez se disponga de la mezcla o del fluido puro, este se cargará en la máquina desde la bombona
 
 \subsection{Variables e incertidumbres derivadas}
 

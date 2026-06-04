@@ -14,7 +14,7 @@ El \textit{screening} consistirá en la combinación de los posibles refrigerant
 
 Si la mezcla resulta mejor que el propano en cuento a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (0.5\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de la VHC. Véase la \autoref{fig:diagrama_screening} donde se representa el diagrama de flujo del \textit{scrrening}.
 
-El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada simulación se lleva a cabo en cuatro escenarios diferentes, como tipifica la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua.
+El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada combinación se simulará en cuatro escenarios diferentes, dos vienen tpificados por la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua y otros dos tienen condiciones parecidas a la normativa pero se han añadido para reducir la incertidumbre de medida en el evaporador.
 
 \newpage
 
@@ -30,9 +30,34 @@ El comportamiento de cada combinación se simulará considerando su operación e
 % ===============================================
 
 \subsection{Condiciones de simulación}
+
+\subsubsection{Fluidos}
+
+Tras considerar una gran serie fluidos naturales junto al grupo GIT, se ha considerado realizar el \textit{screening} termodinámico de los refrigerantes de la \autoref{tab:fluidos_screening} debido a su dispnibilidad tanto económica como técnica ya que son bien conocidos y sus características en la base de datos REFPROP es precisa.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|}
+    \cline{2-7}
+    & \textbf{Familia} & \textbf{\begin{tabular}[c]{@{}c@{}}Código\\ ASHRAE\end{tabular}} & \textbf{GWP} & \textbf{ODP} & \textbf{NBP (ºC)} & \textbf{\begin{tabular}[c]{@{}c@{}}Código de\\ peligrosidad\end{tabular}} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Propano}} & HC & R290 & 3.3 - 9.5 & 0 & -42.1 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Butano}} & HC & R600 & 4.0 - 6.5 & 0 & -0.49 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Isobutano}} & HC & R600a & 3 & 0 & -11.75 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{CO2}} & Óxido & R744 & 1 & 0 & - & A1 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Dimetil Éter}} & HC & RE170 & 1 & 0 & -24.78 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Etano}} & HC & R170 & 5.5 - 10.2 & 0 & -88.58 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Etileno}} & HO & R1150 & 3.7 & 0 & -103.77 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Propileno}} & HO & R1270 & 1.8 & 0 & -57.62 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Metano}} & HC & R50 & 28 & 0 & -161.48 & A3 \\ \hline
+    \end{tabular}
+    \caption{Tabla de fluidos que se estudiarán en el \textit{screening}}
+    \label{tab:fluidos_screening}
+\end{table}
+
+\subsubsection{Variables}
 Para el cálculo termodinámico del ciclo las principales variables tomarán los siguientes valores para cada uno de los escenarios:
 
-El ciclo termodinámico tiene muchos grados de libertad así que es necesario fijar algunas variables para su análisis. En la \autoref{fig:condiciones_constantes} se muestran las variables que son constantes para todos los ensayos y en la \autoref{fig:cond_une_teorico} se muestran las condiciones que varian en función de los 4 diferentes escenarios que se analizan.
+En la \autoref{fig:condiciones_constantes} se muestran las variables que son constantes para todos los ensayos y en la \autoref{fig:cond_une_teorico} se muestran las condiciones que varian en función de los 4 diferentes escenarios que se analizan.
 
 \begin{table}[H]
 \centering
@@ -48,7 +73,7 @@ El ciclo termodinámico tiene muchos grados de libertad así que es necesario fi
 \begin{table}[H]
     \centering
     \input{capitulos/tablas/temperaturas_une.tex}
-    \caption{Temperaturas de los ciclos secundarios según UNE-EN 14511-3}
+    \caption{Temperaturas de los ensayos}
     \label{fig:cond_une_teorico}
 \end{table}
 
