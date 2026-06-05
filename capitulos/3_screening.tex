@@ -12,7 +12,7 @@ El primer paso de este TFG es realizar un \textit{screening} termodinámico para
 
 El \textit{screening} consistirá en la combinación de los posibles refrigerantes de trabajo en mezclas de tres en tres. Con cada mezcla se calcularán las propiedades termodinámicas del ciclo de compresión con incrementos y decrementos en las proporciones de los refrigerantes de un 5\%, resultando en un total de 231 posibles combinaciones para cada tres refrigerantes. Posteriormente, se filtrarán los resultados en función de unas restricciones (ver \cref{subsec:restricciones} donde se muestran las restricciones) y de estos resultados se calcularán la mejora del COP y la variación de VHC.
 
-Si la mezcla resulta mejor que el propano en cuento a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (0.5\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de la VHC. Véase la \autoref{fig:diagrama_screening} donde se representa el diagrama de flujo del \textit{scrrening}.
+Si la mezcla resulta mejor que el propano en cuento a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (1\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de la VHC. Véase la \autoref{fig:diagrama_screening} donde se representa el diagrama de flujo del \textit{scrrening}.
 
 El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada combinación se simulará en cuatro escenarios diferentes, dos vienen tpificados por la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua y otros dos tienen condiciones parecidas a la normativa pero se han añadido para reducir la incertidumbre de medida en el evaporador.
 
@@ -170,23 +170,29 @@ Además, si la diferencia de temperatura entre el fluido y el agua en el \textit
 Posteriormente, todas las mezclas que superen los filtros se reevaluarán pero ahora con una variación del 1\% en su composición para encontrar la composición que maximiza el $COP$.
 
 % ===============================================
-% RESULTADO BRUTO
+% RESULTADOS TEÓRICOS
 % ===============================================
-
-\subsection{Resultado bruto}
+\newpage
+\subsection{Resultados teóricos}
 
 \begin{table}[ht]
+    \centering
+    \input{capitulos/tablas/resultados_teo/temp_alta.tex}
+    \caption{Resultado teórico con temperaturas altas (ensayo tipo 1)}
+    \label{tab:res_teo_alta}
+\end{table}
+
+\begin{table}[ht]
+    \centering
     \input{capitulos/tablas/resultados_teo/temp_media.tex}
-    \caption{Resultado teórico con temperaturas medias}
+    \caption{Resultado teórico con temperaturas medias (ensayo tipo 4)}
     \label{tab:res_teo_media}
 \end{table}
 
 
-% ===============================================
-% RESULTADO REFINADO
-% ===============================================
+\FloatBarrier
 
-\subsection{Resultado refinado}
+En las tablas superiores (\autoref{tab:res_teo_alta} y \autoref{tab:res_teo_media}) se muestran las diez mejores mezclas de cada condición de simulación. Cabe destacar que no se están representando los resultados de los ensayos tipo 2 y tipo 3 ya que al solamente variar las temperaturas del fluido secundario en el evaporador no representan un cambio en los resultados debido a las limitaciones del modelo teórico.
 
 % ===============================================
 % ANÁLISIS DE RESULTADOS TEÓRICOS

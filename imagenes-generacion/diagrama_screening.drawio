@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Página-1" id="un848NNqQYGcK0Akpcvi">
-    <mxGraphModel dx="1118" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="600" dy="325" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -155,7 +155,7 @@
         <mxCell id="T7eQjCNWE3u8NABly5WU-50" connectable="0" parent="1" style="group" value="" vertex="1">
           <mxGeometry height="90" width="160" x="320" y="960" as="geometry" />
         </mxCell>
-        <mxCell id="T7eQjCNWE3u8NABly5WU-43" parent="T7eQjCNWE3u8NABly5WU-50" style="rounded=1;whiteSpace=wrap;html=1;" value="Matriz de mezclas con variaciones del 0.5% en la composición" vertex="1">
+        <mxCell id="T7eQjCNWE3u8NABly5WU-43" parent="T7eQjCNWE3u8NABly5WU-50" style="rounded=1;whiteSpace=wrap;html=1;" value="Matriz de mezclas con variaciones del 1% en la composición" vertex="1">
           <mxGeometry height="60" width="160" y="30" as="geometry" />
         </mxCell>
         <mxCell id="T7eQjCNWE3u8NABly5WU-48" parent="T7eQjCNWE3u8NABly5WU-50" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="REEVALUACIÓN" vertex="1">
