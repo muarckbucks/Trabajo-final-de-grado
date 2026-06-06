@@ -202,7 +202,7 @@ En las tablas superiores (\autoref{tab:res_teo_alta} y \autoref{tab:res_teo_medi
 
 Como se puede observar en la \autoref{fig:teo_COP_VHC_alta} y en la \autoref{fig:teo_COP_VHC_media}, la gran mayoría de los fluidos con mayor incremento de COP tienen una merma considerable de capacidad calorífica volumétrica, esto no es deseable, ya que implica un aumento en la frecuencia de trabajo del compresor, que puede tener como consecuencia una posible reducción de rendimiento del compresor, ya que se está variando el punto de trabajo.
 
-Cabe destacar que se ha añadido una mezcla a los resultados (R290 / RE170, 85\% / 15\%), esta pertenece al estudio de Mickoleit et al. \cite{Mickoleit_2026} donde se realiza otro \textit{screening} termodinámico cuyo mejor resultado fue dicha mezcla. Se ha decidido incluir en este trabajo ya que el estudio propuesto por Mickoleit et al. no contiene datos exerimentales y estudiarla experimentalmente podría \#\#\# NO SE QUE POSAR, REFORMULAR \#\#\#. Además, como mencionan en su artículo, esta mezcla puede ser interesante, ya que presenta propiedades similares a las que tendría un fluido puro sin serlo.
+Cabe destacar que se ha añadido una mezcla a los resultados (R290 / RE170, 85\% / 15\%), esta pertenece al estudio de Mickoleit et al. \cite{Mickoleit_2026} donde se realiza otro \textit{screening} termodinámico cuyo mejor resultado fue esta mezcla. Se ha decidido incluir en este trabajo ya que el estudio propuesto por Mickoleit et al. no contiene datos exerimentales y estudiarla experimentalmente podría \hl{NO SE QUE POSAR, REFORMULAR}. Además, como mencionan en su artículo, esta mezcla puede ser interesante, ya que presenta propiedades similares a las que tendría un fluido puro sin serlo.
 
 \begin{figure}[ht]
     \centering
@@ -218,9 +218,107 @@ Cabe destacar que se ha añadido una mezcla a los resultados (R290 / RE170, 85\%
     \label{fig:teo_COP_VHC_media}
 \end{figure}
 
+\FloatBarrier
+
 \subsubsection{Temperatura alta}
 
-Los resultados en esta configuración están dominados por tres mezclas ternarias seguidos de 
+Los resultados en esta configuración están dominados por tres mezclas ternarias seguidos de de mezclas que mezclas que mayoritariamente contienen dimetil con una pequeña proporción de otro fluido. Por último, se encuentra la mezcla de Erik Mickoeit et al. que teóricamente no destacar respecto a las demás por su COP pero es la única que consigue tener un VHC más alto que el propano.
+
+Analizando más en detalle las tres mezclas con más COP mediante figuras ternarias donde se expresan diferentes magnitudes en función de la composición de la mezcla, se puede observar que en las dos primeras, el punto de máximo rendimiento que ha aparecido en el resultado es una región muy pequeña y muy sensible a variaciones de la composición (\autoref{fig:COP_alta_n1} y \autoref{fig:COP_alta_n2}), esto no es deseable ya que si hay fugas en la instalación y la composición varía no se quiere que el comportamiento se vea afectado drásticamente. Además, estas regiones de máximo rendimiento son regionnes límite, esto significa que si varía la concentración un poco podríamos estar en puntos de trabajo que no cumplen con las restricciones que se han establecido previamente, en este caso, la variable que no cumpliría es el glide en el evaporador, este es muy sensible a cambios en la composición y podría superar los 10ºC (\autoref{fig:glide_o_alta_n1}, \autoref{fig:glide_o_alta_n2}).
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPYLENE_DME_BUTANE/COP.png}
+        \caption{\centering COP en función de la composición}
+        \label{fig:COP_alta_n1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPYLENE_DME_BUTANE/glide 0.png}
+        \caption{\centering Glide en el evaporador en función de la composición}
+        \label{fig:glide_o_alta_n1}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPANE_DME_BUTANE/COP.png}
+        \caption{\centering COP en función de la ocmposición}
+        \label{fig:COP_alta_n2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPANE_DME_BUTANE/glide 0.png}
+        \caption{\centering Glide en el evaporador en función de la composición}
+        \label{fig:glide_o_alta_n2}
+    \end{minipage}
+\end{figure}
+
+\FloatBarrier
+
+Siguiendo con la siguiente mezcla (R1270, RE170, R600a) en esta se puede observar un comportamiento diferente, las regiones de máximo rendimiento ocupan una zona más amplia y esta no es una frontera con lo que hay margen con posibles variaciones de la composición (\autoref{fig:COP_alta_n3}). Esta zona de alto COP se puede explicar por la subida de presiones en el evaporador que conllevan una reducción en la tasa de compresión y por ende, una reducción de trabajo del compresor (\autoref{fig:presion_o_alta_n3}).
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPYLENE_DME_ISOBUTANE/COP.png}
+        \caption{\centering COP en función de la composición}
+        \label{fig:COP_alta_n3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPYLENE_DME_ISOBUTANE/Presion 0.png}
+        \caption{\centering Presión de evaporación en función de la composición}
+        \label{fig:presion_o_alta_n3}
+    \end{minipage}
+\end{figure}
+
+\FloatBarrier
+
+En la figura \autoref{fig:PH_3_mejores_alta} se pueden observar la comparación de las tres mezclas ternarias respecto al propano.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/res_teo/diagramas_PH/alta/3_mejores_con.png}
+    \caption{Diagramas P-H de las mejores mezclas}
+    \label{fig:PH_3_mejores_alta}
+\end{figure}
+
+\FloatBarrier
+
+\hl{ME PAREIX QUE SE VEU UN POC MALAMENT, HI HA MASSA LINIES, ¿POSO NOMÉS EL DIAGRAMA DE LES MESCLES SENSE ELS PUNTS DEL CICLE?}
+
+Continuando con el análisis siguen las mezclas que se componen por su mayoría de Dimetíl Éter (RE170), esto se debe a que, entre otros motivos, el calor latente del Dimetil Éter es muy grande. Este fonómeno se puede observar en la \autoref{fig:PH_fluidos_no_volatiles} donde se comparan los diagramas P-H de los diferentes fluidos con una volatilidad similar al propano. \hl{¿FA FALTA QUE POSE PER QUÈ HA DE SER AMB VOLATILITAT SIMILAR AL PROPÀ?}
+
+ % (PER SI FA FALTA) Solo se comparan los fluidos con una valatilidad similar ya que si se comparara fluidos de diferente volatilidad las presiones en el ciclo variarían demasiado pudiendo llegar a ser demasiado altas o demasiado bajas, por lo tanto, estos fluidos siempre estarán contenidos a una fracción pequeña del ciclo.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/res_teo/diagramas_PH/fluidos_puros_no_volatiles.png}
+    \caption{Comparación de fluidos con volatilidad similar al R290}
+    \label{fig:PH_fluidos_no_volatiles}
+\end{figure}
+
+\FloatBarrier
+
+Como todos las mezclas que combinan con el RE170 tienen un incremento del COP respecto al R290 similar rondando los 10.8\%, se pasará a mirar el segundo criterio más importante, la VHC.
+
+En la \autoref{tab:res_teo_vhc} se pueden observar los fluidos ordenados por incremento en la capacidad calorífica volumétrica.
+
+\begin{table}
+    \centering
+    \input{capitulos/tablas/resultados_teo/alta_vhc.tex}
+    \caption{Mezclas binarias ordenadas por VHC}
+    \label{tab:res_teo_vhc}
+\end{table}
 
 \newpage
 \end{document}
