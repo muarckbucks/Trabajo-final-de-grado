@@ -9,9 +9,9 @@
 
 \subsection{Objetivo}
 
-Una vez obtenidos los resultados de las mezclas de fluidos de trabajo, se llevará a cabo un estudio experimental. Esto es de vital importancia, ya que, el software usado (REFPROP v10.0), al no tener datos precisos de la interacción entre las mezclas de los diferentes fluidos, proporciona una aproximación de sus propiedades termodinámicas.
+Tras la obtención de los resultados teóricos, se llevará a cabo un estudio experimental. Esto es de vital importancia, ya que, el software usado (REFPROP v10.0), no tiene información precisa de la interacción entre los diferentes fluidos en mezclas, por lo tanto, proporciona una aproximación de sus propiedades termodinámicas.
 
-El estudio experimental se realizará con una máquina completamente equipada perteneciente al grupo de ingeniería térmica (GIT) de la UJI, esta máquina está dentro de una cámara aclimatada a 24 $^\circ$C y se puede observar en la \autoref{fig:maquina_experimental}.
+El estudio experimental se realizará con una máquina completamente equipada perteneciente a GIT, esta máquina está dentro de una cámara aclimatada a 24 ºC y se puede observar en la \autoref{fig:maquina_experimental}.
 
 \begin{figure}[ht]
     \centering
@@ -31,7 +31,7 @@ El estudio experimental se realizará con una máquina completamente equipada pe
 \subsubsection{Ciclo de compresión}
 El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa (véase el esquema en la \autoref{fig:esquema_ciclo}), este consiste de un compresor hermético de velocidad variable; dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos, el refrigerante circula por dentro y el fluido secundario por fuera; y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes, los detalles de estos componentes se pueden observar en la \autoref{tab:componentes_compresion}.
 
-Se pueden ver fotografías de los componentes en las siguientes figuras: \autoref{fig:intercambiadores} y \autoref{fig:compresor}: 
+Se pueden ver fotografías de los componentes en las figuras \ref{fig:intercambiadores} y \ref{fig:compresor}: 
 
 \newpage
 
@@ -83,7 +83,7 @@ Se pueden ver fotografías de los componentes en las siguientes figuras: \autore
 \subsubsection{Fluidos secundarios}
 Como se ha mencionado anteriormente, no se conocen con exactitud las propiedades termodinámicas de las mezclas de fluidos de trabajo. Esto hace que sea necesario un sistema de fluidos secundarios con el que medir la absorción y cesión de calor del sistema principal.
 
-Estos ciclos se componen de un depósito de agua destilada en el condensador (\autoref{fig:deposito_agua}) y un depósito de una mezcla de propilenglicol (CH\tsub{3}-CHOH-CH\tsub{2}OH) y agua (50\!\%/50\!\%)  (\autoref{fig:deposito_glicol}) para el evaporador que, mediante unas resistencias en el evaporador y unas resistencias y una motocondesadora en el condensador, son capaces de llevar el fluido secundario hasta las condiciones de ensayo requeridas y enviarlo a los intercambiadores de calor mediante unas bombas (\autoref{fig:bomba_agua} y \autoref{fig:bomba_glicol}). Se puede observar el esquema de este ciclo en la \autoref{fig:fluidos_secundarios}. 
+Estos ciclos se componen de un depósito de agua destilada para el condensador (\autoref{fig:deposito_agua}) y un depósito de una mezcla de propilenglicol y agua (50\!\%/50\!\%)  (\autoref{fig:deposito_glicol}) para el evaporador que, mediante unas resistencias en el evaporador y unas resistencias y una motocondesadora en el condensador, son capaces de llevar el fluido secundario hasta las condiciones de ensayo requeridas y enviarlo a los intercambiadores de calor mediante unas bombas (\autoref{fig:bomba_agua} y \autoref{fig:bomba_glicol}). Se puede observar el esquema de los ciclos secundarios en la \autoref{fig:fluidos_secundarios} los detalles de los componentes en la \autoref{tab:ciclos_secundarios}. 
 
 \begin{figure}[ht]
 \centering
@@ -169,7 +169,7 @@ Estos ciclos se componen de un depósito de agua destilada en el condensador (\a
 
 \subsection{Sistema de adquisición de datos}
 
-Para poder adquirir los datos para su posterior análisis, la instalación está dotada de diferentes sensores de temperatura, presión y caudal a lo largo de los diferentes elementos de los ciclos tanto principales como secundarios (véase la \autoref{fig:esquema_ciclo}), además, también está equipada con un wattímetro para controlar el consumo de electricidad del compresor y de un termopar y un termohigrómetro para determinar las condiciones de la cámara climática.
+Para poder adquirir los datos para su posterior análisis, la instalación está dotada de diferentes sensores de temperatura, presión y caudal a lo largo de los diferentes elementos de los ciclos tanto principales como secundarios (véase la \autoref{fig:esquema_ciclo}), además, también está equipada con un wattímetro para controlar el consumo de electricidad del compresor y de un termohigrómetro para determinar las condiciones de la cámara climática.
 
 \subsubsection{Termopares}
 
@@ -177,9 +177,9 @@ Los termopares que se han usado en la instalación son de tipo T, además, los q
 
 \subsubsection{Transductores de Presión}
 
-Los transductores de presión usados sólamente en el ciclo principal proporcionan una señal de 4-20 mA adecuándose a su rango de medida, que en esta instalación se han usado 3 tipos: en la parte de baja presión, el rango de los transductores es de 0 a 9 bar y en el rango de alta presión, hay sensores con rangos de 0 a 16 bar y de 1 a 31 bar.
+Los transductores de presión usados sólamente en el ciclo principal proporcionan una señal de 4-20 mA adecuándose a su rango de medida, en esta instalación se han usado 3 tipos de rango diferentes: en la parte de baja presión, el rango de los transductores es de 0 a 9 bar y en el rango de alta presión, hay sensores con rangos de 0 a 16 bar y de 1 a 31 bar.
 
-Estos fueron calibrados al principio del proceso experimental a lo largo de todo su rango de medida usando un transductor de presión absoluta calibrado (véase \autoref{fig:calibracion_presion}) y realizando una regresión lineal.
+Estos fueron calibrados al principio del proceso experimental a lo largo de todo su rango de medida usando un transductor de presión absoluta calibrado (véase \autoref{fig:calibracion_presion}).
 
 \begin{figure}[ht]
     \centering
@@ -200,7 +200,7 @@ El Wattímetro utilizado para medir la potencia del compresor proporciona una se
 
 \subsubsection{Caudalímetros}
 
-Los caudalímetros se han usado para detrminar la potencia calorífica de la instalación, esta usa dos caudalimetros Coriolis másico (para el ciclo principal y el ciclo de la mezcla de agua/glicol) y un caudalímetro electromagnético volumétrico (en el circuito de agua).
+Los caudalímetros se han usado para detrminar la potencia calorífica de la instalación, en la instalación hay un total de dos caudalimetros Coriolis másicos (para el ciclo principal y el ciclo de la mezcla de agua/glicol) y un caudalímetro electromagnético volumétrico (en el circuito de agua).
 
 \subsubsection{Incertidumbres de medida}
 
@@ -235,18 +235,20 @@ Todas las señales de los diferentes dispositivos de medida son recogidas por el
 
 \label{subsec:cond_ensayos}
 
-Las temperaturas de ensayo serán las mismas que se han aplicado en el \textit{screening} teórico, que son las que exige la normativa UNE-EN 14511-3 \cite{une14511} para ensayos para bombas de calor agua-agua:
+A las temperaturas que se han analizado en el \textit{screening} teórico se adicionarán dos temperaturas diferentes para la reducción de la incertidumbre de medida.
+
+Los tipos de ensayo 1 y 4 corresponden a las temperaturas alta y media analizadas previamente, los tipos de ensayos 2 y 3 corresponden a las mismas temperaturas de condensación pero un aumento en las temperaturas de evaporación.
+
+Las nuevas temperaturas aunque no esten en la normativa UNE-EN 14511-3, tienen como objetivo no alterar significativamente el comportamiento del ciclo al mismo tiempo que se reduce la incertidumbre de medida en la potencia frigorífica del evaporador.
 
 \begin{table}[H]
     \centering
     \input{capitulos/tablas/temperaturas_une.tex}
-    \caption{Temperaturas de los ciclos secundarios según UNE-EN 14511-3}
+    \caption{Temperaturas de los ciclos secundarios según}
     \label{fig:cond_une_experimental}
 \end{table}
 
-Cabe destacar que las condiciones que marca UNE solo contemplan los ensayos tipo 1 y tipo 4 pero se han añadido los ensayos tipo 2 y tipo 3, ya que, con estas temperaturas se podrá obtener una incertidumbre derivada mucho menor.
-
-Para que el análisis sea lo más equitativo posible, se analizarán las mezclas de los diferentes fluidos de trabajo para una misma potencia calorífica y a un caudal del circuito de agua del condensador constante. Para ello, se ralizará un ensayo inicial del propano a una frecuencia de commpresor de 35 Hz, el caudal del circuito de agua de este primer ensayo, será la referencia que se toma en los siguientes ensayos para poder mantener constante la potencia calorífica.
+Para que el análisis sea lo más equitativo posible, se analizarán las mezclas de los diferentes fluidos de trabajo para una misma potencia calorífica y a un caudal del circuito de agua del condensador constante. Para ello, se ralizará un ensayo inicial del propano a una frecuencia de commpresor de 35 Hz \hl{COMENTAR PER QUÈ S'HA ELLEGIT AQUESTA FREQÜENCIA (CORBES DEL COMPRESSOR)}, el caudal del circuito de agua de este primer ensayo, será la referencia que se toma en los siguientes ensayos para poder mantener constante la potencia calorífica.
 
 \begin{figure}[ht]
     \centering
