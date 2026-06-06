@@ -44,7 +44,7 @@ Tras considerar una gran serie fluidos naturales junto al grupo GIT, se ha consi
     \multicolumn{1}{|c|}{\textbf{Butano}} & HC & R600 & 4.0 - 6.5 & 0 & -0.49 & A3 \\ \hline
     \multicolumn{1}{|c|}{\textbf{Isobutano}} & HC & R600a & 3 & 0 & -11.75 & A3 \\ \hline
     \multicolumn{1}{|c|}{\textbf{CO2}} & Óxido & R744 & 1 & 0 & - & A1 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Dimetil Éter}} & HC & RE170 & 1 & 0 & -24.78 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{dimetil éter}} & HC & RE170 & 1 & 0 & -24.78 & A3 \\ \hline
     \multicolumn{1}{|c|}{\textbf{Etano}} & HC & R170 & 5.5 - 10.2 & 0 & -88.58 & A3 \\ \hline
     \multicolumn{1}{|c|}{\textbf{Etileno}} & HO & R1150 & 3.7 & 0 & -103.77 & A3 \\ \hline
     \multicolumn{1}{|c|}{\textbf{Propileno}} & HO & R1270 & 1.8 & 0 & -57.62 & A3 \\ \hline
@@ -231,7 +231,7 @@ Analizando más en detalle las tres mezclas con más COP mediante figuras ternar
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPYLENE_DME_BUTANE/COP.png}
-        \caption{\centering COP en función de la composición}
+        \caption{\centering $\Delta$COP en función de la composición}
         \label{fig:COP_alta_n1}
     \end{minipage}
     \hfill
@@ -248,7 +248,7 @@ Analizando más en detalle las tres mezclas con más COP mediante figuras ternar
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPANE_DME_BUTANE/COP.png}
-        \caption{\centering COP en función de la ocmposición}
+        \caption{\centering $\Delta$COP en función de la ocmposición}
         \label{fig:COP_alta_n2}
     \end{minipage}
     \hfill
@@ -269,7 +269,7 @@ Siguiendo con la siguiente mezcla (R1270, RE170, R600a) en esta se puede observa
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/alta/PROPYLENE_DME_ISOBUTANE/COP.png}
-        \caption{\centering COP en función de la composición}
+        \caption{\centering $\Delta$COP en función de la composición}
         \label{fig:COP_alta_n3}
     \end{minipage}
     \hfill
@@ -296,7 +296,7 @@ En la figura \autoref{fig:PH_3_mejores_alta} se pueden observar la comparación 
 
 \hl{ME PAREIX QUE SE VEU UN POC MALAMENT, HI HA MASSA LINIES, ¿POSO NOMÉS EL DIAGRAMA DE LES MESCLES SENSE ELS PUNTS DEL CICLE?}
 
-Continuando con el análisis siguen las mezclas que se componen por su mayoría de Dimetíl Éter (RE170), esto se debe a que, entre otros motivos, el calor latente del Dimetil Éter es muy grande. Este fonómeno se puede observar en la \autoref{fig:PH_fluidos_no_volatiles} donde se comparan los diagramas P-H de los diferentes fluidos con una volatilidad similar al propano. \hl{¿FA FALTA QUE POSE PER QUÈ HA DE SER AMB VOLATILITAT SIMILAR AL PROPÀ?}
+Continuando con el análisis siguen las mezclas que se componen por su mayoría de Dimetíl Éter (RE170), esto se debe a que, entre otros motivos, el calor latente del dimetil éter es muy grande. Este fonómeno se puede observar en la \autoref{fig:PH_fluidos_no_volatiles} donde se comparan los diagramas P-H de los diferentes fluidos con una volatilidad similar al propano. \hl{¿FA FALTA QUE POSE PER QUÈ HA DE SER AMB VOLATILITAT SIMILAR AL PROPÀ?}
 
  % (PER SI FA FALTA) Solo se comparan los fluidos con una valatilidad similar ya que si se comparara fluidos de diferente volatilidad las presiones en el ciclo variarían demasiado pudiendo llegar a ser demasiado altas o demasiado bajas, por lo tanto, estos fluidos siempre estarán contenidos a una fracción pequeña del ciclo.
 
@@ -319,6 +319,127 @@ En la \autoref{tab:res_teo_vhc} se pueden observar los fluidos ordenados por inc
     \caption{Mezclas binarias ordenadas por VHC}
     \label{tab:res_teo_vhc}
 \end{table}
+
+\FloatBarrier
+
+De estas mezclas, sus zonas de mayor eficiencia energética son bastante amplias, es decir, no son fronteras exceptuando el CO2 (R744), etileno (R170) y el butano (R600) ya que estos dos primeros tienen problemas por estar cercanos a la temperatura máxima de descarga de 130ºC (\autoref{fig:re170_r744_t_descarga} y \autoref{fig:re170_r1150_t_descarga}) y el butano por estar cerca del umbral de disminución porcentual del VHC del -30\% (\autoref{fig:re170_r600_vhc}). 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/alta/CO2_RE170/t_descarga.png}
+    \caption{Temperatura de descarga de la mezcla RE170 y R744}
+    \label{fig:re170_r744_t_descarga}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/alta/R1150_RE170/t_descarga.png}
+    \caption{Temperatura de edescarga de la mezcla RE170 y R1150}
+    \label{fig:re170_r1150_t_descarga}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/alta/R600_RE170/VHC.png}
+    \caption{$\Delta$VHC de la mezcla RE170 y R600}
+    \label{fig:re170_r600_vhc}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Temperatura media}
+
+Los resultados de la temperatura media (\autoref{tab:res_teo_media}) son similares a los resultados de la simulación a alta temperatura, estos empiezan con las tres mezclas trifásicas encontradas previamente con variaciones pequeñas en las proporciones, después sigue el dimetil éter puro y por último hay algunas mezclas tanto binarias como ternarias que no presentan interés debido a su reducido incremento en el COP.
+
+Las mezclas ternarias siguen presentando el mismo problema que se obserbava en la configuración anterior, la zona de incremento de rendimiento es una frontera donde el glide en el evaporador es muy sensible a cambios en la composición (véase las figuras: \ref{fig:COP_media_n1}, \ref{fig:glide_o_media_n1}, \ref{fig:COP_media_n2} y \ref{fig:glide_o_media_n2}).
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/media/PROPYLENE_DME_BUTANE/COP.png}
+        \caption{\centering $\Delta$COP en función de la composición}
+        \label{fig:COP_media_n1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/media/PROPYLENE_DME_BUTANE/glide 0.png}
+        \caption{\centering Glide en el evaporador en función de la composición}
+        \label{fig:glide_o_media_n1}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/media/PROPANE_DME_BUTANE/COP.png}
+        \caption{\centering $\Delta$COP en función de la ocmposición}
+        \label{fig:COP_media_n2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/media/PROPANE_DME_BUTANE/glide 0.png}
+        \caption{\centering Glide en el evaporador en función de la composición}
+        \label{fig:glide_o_media_n2}
+    \end{minipage}
+\end{figure}
+
+\FloatBarrier
+
+La tercera mezcla con más COP (R1270, RE170, R600a) sigue siendo la misma que en el rango de temperaturas anterior, además esta no ha sufrido ningún cambio de composición. El rango en el que el rendimiento energético es máximo sigue siendo amplio (\autoref{fig:COP_media_n3}) y la tasa de compresión sigue favoreciendo la disminución del trabajo del compresor (\autoref{fig:presion_o_media_n3}).
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/media/PROPYLENE_DME_ISOBUTANE/COP.png}
+        \caption{\centering $\Delta$COP en función de la composición}
+        \label{fig:COP_media_n3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_teo/diag_ternarios/media/PROPYLENE_DME_ISOBUTANE/Presion 0.png}
+        \caption{\centering Presión de evaporación en función de la composición}
+        \label{fig:presion_o_media_n3}
+    \end{minipage}
+\end{figure}
+
+\FloatBarrier
+
+A dfierencia de la configuración de temperaturas anterior, en esta, las combinaciones que previamente habian resultado en mezclas con una composición con gran cantidad de dimetil éter y una pequeña proporcion de otros fluidos, en esta, todas estas combinaciones han convergido hacia el dimetil éter.
+
+Este fenómeno se puede observar en las figuras \ref{fig:COP_r1270_re170_media_alta}, \ref{fig:COP_r290_re170_media_alta} y \ref{fig:COP_r170_re170_media_alta} donde se ha graficado la evolución del incremento del COP respecto al R290 en función de la variación en la composición de diferentes fluidos en mezclas de dimetil éter para las dos condiciones de temperatura diferentes.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/media-alta/R290_RE170/COP.png}
+    \caption{Evalución del $\Delta$COP (R290 / RE170)}
+    \label{fig:COP_r290_re170_media_alta}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/media-alta/R1270_RE170/COP.png}
+    \caption{Evalución del $\Delta$COP (R1270 / RE170)}
+    \label{fig:COP_r1270_re170_media_alta}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/media-alta/R170_RE170/COP.png}
+    \caption{Evalución del $\Delta$COP (R170 / RE170)}
+    \label{fig:COP_r170_re170_media_alta}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\subsection{Elección de los fluidos a ensayar}
 
 \newpage
 \end{document}
