@@ -29,8 +29,9 @@
     "comments": false,
     "strings": false
     },
-    "ltex.language": "es",
-    "ltex.enabled": [
-        "latex"
-    ]
+   "[latex]": {
+    "editor.wordWrap": "on",
+    "editor.lineNumbers": "relative",
+    "files.autoSave": "off"
+    }
 }

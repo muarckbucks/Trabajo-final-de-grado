@@ -462,10 +462,113 @@ Como se muestra en la anterior figura, la diferencia entre las potencias térmic
 \end{table}
 
 \FloatBarrier
-Como se puede observar, solo se ha añadido el gráfico, de la evolución temporal de las variables de medida para un ensayo, el resto de gráficos se encuentran en la \autoref{sec:resultados_experimentales} del anexo.
+Como se puede observar, solo se ha añadido el gráfico de la evolución temporal de las variables de medida para el primer ensayo de R290, el resto de gráficos se encuentran en la \autoref{sec:resultados_experimentales} del anexo.
 
 \newpage
 
 \subsection{Análisis de resultados}
+
+\subsubsection{RE170 + R1270}
+Como se puede observar en las anteriores tablas, la mezcla de RE170 / R1270 ha resultado con grandes incrementos de COP respecto al R290, aunque para observar si ha habido un cambio respecto a los cálculos teóricos se graficarán tanto la evolución del COP como la del VHC de ambas series para las diferentes composiciones que se han ensayado, vénse las figuras de la \ref{fig:cop_comp_1} a la \ref{fig:vhc_comp_4}.
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_exp/COP_VHC_vs_comp/grafico_ΔCOP_tipo_1.png}
+        \caption{\centering $\Delta$COP en función de la composición (ensayos tipo 1)}
+        \label{fig:cop_comp_1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_exp/COP_VHC_vs_comp/grafico_ΔVHC_tipo_1.png}
+        \caption{\centering $\Delta$VHC en función de la composición (ensayos tipo 1)}
+        \label{fig:vhc_comp_1}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_exp/COP_VHC_vs_comp/grafico_ΔCOP_tipo_2.png}
+        \caption{\centering $\Delta$COP en función de la composición (ensayos tipo 2)}
+        \label{fig:cop_comp_2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_exp/COP_VHC_vs_comp/grafico_ΔVHC_tipo_2.png}
+        \caption{\centering $\Delta$VHC en función de la composición (ensayos tipo 2)}
+        \label{fig:vhc_comp_2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_exp/COP_VHC_vs_comp/grafico_ΔCOP_tipo_3.png}
+        \caption{\centering $\Delta$COP en función de la composición (ensayos tipo 3)}
+        \label{fig:cop_comp_3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_exp/COP_VHC_vs_comp/grafico_ΔVHC_tipo_3.png}
+        \caption{\centering $\Delta$VHC en función de la composición (ensayos tipo 3)}
+        \label{fig:vhc_comp_3}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_exp/COP_VHC_vs_comp/grafico_ΔCOP_tipo_4.png}
+        \caption{\centering $\Delta$COP en función de la composición (ensayos tipo 4)}
+        \label{fig:cop_comp_4}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/res_exp/COP_VHC_vs_comp/grafico_ΔVHC_tipo_4.png}
+        \caption{\centering $\Delta$VHC en función de la composición (ensayos tipo 4)}
+        \label{fig:vhc_comp_4}
+    \end{minipage}
+\end{figure}
+
+\FloatBarrier
+
+Como se puede observar en las figuras del incremento del COP, en los ensayos de temperatura alta (tipo 1 y tipo 2), la tendencia que se ha seguido es la predicha por las simulaciones teóricas aunque con un leve incremento en el COP. En los ensayos de temperatura media (tipo 3 y tipo 4), se ha obtenido una tendencia diferente a la predicha por las simulaciones teóricas que indicaban que el COP no podía aumentar si se variaba la composición, sin embargo, los datos experimentales indican que añadiendo propileno a la mezcla es muy probable que el COP de la instalación aumente vistas las tendencias de las figuras \ref{fig:cop_comp_3} y \ref{fig:cop_comp_4}.
+
+Respecto a las capacidades caloríficas vaolumétricas, para todos los ensayos se han obtenido valores un poco más pequeños que  los predichos en las simulaciones teóricas a excepción de la composición con 20\% de propileno, que presenta un VHC considerablemente más bajo.
+
+A continuación se mostrará en la \autoref{fig:f_comp_comp} las diferentes frecuencias que se han tenido que usar en los diferentes ensayos para conseguir la misma capacidad térmica.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/res_exp/f_comp_comp.png}
+    \caption{Incremento de la frecuencia del compresor en función de la composición}
+    \label{fig:f_comp_comp}
+\end{figure}
+
+\FloatBarrier
+
+Como se puede observar, con RE170 puro es necesario incrementar mucho la frecuencia del compresor mientras que con un aumento de un 20\% en la proporción de R1270 el aumento en la frecuencia necesario para mantener la misma potencia de calentamiento se reduce a la mitad.
+
+\subsubsection{R290 + RE170 (Mickoleit et al.)}
+
+En la \autoref{fig:grafico_cuadrado} se puede observar la variación de diferentes parámetros de esta composición respecto al R290 para los diferentes cuatro ensayos.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/res_exp/grafico_cuadrado.png}
+    \caption{Variación de diferentes variables ....}
+    \label{fig:grafico_cuadrado}
+\end{figure}
+
+Como se puede observar, la tasa de compresión se consigue reducir un poco y la frecuencia en algunos casos sí y en otros no. Respecto al VHC, este incrementa de forma muy pequeña y respecto al COP, no se puede determinar si hay un incremento debido a la incertidumbre de medida.
 
 \end{document}
