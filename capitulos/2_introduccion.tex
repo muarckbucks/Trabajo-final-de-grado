@@ -35,10 +35,10 @@ Como parte final del estudio, se analizarán los resultados obtenidos de los ens
 En la actualidad, el 62\% del calor destinado a la calefacción de edificios se genera a partir de combustibles fósiles, el 26\% procede de biomasa y solamente el 12\% proviene de renovables modernas como bombas de calor, energía termosolar o geotermia. En el caso de la calefacción urbana, esta dependencia es aún mayor, ya que alrededor del 90\% de las instalaciones siguen basándose en combustibles fósiles (IRENA 2023) \cite{IRENA2023}.
 
 % BOMBAS DE CALOR FRENTE A CALDERAS
-No obstante, diversos estudios señalan que la sustitución de los sistemas de calefacción basados en combustibles fósiles por sistemas con bomba de calor permitiría reducir de forma significativa tanto el consumo energético como el impacto ambiental (Mayer 2024) \cite{Meyer_2024}.
+No obstante, diversos estudios señalan que la sustitución de los sistemas de calefacción basados en combustibles fósiles por sistemas con bomba de calor permitiría reducir de forma significativa tanto el consumo energético como el impacto medioambiental (Mayer 2024) \cite{Meyer_2024}.
 
 % FUNCIONAMIENTO BOMBA DE CALOR
-Las bombas de calor por compresión se basan en la transferencia de calor de un lugar a otro. El ciclo hace circular un fluido de trabajo por su interior y, de forma cíclica y cerrada, se evapora, comprime, condensa y expande absorbiendo y liberando calor en el acto.
+Las bombas de calor por compresión se basan en la transferencia térmica entre distintos ambientes. Para ello, un fluido de trabajo circula por un circuito cerrado donde, de forma cíclica, se evapora, comprime, condensa y expande, absorbiendo y liberando calor en el proceso.
 
 \begin{figure}[ht]
     \centering
@@ -47,9 +47,9 @@ Las bombas de calor por compresión se basan en la transferencia de calor de un 
     \label{fig:ciclo_basico}
 \end{figure}
 
-Como se puede observar en la \autoref{fig:ciclo_basico}, este ciclo tiene cuatro componentes principales: un evaporador, un compresor, un condensador y un dispositivo de expansión. De este último se puede aprovechar el calor cedido por el condensador o el calor absorbido por el evaporador, tanto para calentar como para enfriar, respectivamente, lo que lo hace muy útil tanto a nivel doméstico como a nivel industrial.
+Como se puede observar en la \autoref{fig:ciclo_basico}, este ciclo tiene cuatro componentes principales: un evaporador, un compresor, un condensador y un dispositivo de expansión. De este proceso se puede parovechar el calor cedido por el condensador o el calor absorbido por el evaporador, tanto para calentar como para enfriar, respectivamente, lo que lo hace muy útil tanto a nivel doméstico como a nivel industrial, sin embargo, en este estudio solo se va a aprovechar el calor cedido por el condensador.
 
-A día de hoy, solamente el sector de la calefacción en los edificios mediante bombas de calor presenta un 10\% de las emisiones de \begin{math} \left[\mathrm{CO_2}\right]_{\mathrm{eq}} \end{math} a la atmósfera (sin considerar otros gases de efecto invernadero). De estas emisiones, un tercio son emisiones directas, es decir, provienen de la liberación de fluidos de trabajo con alto potencial de calentamiento global a la atmósfera, mientras que los otros dos tercios están asociados a emisiones indirectas (IEA 2022) \cite{IEA2022FutureHeatPumps}.
+A día de hoy, solamente el sector de la calefacción en los edificios mediante bombas de calor presenta un 10\% de las emisiones de \begin{math} \left[\mathrm{CO_2}\right]_{\mathrm{eq}} \end{math} a la atmósfera. De estas emisiones, un tercio son emisiones directas, es decir, provienen de la liberación de fluidos con alto potencial de calentamiento global a la atmósfera, mientras que los otros dos tercios están asociados a emisiones indirectas (IEA 2022) \cite{IEA2022FutureHeatPumps}.
 
 % ===============================================
 % MARCO HISTÓRICO-REGULATIVO
@@ -57,7 +57,7 @@ A día de hoy, solamente el sector de la calefacción en los edificios mediante 
 
 \subsection{Marco histórico-regulativo}
 
-El sector de las bombas de calor se ha desarrollado mucho desde su descubrimiento debido a grandes avances tecnológicos, termodinámicos, químicos y medioambientales. El primer sistema de bomba de calor por compresión fue descrito por Oliver Evans en el 1805, aunque no fue hasta el 1830 que John Hague lo construyó usando etil éter como fluido de trabajo.
+El sector de las bombas de calor se ha desarrollado mucho desde su descubrimiento debido a grandes avances tecnológicos, termodinámicos y medioambientales. El primer sistema de bomba de calor por compresión fue descrito por Oliver Evans en el 1805, aunque no fue hasta el 1830 que John Hague lo construyó usando etil éter como fluido de trabajo.
 
 Es, a partir de entonces, cuando consideramos que empieza la historia de las bombas de calor. Diferenciamos 4 principales generaciones, marcadas por el fluido de trabajo usado en cada una de ellas.
 
@@ -70,18 +70,18 @@ La seguridad pasó a un segundo plano y, en consecuencia, ocurrieron varios acci
 
 
 \subsubsection{Segunda generación}
-La segunda generación surgió con el trabajo de Thomas Midgley Jr. y Albert L. Henne sobre los halogenúros orgánicos volátiles. Los investigadores estaban buscando la solución a los problemas de los fluidos de trabajo anteriores cuando encontraron la familia de los clorofluorocarburos (CFC) y, añadiendo hidrógeno a la mezcla obtuvieron los hidroclorofluorocarburos (HCFC).
+La segunda generación surgió con el trabajo de Thomas Midgley Jr. y Albert L. Henne sobre los halogenúros orgánicos volátiles \cite{midgley1930organic}. Los investigadores estaban buscando la solución a los problemas de los fluidos de trabajo cuando encontraron la familia de los clorofluorocarburos (CFC) y, añadiendo hidrógeno a la mezcla obtuvieron los hidroclorofluorocarburos (HCFC).
 
 Estas moléculas consiguieron reducir la inflamabilidad, toxicidad y aumentar la estabilidad y compatibilidad con los materiales presentes en las bombas de calor. Algunos fluidos de trabajo que dominaron esta etapa fueron el R11 (CCl\tsub{3}F), el R12 (CCl\tsub{2}F\tsub{2}), el R22 (CHClF\tsub{2}) y el R502 (mezcla de HCFC y CFC).
 
-Sin embargo, tras una época de dominación de los CFC y HCFC, los investigadores Rowland y Molina, descubrieron que si estas moléculas llegaban suficientemente alto en la atmósfera, en contacto con la radiación ultravioleta, el cloro se desprendía y empezaba una reacción en cadena por catálisis, donde un solo átomo de cloro podía destruir miles de moléculas de ozono.
+Sin embargo, tras una época de dominación de los CFC y HCFC, los investigadores Rowland y Molina, descubrieron que si estas moléculas llegaban suficientemente alto en la atmósfera, en contacto con la radiación ultravioleta, el cloro se desprendía y empezaba una reacción en cadena por catálisis, donde un solo átomo de cloro podía destruir miles de moléculas de ozono \cite{molina1974stratospheric}.
 
 Para resolver la problemática de la desaparición de la capa de ozono, en el año 1987 se decidió firmar el Protocolo Montreal, un acuerdo internacional que imponía una reducción progresiva de los fluidos de trabajo que afectaban a la capa de ozono hasta llegar a su eliminación.
 
 
 \subsubsection{Tercera generación}
 
-Debido a la prohibición de los CFC y HCFC, esta generación empezó con el desarrollo de los hidrofluorocarburos (HFC), que no contienen moléculas de cloro, entre ellos destacan el R134a (CF\tsub{3}-CH\tsub{2}F), el R404A (mezcla de HFC) y el R507A (mezcla de HFC). Estos fluidos de trabajo, aunque no destruyen la capa de ozono, tienen otro efecto nocivo sobre el medioambiente, ya que, al contener moléculas de flúor, la absorción de radiación infrarroja se ve favorecida agravando el efecto invernadero.
+Debido a la prohibición de los CFC y HCFC, esta generación empezó con el desarrollo de los hidrofluorocarburos (HFC), que no contienen moléculas de cloro. Entre ellos destacan el R134a (CF\tsub{3}-CH\tsub{2}F), el R404A (mezcla de HFC) y el R507A (mezcla de HFC). Estos fluidos de trabajo, aunque no destruyen la capa de ozono, tienen otro efecto nocivo sobre el medioambiente, ya que, al contener moléculas de flúor, la absorción de radiación infrarroja se ve favorecida agravando el efecto invernadero.
 
 Posteriormente, el Protocolo Kioto de 1997 establecería un límite para estos gases con alto potencial de calentamiento global (GWP, por sus siglas en inglés) y asentaría una base para las futuras normativas respecto a los gases de efecto invernadero.
 
@@ -104,7 +104,7 @@ Además, la transición de HFC a HFO se vio potenciada por la actualización de 
     \label{fig:max_CO2_f-gas}
 \end{figure}
 
-Sin embargo, en estos últimos años, los HFO han sido fuente de preocupación por su capacidad de emitir sustancias perfluoroalquiladas y polifluoralquiladas (PFAS) y estas, aunque no impacten negativamente al medioambiente, conllevan un riesgo para la salud humana y animal.
+Sin embargo, en estos últimos años, los HFO han sido fuente de preocupación por su capacidad de emitir sustancias perfluoroalquiladas y polifluoralquiladas (PFAS) y estas, aunque no impacten negativamente a la capa de ozono o al calentamiento global, conllevan un riesgo para la salud humana y animal.
 
 Es por este motivo que ha crecido el interés en los gases naturales, ya que, aunque no son los mejores en cuanto a rendimiento energético, se sabe que son los que menos impacto tendrán tanto en la salud como a nivel medioambiental.
 
@@ -115,7 +115,7 @@ Es por este motivo que ha crecido el interés en los gases naturales, ya que, au
 
 \subsection{Motivación y objetivos}
 
-
+\hl{FER}
 
 
 \newpage

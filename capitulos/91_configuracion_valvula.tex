@@ -1,0 +1,36 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+La válvula empleada en los ensayos experimentales es de tipo electrónico e incorpora un sensor de temperatura y de presión. Sin embargo, estas dos variables por sí solas no son suficientes para controlar el recalentamiento útil; es necesario, además, conocer las curvas características de cada fluido para determinar el grado de recalentamiento en el evaporador.
+Para introducir dichas curvas en la válvula, se deben calcular previamente las expresiones de temperatura en función de la presión, tanto para la línea de líquido saturado como para la de vapor saturado, siguiendo la expresión polinómica en logaritmos de la \ref{eq:temp_ln_p}:
+\begin{equation}
+T = a + b \cdot \ln{P} + c \cdot \left(\ln{P}\right)^{2} + d \cdot \left(\ln{P}\right)^{3} + e \cdot \left(\ln{P}\right)^{4} + f \cdot \left(\ln{P}\right)^{5}
+\label{eq:temp_ln_p}
+\end{equation}
+Los valores de presión y temperatura de referencia se obtienen mediante el software REFPROP, y los coeficientes aa
+a, bb
+b, cc
+c, dd
+d, ee
+e y ff
+f tanto para la curva de vapor saturado como para la de líquido saturado se determinan a través de una regresión lineal.
+Una vez obtenidos estos coeficientes, se introducen en una hoja de cálculo Excel proporcionada por el fabricante, que genera 24 enteros de 16 bits listos para ser cargados en la válvula (véase la \autoref{fig:excel_carel}).
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\textwidth]{imagenes/Excel_CAREL.png}
+\caption{Hoja de cálculo Excel proporcionada por el fabricante}
+\label{fig:excel_carel}
+\end{figure}
+\FloatBarrier
+Para facilitar la introducción de estos parámetros en la válvula, se utiliza el software Visual Parameter Manager (VPM) (véase la \autoref{fig:vpm}).
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\textwidth]{imagenes/VPM.png}
+\caption{Software VPM para la introducción de parámetros en la válvula}
+\label{fig:vpm}
+\end{figure}
+\FloatBarrier
+
+
+\end{document}

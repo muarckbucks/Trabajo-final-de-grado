@@ -14,7 +14,7 @@ El \textit{screening} consistirá en la combinación de los posibles refrigerant
 
 Si la mezcla resulta mejor que el propano en cuento a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (1\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de la VHC. Véase la \autoref{fig:diagrama_screening} donde se representa el diagrama de flujo del \textit{scrrening}.
 
-El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada combinación se simulará en cuatro escenarios diferentes, dos vienen tpificados por la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua y otros dos tienen condiciones parecidas a la normativa pero se han añadido para reducir la incertidumbre de medida en el evaporador.
+El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de vapor. Este involucrará una compresión con un rendimiento fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica en la válvula de expansión. Cada combinación se simulará en dos escenarios diferentes tipificados por la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua. 
 
 \newpage
 
@@ -73,7 +73,7 @@ En la \autoref{fig:condiciones_constantes} se muestran las variables que son con
 \begin{table}[H]
     \centering
     \input{capitulos/tablas/temperaturas_une.tex}
-    \caption{Temperaturas de los ensayos}
+    \caption{Temperaturas de las simulaciones según UNE-EN 14511-3}
     \label{fig:cond_une_teorico}
 \end{table}
 
@@ -88,14 +88,14 @@ p_{k} = f(t = t_{hw\_in} + Ap_{k} + SUB,\ x_{v} = 0)
 \end{equation}
 Una vez conocido el punto termodinámico de la salida del condensador, se puede hallar de forma similar el punto posterior a la válvula de expansión:
 \begin{equation}
-p_{O} = f(t = t_{cw\_out} - Ap_{O},\ h = h_{k,out})
+p_{0} = f(t = t_{cw\_out} - Ap_{0},\ h = h_{k,out})
 \end{equation}
 A partir de estas presiones se pueden hallar un par de magnitudes que definan termodinámicamente los puntos de salida del condensador y de entrada del evaporador.
 \begin{gather}
 \mathrm{h}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + Ap_{k})
 \label{eq:punto_k,out}
 \\
-\mathrm{h}_{O,in} = f(p = p_{O},\ h = h_{k,out})
+\mathrm{h}_{0,in} = f(p = p_{0},\ h = h_{k,out})
 \label{eq:punto_O,in}
 \end{gather}
 Obteniendo la temperatura de vapor saturado en el evaporador, se puede hallar el punto de salida del evaporador:
@@ -103,24 +103,24 @@ Obteniendo la temperatura de vapor saturado en el evaporador, se puede hallar el
 t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
 \label{eq:t_vap_sat}
 \\
-\mathrm{h}_{O,out} = f(p = p_{O},\ t = t_{vap,sat})
+\mathrm{h}_{0,out} = f(p = p_{0},\ t = t_{vap,sat})
 \label{eq:punto_O,out}
 \end{gather}
 Conociendo el rendimiento del compresor, se puede hallar el punto a la salida de este, que es el mismo que el de la entrada del condensador:
 \begin{gather}
-h_{c,out,s} = f(p = p_{k},\ s = s_{c,in}),\quad
+h_{comp,out,s} = f(p = p_{k},\ s = s_{comp,in}),\quad
 \label{eq:h_c,out,s}
 \\
-h_{c,out} = h_{c,in} + \frac{h_{c,out,s} - h_{c,in}}{\eta_{comp}}
+h_{comp,out} = h_{comp,in} + \frac{h_{ccomp,out,s} - h_{c,in}}{\eta_{comp}}
 \label{eq:h_c,out}
 \\
-\mathrm{h}_{k,in} = f(p = p_{k},\ h = h_{c,out})
+\mathrm{h}_{k,in} = f(p = p_{k},\ h = h_{comp,out})
 \label{eq:punto_k,in}
 \end{gather}
 
 A continuación, se muestran las expresiones que se usan para calcular los parámetros del ciclo termodinámico:
 \begin{gather}
-Glide_{O}=t(p = p_{O},\ x_{v} = 1) - t(p = p_{O},\ x_{v} = x_{v,O,in})
+Glide_{0}=t(p = p_{0},\ x_{v} = 1) - t(p = p_{0},\ x_{v} = x_{v,0,in})
 \label{eq:glide_O}
 \\
 Glide_{k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
@@ -129,10 +129,10 @@ Glide_{k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
 VHC = \frac{h_{k,in} - h_{k,ou}}{\nu_{suc}}
 \label{eq:VHC}
 \\
-COP = \frac{h_{O,out}-h_{O,in}}{h_{k,in}-h_{k,out}}
+COP = \frac{h_{0,out}-h_{0,in}}{h_{k,in}-h_{k,out}}
 \label{eq:COP}
 \\
-\frac{\dot{m}_{hw}}{\dot{m}_{ref}}=\frac{h_{O,in}-h_{O,out}}
+\frac{\dot{m}_{hw}}{\dot{m}_{ref}}=\frac{h_{0,in}-h_{0,out}}
 {c_{p}\cdot \left( t_{hw,out}-t_{hw,in} \right)}
 \label{eq:caudales}
 \\
@@ -155,7 +155,7 @@ El software usado para el cálculo de las propiedades termodinámicas ha sido RE
 El proceso incluye filtros que excluyen las mezclas que no cumplen los siguientes requisitos:
 \begin{itemize}
     \item Glide de condensación ($Glide_{k}$) y glide efectivo de evaporación 
-    ($Glide_{O}$) menor a $10\,^{\circ}\mathrm{C}$, ya que la transferencia de 
+    ($Glide_{0}$) menor a $10\,^{\circ}\mathrm{C}$, ya que la transferencia de 
     calor se reduce al pasar estos umbrales.
     \item Temperatura de descarga del compresor menor a $130\,^{\circ}\mathrm{C}$,
     ya que este no está pensado para soportar temperaturas tan elevadas.
@@ -454,9 +454,9 @@ Tras consultar con el personal del grupo GIT, se ha estimado que durante el per�
 
 Teniendo en cuenta que se necesitan en torno a cinco composiciones por mezcla para caracterizar el rango óptimo, y que cuatro ensayos están reservados para el R290 puro como referencia y otros cuatro para la mezcla de Mickoleit et al. (R290/RE170), solo quedan disponibles aproximadamente cinco composiciones, lo que equivale a una única mezcla adicional.
 
-Tras discutirlo con el equipo GIT, se ha decidido descartar la mezcla ternaria y reservarla para futuras investigaciones con mayor disponibilidad de tiempo de ensayo. Esta decisión se fundamenta en que la forma de la zona de máximo rendimiento (\autoref{fig:COP_alta_n3} y \autoref{fig:COP_media_n3}) hace sospechar de un posible error en la base de datos de REFPROP, lo que añade incertidumbre adicional a su caracterización experimental.
+Tras discutirlo con el equipo GIT, se ha decidido descartar la mezcla ternaria y reservarla para futuras investigaciones con mayor disponibilidad de tiempo para ensayos. Esta decisión se fundamenta en que la forma de la zona de máximo rendimiento (\autoref{fig:COP_alta_n3} y \autoref{fig:COP_media_n3}) hace sospechar de un posible error en la base de datos de REFPROP, lo que añade incertidumbre adicional a su caracterización experimental.
 
-Descartada la mezcla ternaria, las tres candidatas restantes RE170/R1270, RE170/R290 y RE170/R170 presentan un incremento de COP respecto al propano similar entre sí. Por ello, el criterio de selección recae sobre la VHC, donde la mezcla RE170/R1270 destaca por su mayor incremento respecto al propano (\autoref{tab:res_teo_vhc}), siendo esta la elegida para los ensayos experimentales.
+Descartada la mezcla ternaria, las tres candidatas restantes RE170/R1270, RE170/R290 y RE170/R170 presentan un incremento de COP respecto al propano similar entre sí. Por ello, el criterio de selección recae sobre el VHC, donde la mezcla RE170/R1270 destaca por su mayor incremento respecto al propano (\autoref{tab:res_teo_vhc}), siendo esta la elegida para los ensayos experimentales.
 
 \newpage
 \end{document}

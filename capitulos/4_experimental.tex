@@ -11,7 +11,7 @@
 
 Tras la obtención de los resultados teóricos, se llevará a cabo un estudio experimental. Esto es de vital importancia, ya que, el software usado (REFPROP v10.0), no tiene información precisa de la interacción entre los diferentes fluidos en mezclas, por lo tanto, proporciona una aproximación de sus propiedades termodinámicas.
 
-El estudio experimental se realizará con una máquina completamente equipada perteneciente a GIT, esta máquina está dentro de una cámara aclimatada a 24 ºC y se puede observar en la \autoref{fig:maquina_experimental}.
+El estudio experimental se realizará con una máquina completamente equipada perteneciente a GIT, esta máquina está dentro de una cámara aclimatada a 25 ºC y 50\% de HR y se puede observar en la \autoref{fig:maquina_experimental}.
 
 \begin{figure}[ht]
     \centering
@@ -237,23 +237,36 @@ Todas las señales de los diferentes dispositivos de medida son recogidas por el
 
 A las temperaturas que se han analizado en el \textit{screening} teórico se adicionarán dos temperaturas diferentes para la reducción de la incertidumbre de medida.
 
-Los tipos de ensayo 1 y 4 corresponden a las temperaturas alta y media analizadas previamente, los tipos de ensayos 2 y 3 corresponden a las mismas temperaturas de condensación pero un aumento en las temperaturas de evaporación.
+Los tipos de ensayo 1 y 4 corresponden a las temperaturas alta y media analizadas previamente, los tipos de ensayos 2 y 3 corresponden a las mismas temperaturas del agua pero tienen un aumento en el salto de temperaturas en el ciclo de glicol/aguga.
 
-Las nuevas temperaturas aunque no esten en la normativa UNE-EN 14511-3, tienen como objetivo no alterar significativamente el comportamiento del ciclo al mismo tiempo que se reduce la incertidumbre de medida en la potencia frigorífica del evaporador.
+Las nuevas temperaturas, aunque no esten en la normativa UNE-EN 14511-3, tienen como objetivo no alterar significativamente el comportamiento del ciclo al mismo tiempo que se reduce la incertidumbre de medida en la potencia frigorífica del evaporador.
 
 \begin{table}[H]
     \centering
-    \input{capitulos/tablas/temperaturas_une.tex}
-    \caption{Temperaturas de los ciclos secundarios según}
+    \input{capitulos/tablas/temperaturas_ensayos.tex}
+    \caption{Temperaturas de los ciclos secundarios que se seguirán en los ensayos}
     \label{fig:cond_une_experimental}
 \end{table}
 
-Para que el análisis sea lo más equitativo posible, se analizarán las mezclas de los diferentes fluidos de trabajo para una misma potencia calorífica y a un caudal del circuito de agua del condensador constante. Para ello, se ralizará un ensayo inicial del propano a una frecuencia de commpresor de 35 Hz \hl{COMENTAR PER QUÈ S'HA ELLEGIT AQUESTA FREQÜENCIA (CORBES DEL COMPRESSOR)}, el caudal del circuito de agua de este primer ensayo, será la referencia que se toma en los siguientes ensayos para poder mantener constante la potencia calorífica.
+Con el objetivo de que el análisis sea lo más equitativo posible, se estudiarán las mezclas de los distintos fluidos de trabajo bajo una misma potencia calorífica, manteniendo constante el caudal del circuito de agua del condensador a lo largo de todos los ensayos de un mismo tipo. Para ello, se realizará un ensayo inicial con propano a una frecuencia de compresor de 35 Hz, y el caudal registrado en dicho ensayo servirá como referencia para los ensayos posteriores, garantizando así una potencia calorífica comparable entre fluidos.
+
+La elección de 35 Hz como frecuencia de operación se ha establecido teniendo en cuenta tanto el rango de funcionamiento del compresor como sus curvas de rendimiento (véase la \autoref{fig:rend_comp}).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{imagenes/rend_comp.png}
+\caption{Rendimiento del compresor}
+\label{fig:rend_comp}
+\end{figure}
+
+\FloatBarrier
+
+Dado que los ensayos con las mezclas se realizarán con fluidos de menor capacidad calorífica volumétrica que el propano, será necesario operar el compresor a frecuencias más elevadas para alcanzar la misma potencia calorífica. Por este motivo, se ha optado por una frecuencia inicial relativamente baja dentro del rango disponible, dejando margen suficiente para incrementarla sin riesgo de alcanzar el límite operativo del equipo.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{imagenes/metodologia_ensayo.pdf}
-    \caption{Diagrama de metodología de ensayo}
+    \caption{Diagrama de condiciones de ensayo}
     \label{fig:metodologia_ensayo}
 \end{figure}
 
@@ -269,13 +282,13 @@ Si se va a ensayar una mezcla, esta se preparará dentro de una bombona. Para el
 
 Una vez se disponga de la mezcla o del fluido puro, se cargará en la máquina desde la bombona, controlando igualmente la cantidad introducida con una báscula de incertidumbre de medida de 1 g.
 
-Como esta instalación hace uso de una válvula electróncica para controlar el recalentamiento en el evaporador haciendo uso de dos sensores, uno de presión y uno de temperatura hace falta configurarla para según la mezcla o fluido que tenga en el interior. En el anexo \hl{POSAR ANNEX DE CONFIGURACIÓ DE LA VÀLVULA} se puede ver el proceso de configuración de la válvula.
+Posteriormente, se tendrá que configurar al válvula para que controle adecuadamente el recalentamiento en el evaporador para el fluido que se esté usando. En la \autoref{sec:configuracion_valvula} del anexo se puede ver el proceso de configuración de la válvula.
 
-Con el fluido ya cargado y la válvula configurada, se pondrá en marcha la instalación y se establecerán los valores de consigna correspondientes al ensayo que se desee realizar. La puerta de la cámara climática permanecerá cerrada durante todo el proceso de estabilización y a lo largo del ensayo, salvo aperturas puntuales.
+Con el fluido ya cargado y la válvula configurada, se pondrá en marcha la instalación y se establecerán los valores de consigna correspondientes al ensayo que se desee realizar. Si se trata del ensayo de propano, la frecuencia del compresor se fijará a 35 Hz y el caudal del agua se ajustará para cumplir las condiciones de temperatura, sin embargo, si se trata de otros fluidos, el caudal de agua se fijará al mismo caudal de agua del propano y se variará la frecuencia del compresor hasta cumplir nuevamente con las condiciones de temperatura.
 
 Desde LabVIEW se comprobará que todas las variables estén estabilizadas y centradas en el punto objetivo durante un período mínimo de media hora; solo entonces se procederá a realizar el ensayo.
 
-Cada ensayo tendrá una duración de 5 minutos, durante los cuales no se modificará ninguna consigna de la instalación ni se intervendrá físicamente sobre la máquina.
+Cada ensayo tendrá una duración de 5 minutos, durante los cuales no se modificará ninguna consigna de la instalación ni se intervendrá físicamente sobre la máquina, además, la puerta de la cámara climática permanecerá cerrada durante todos los 5 minutos.
 
 Una vez finalizado el ensayo, si se desea realizar otro con el mismo fluido, bastará con cambiar las consignas y esperar a que la máquina se estabilice de nuevo.
 
@@ -352,9 +365,9 @@ Por tanto, las incertidumbres de las variables principales vendrán dadas por la
 \subsection{Validación experimental}
 \label{subsec:validacion_experimental}
 
-La herramienta usada para realizar los cálculos de los estados termodinámicos ha sido REFPROP, aunque, esta solo proporciona valores correctos para los fluidos puros, es decir, los que no estén mezclados. Es por esta razón por la que se ha decidido depender exclusivamente del ciclo secundario de agua para calcular el $COP$, ya que las propiedades del agua son bien conocidas.
+La herramienta usada para realizar los cálculos de los estados termodinámicos ha sido REFPROP, aunque, esta solo proporciona valores correctos para los fluidos puros, es decir, los que no estén mezclados. Es por esta razón por la que se ha decidido depender exclusivamente del ciclo secundario de agua para calcular el $COP$, ya que, las propiedades del agua son bien conocidas.
 
-Para depender exclusivamente del agua es necesario comprobar que la potencia medida en el condensador tanto del fluido de trabajo como del agua sean la misma, esta comprobación se realizará con dos fluidos cuyas propiedades termodinámicas se conocen correctamente: Dimetil-éter (RE170) y propano (R290) como se puede observar en la \autoref{fig:validacion_qk}. 
+Para depender exclusivamente del agua es necesario comprobar que la potencia medida en el condensador tanto del fluido de trabajo como del agua sean la misma, esta comprobación se realizará con dos fluidos cuyas propiedades termodinámicas se conocen correctamente: dimetil éter (RE170) y propano (R290) como se puede observar en la \autoref{fig:validacion_qk}. 
 
 \begin{figure}[ht]
     \centering
@@ -366,6 +379,10 @@ Para depender exclusivamente del agua es necesario comprobar que la potencia med
 \FloatBarrier
 
 Como se muestra en la anterior figura, la diferencia entre las potencias térmicas no supera nunca el 10\%, esto indica que las medidas tomadas en el circuito de agua son fiables y se pueden comparar entre ellas.
+
+Además, se ha realizado una comprobación del aislamiento en los intercambiadores de calor haciendo uso de una cámara termográfica como se observa en la \hl{POSAR FIGURA}.
+
+Como se observa, las temperaturas son homogeneas en toda la superficie del aislamiento y su valor no llega a unos umbrales preocupantes.
 
 % ===============================================
 % RESULTADOS EXPERIMENTALES
@@ -543,7 +560,7 @@ Como se puede observar en las anteriores tablas, la mezcla de RE170 / R1270 ha r
 
 Como se puede observar en las figuras del incremento del COP, en los ensayos de temperatura alta (tipo 1 y tipo 2), la tendencia que se ha seguido es la predicha por las simulaciones teóricas aunque con un leve incremento en el COP. En los ensayos de temperatura media (tipo 3 y tipo 4), se ha obtenido una tendencia diferente a la predicha por las simulaciones teóricas que indicaban que el COP no podía aumentar si se variaba la composición, sin embargo, los datos experimentales indican que añadiendo propileno a la mezcla es muy probable que el COP de la instalación aumente vistas las tendencias de las figuras \ref{fig:cop_comp_3} y \ref{fig:cop_comp_4}.
 
-Respecto a las capacidades caloríficas vaolumétricas, para todos los ensayos se han obtenido valores un poco más pequeños que  los predichos en las simulaciones teóricas a excepción de la composición con 20\% de propileno, que presenta un VHC considerablemente más bajo.
+Respecto a las capacidades caloríficas volumétricas, para todos los ensayos se han obtenido valores un poco más pequeños que  los predichos en las simulaciones teóricas a excepción de la composición con 20\% de propileno, que presenta un VHC considerablemente más bajo.
 
 A continuación se mostrará en la \autoref{fig:f_comp_comp} las diferentes frecuencias que se han tenido que usar en los diferentes ensayos para conseguir la misma capacidad térmica.
 
