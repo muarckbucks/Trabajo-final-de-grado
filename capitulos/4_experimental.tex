@@ -22,6 +22,8 @@ El estudio experimental se realizará con una máquina completamente equipada pe
 
 \FloatBarrier
 
+\newpage
+
 % ===============================================
 % DESCRIPCIÓN DE LAS INSTALACIONES EXPERIMENTALES
 % ===============================================
@@ -163,6 +165,8 @@ Estos ciclos se componen de un depósito de agua destilada para el condensador (
 
 \FloatBarrier
 
+\newpage
+
 % ===============================================
 % SISTEMA DE ADQUISICIÓN DE DATOS
 % ===============================================
@@ -218,12 +222,18 @@ A continuación, en la \autoref{tab:incertidumbres} se muestra una tabla con las
 
 Todas las señales de los diferentes dispositivos de medida son recogidas por el controlador cRIO-9074 (véase la figura \autoref{fig:rio}) a una frecuencia de muestreo de 0.2 Hz para su análisis en tiempo real desde el software LabVIEW \cite{LabVIEW}. Posteriormente se podrá realizar el almacenamiento de la información en archivos de texto para su posterior análisis con Excel \cite{Excel} y REFPROP \cite{refprop}.
 
+\newpage
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{imagenes/rio.jpg}
     \caption{Controlador de adquisición de datos}
     \label{fig:rio}
 \end{figure}
+
+\FloatBarrier
+
+\newpage
 
 % ===============================================
 % PROCEDIMIENTO EXPERIMENTAL
@@ -292,6 +302,8 @@ Cada ensayo tendrá una duración de 5 minutos, durante los cuales no se modific
 
 Una vez finalizado el ensayo, si se desea realizar otro con el mismo fluido, bastará con cambiar las consignas y esperar a que la máquina se estabilice de nuevo.
 
+\newpage
+
 \subsection{Variables e incertidumbres derivadas}
 
 \subsubsection{Variables derivadas}
@@ -358,6 +370,8 @@ Por tanto, las incertidumbres de las variables principales vendrán dadas por la
     \label{eq:incert_cop}
 \end{equation}
 
+\newpage
+
 % ===============================================
 % VALIDACIÓN EXPERIMENTAL
 % ===============================================
@@ -389,6 +403,7 @@ Como se observa, las temperaturas son homogeneas en toda la superficie del aisla
 % ===============================================
 
 \newpage
+
 \subsection{Resultados experimentales}
 
 \subsubsection{Propano (R290)}
@@ -482,11 +497,16 @@ Como se observa, las temperaturas son homogeneas en toda la superficie del aisla
 Como se puede observar, solo se ha añadido el gráfico de la evolución temporal de las variables de medida para el primer ensayo de R290, el resto de gráficos se encuentran en la \autoref{sec:resultados_experimentales} del anexo.
 
 \newpage
-
+% =================================
+% ANÁLISIS DE RESULTADOS
+% =================================
 \subsection{Análisis de resultados}
 
 \subsubsection{RE170 + R1270}
-Como se puede observar en las anteriores tablas, la mezcla de RE170 / R1270 ha resultado con grandes incrementos de COP respecto al R290, aunque para observar si ha habido un cambio respecto a los cálculos teóricos se graficarán tanto la evolución del COP como la del VHC de ambas series para las diferentes composiciones que se han ensayado, vénse las figuras de la \ref{fig:cop_comp_1} a la \ref{fig:vhc_comp_4}.
+
+Como se puede observar en las figuras \ref{fig:cop_comp_1}, \ref{fig:cop_comp_2}, \ref{fig:cop_comp_3} y \ref{fig:cop_comp_4}, el COP medido en la planta experimental presenta una buena concordancia con el obtenido mediante simulación teórica. No obstante, debido a la incertidumbre de medida, no es posible afirmar con rigor estadístico que un aumento en la proporción másica de propileno conlleve una mejora real del COP, a pesar de que los valores experimentales apunten en esa dirección.
+
+En cambio, en lo que respecta al VHC, las figuras \ref{fig:vhc_comp_1}, \ref{fig:vhc_comp_2}, \ref{fig:vhc_comp_3} y \ref{fig:vhc_comp_4} muestran que la incertidumbre acumulada es suficientemente reducida como para confirmar que sí se produce un incremento significativo del VHC, alcanzando valores de hasta un -20\% respecto al propano puro.
 
 \begin{figure}[ht]
     \centering
@@ -558,11 +578,7 @@ Como se puede observar en las anteriores tablas, la mezcla de RE170 / R1270 ha r
 
 \FloatBarrier
 
-Como se puede observar en las figuras del incremento del COP, en los ensayos de temperatura alta (tipo 1 y tipo 2), la tendencia que se ha seguido es la predicha por las simulaciones teóricas aunque con un leve incremento en el COP. En los ensayos de temperatura media (tipo 3 y tipo 4), se ha obtenido una tendencia diferente a la predicha por las simulaciones teóricas que indicaban que el COP no podía aumentar si se variaba la composición, sin embargo, los datos experimentales indican que añadiendo propileno a la mezcla es muy probable que el COP de la instalación aumente vistas las tendencias de las figuras \ref{fig:cop_comp_3} y \ref{fig:cop_comp_4}.
-
-Respecto a las capacidades caloríficas volumétricas, para todos los ensayos se han obtenido valores un poco más pequeños que  los predichos en las simulaciones teóricas a excepción de la composición con 20\% de propileno, que presenta un VHC considerablemente más bajo.
-
-A continuación se mostrará en la \autoref{fig:f_comp_comp} las diferentes frecuencias que se han tenido que usar en los diferentes ensayos para conseguir la misma capacidad térmica.
+Este incremento del VHC queda reflejado en la reducción de la frecuencia del compresor (\autoref{fig:f_comp_comp}), donde se aprecia que un mayor contenido de R1270 en la mezcla permite reducir dicha frecuencia de forma notable.
 
 \begin{figure}[ht]
     \centering
@@ -573,21 +589,26 @@ A continuación se mostrará en la \autoref{fig:f_comp_comp} las diferentes frec
 
 \FloatBarrier
 
-Como se puede observar, con RE170 puro es necesario incrementar mucho la frecuencia del compresor mientras que con un aumento de un 20\% en la proporción de R1270 el aumento en la frecuencia necesario para mantener la misma potencia de calentamiento se reduce a la mitad.
+Sin embargo, este aumento en el VHC y reducción de frecuencia, se consiguen a costa de un aumento en la presión de descarga (véase la \hl{POSAR FIGURA}).
+
+\hl{POSAR LA FIGURA AMB LA EVOLUCIÓ DE PRESIONS RESPECTE AL ASSIG}
+
+
+\FloatBarrier
 
 \subsubsection{R290 + RE170 (Mickoleit et al.)}
 
-En la \autoref{fig:grafico_cuadrado} se puede observar la variación de diferentes parámetros de esta composición respecto al R290 para los diferentes cuatro ensayos.
+En la \autoref{fig:grafico_cuadrado} se recogen los principales parámetros del ciclo para la mezcla RE170/R290 (15\%/85\%), expresados como variación porcentual respecto al R290 puro, para cada uno de los cuatro tipos de ensayo realizados.
 
 \begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{imagenes/res_exp/grafico_cuadrado.png}
-    \caption{Comparativa R290/RE170 (85\%/15\%) con R290}
-    \label{fig:grafico_cuadrado}
+\centering
+\includegraphics[width=0.8\textwidth]{imagenes/res_exp/grafico_cuadrado.png}
+\caption{Comparativa R290/RE170 (85\%/15\%) con R290}
+\label{fig:grafico_cuadrado}
 \end{figure}
 
 \FloatBarrier
 
-Como se puede observar, la tasa de compresión se consigue reducir un poco y la frecuencia en algunos casos sí y en otros no. Respecto al VHC, este incrementa de forma muy pequeña y respecto al COP, no se puede determinar si hay un incremento debido a la incertidumbre de medida.
+Como se puede apreciar, las diferencias observadas en las distintas variables del ciclo son de escasa magnitud y, en todos los casos, quedan dentro de los márgenes de incertidumbre de medida. Por ello, no es posible concluir que la adición de un 15\% de RE170 al R290 produzca una mejora demostrable.
 
 \end{document}
