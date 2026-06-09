@@ -8,13 +8,7 @@ Para introducir dichas curvas en la válvula, se deben calcular previamente las 
 T = a + b \cdot \ln{P} + c \cdot \left(\ln{P}\right)^{2} + d \cdot \left(\ln{P}\right)^{3} + e \cdot \left(\ln{P}\right)^{4} + f \cdot \left(\ln{P}\right)^{5}
 \label{eq:temp_ln_p}
 \end{equation}
-Los valores de presión y temperatura de referencia se obtienen mediante el software REFPROP, y los coeficientes aa
-a, bb
-b, cc
-c, dd
-d, ee
-e y ff
-f tanto para la curva de vapor saturado como para la de líquido saturado se determinan a través de una regresión lineal.
+Los valores de presión y temperatura de referencia se obtienen mediante el software REFPROP, y los coeficientes a, b, c, d, e y f tanto para la curva de vapor saturado como para la de líquido saturado se determinan a través de una regresión lineal.
 Una vez obtenidos estos coeficientes, se introducen en una hoja de cálculo Excel proporcionada por el fabricante, que genera 24 enteros de 16 bits listos para ser cargados en la válvula (véase la \autoref{fig:excel_carel}).
 \begin{figure}[ht]
 \centering

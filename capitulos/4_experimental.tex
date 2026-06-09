@@ -379,7 +379,7 @@ Por tanto, las incertidumbres de las variables principales vendrán dadas por la
 \subsection{Validación experimental}
 \label{subsec:validacion_experimental}
 
-La herramienta usada para realizar los cálculos de los estados termodinámicos ha sido REFPROP, aunque, esta solo proporciona valores correctos para los fluidos puros, es decir, los que no estén mezclados. Es por esta razón por la que se ha decidido depender exclusivamente del ciclo secundario de agua para calcular el $COP$, ya que, las propiedades del agua son bien conocidas.
+La herramienta usada para realizar los cálculos de los estados termodinámicos ha sido REFPROP, aunque, esta solo proporciona valores correctos para los fluidos puros, es decir, los que no estén mezclados. Es por esta razón por la que se ha decidido depender exclusivamente del ciclo secundario de agua para calcular el COP, ya que, las propiedades del agua son bien conocidas.
 
 Para depender exclusivamente del agua es necesario comprobar que la potencia medida en el condensador tanto del fluido de trabajo como del agua sean la misma, esta comprobación se realizará con dos fluidos cuyas propiedades termodinámicas se conocen correctamente: dimetil éter (RE170) y propano (R290) como se puede observar en la \autoref{fig:validacion_qk}. 
 
@@ -394,9 +394,18 @@ Para depender exclusivamente del agua es necesario comprobar que la potencia med
 
 Como se muestra en la anterior figura, la diferencia entre las potencias térmicas no supera nunca el 10\%, esto indica que las medidas tomadas en el circuito de agua son fiables y se pueden comparar entre ellas.
 
-Además, se ha realizado una comprobación del aislamiento en los intercambiadores de calor haciendo uso de una cámara termográfica como se observa en la \hl{POSAR FIGURA}.
+Además, se ha realizado una comprobación del aislamiento en el condensador haciendo uso de una cámara termográfica como se observa en la \autoref{fig:termografica}.
 
-Como se observa, las temperaturas son homogeneas en toda la superficie del aislamiento y su valor no llega a unos umbrales preocupantes.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/termografica.jpg}
+    \caption{Imagen termográfica del aislamiento del condensador}
+    \label{fig:termografica}
+\end{figure}
+
+\FloatBarrier
+
+Como se observa, las temperaturas son relativamente homogeneas en la superficie del aislamiento y su valor no llega a unos umbrales preocupantes en ningún punto de este. Cabe destacar que los puntos calientes que aparecen tanto en el margen superior como en el derecho no pertenecen al intercambiador, son tuberías externas.
 
 % ===============================================
 % RESULTADOS EXPERIMENTALES
