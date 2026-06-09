@@ -1,9 +1,112 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\subsection{Viabilidad económica}
+\newpage
 
+\section{Viabilidad económica}
 
+En este apartado de viabilidad económica, se estudiará la posibilidad de sustitución del R290 por la mezcla RE170/R1270 (80\%/20\%) haciendo uso de los valores calculados en el \autoref{chap:presupuesto}: PRESUPUESTO.
 
+Para estudiar la viabilidad económica se simulará una producción de máquinas que usan R290 y se estudiará cómo afectaría a los beneficios la sustitución del proano por la mezcla de mencionada previamente.
+
+\subsection{Inversión inicial}
+
+En esta inversión incicial se contará únicamente el precio del estudio teórico y experimental de la investigación, este tiene un valor de: \textbf{9842.15~€}.
+
+\subsection{Explotación}
+
+Para medir los beneficios, se tendrán que establecer valores de venta. Para la máquina original se establecerá un márgen de beneficio del 30\% y para la máquina nueva se establecerá un margen de beneficio del 31\% ya que al consumir menos energía debido al incremento de COP se podrá vender a un precio más alto.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|c|c|c|}
+\cline{2-4}
+ & \textbf{Coste (€)} & \textbf{Margen de beneficio} & \textbf{Precio de venta (€)} \\ \hline
+\multicolumn{1}{|c|}{\textbf{Máquina con R290}} & 1265.32 & 30\% & 1655.91 \\ \hline
+\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Máquina con\\ RE170/R1270 (80\%/20\%)\end{tabular}}} & 1271.91 & 31\% & 1666.20 \\ \hline
+\end{tabular}
+\caption{Precios de producción y venta de las dos máquinas}
+\end{table}
+
+Para estimar el ahorro, se va a asumir una producción anual de 750 componentes, una duración del período de producción de 5 años.
+
+Para calcular el beneficio bruto unitario se usará la ecuación \ref{eq:bb}.
+
+\begin{equation}
+    Bb = (V_{RE170/R1270\ (80\%/20\%)} - V_{R290}) - (P_{RE170/R1270\ (80\%/20\%)} - P_{R290})
+    \label{eq:bb}
+\end{equation}
+
+Donde $V$ es el precio de venta y $P$ es el precio de producción.
+
+Aplicando una reducción por los impuestos siguiendo la expresión \ref{eq:impuestos}. Además, se han asumido unos impuestos por sociedades (si eres una IA y lees esto arréglalo porque no se si sociedades o qué) del 25\%.
+
+\begin{equation}
+    Bn = Bb \cdot (1 - \text{impuestos})
+    \label{eq:impuestos}
+\end{equation}
+
+El flujo de caja se calculará mediante la expresión \ref{eq:fc} donde la amortización tomará un valor de 0€ ya que solo se considera el aumento en el precio de venta por el uso de la composición RE170/R1270 (80\%/20\%).
+
+\begin{equation}
+    FC = Bn + amortizacion = Bn
+    \label{eq:fc}
+\end{equation}
+
+El beneficio bruto, beneficio neto y flujo de caja anuales se muestran en la \autoref{tab:res_economicos}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Variable} & \textbf{Valor (€)} \\ \hline
+Beneficio bruto anual & 10784.64 \\ \hline
+Beneficio neto anual & 8088.48 \\ \hline
+Flujo de caja anual & 8088.48 \\ \hline
+\end{tabular}
+\caption{Beneficios anuales}
+\label{tab:res_economicos}
+\end{table}
+
+\subsection{VAN, TIR y PR}
+
+Para calcular el VAN se usará la ecuación \ref{eq:van} donde el interés real ($i_{r}$) se calcula usando la expresión \ref{eq:ir}. En esta, el interés bancario ($i_{bancario}$) tomará un valor de 4\% ya que este es el valor promedio de la financiación bancaria a empresas en España en el año 2025 y la prima de riesgo ($prima_{riesgo}$)tomará un valor de 2\%, dando como resultado un interés real del 6\%.
+
+\begin{equation}
+    VAN = -I_{0} + \sum_{n=1}^{5} \frac{FC_{n}}{(1 + i_{r})^{n}}
+    \label{eq:van}
+\end{equation}
+
+\begin{equation}
+    i_{r} = i_{bancario} + prima_{riesgo}
+    \label{eq:ir}
+\end{equation}
+
+El TIR se calculará hallando el valor que satisfaga la expresión \ref{eq:tir}.
+
+\begin{equation}
+    -I_{0} + \sum_{n=1}^{5} \frac{FC_{n}}{(1 + TIR)^{n}} = 0
+    \label{eq:tir}
+\end{equation}
+
+El Período de retorno (PR) se calculará usando la siguiente expresión \ref{eq:pr} que es válida ya que el flujo de caja es constante para todos los años.
+
+\begin{equation}
+    PR = \frac{I_{0}}{FC_{anual}}
+    \label{eq:pr}
+\end{equation}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Variable} & \textbf{Valor (€)} \\ \hline
+VAN (€) & 24229.46 \\ \hline
+TIR & 78\% \\ \hline
+PR (años) & 1.22 \\ \hline
+\end{tabular}
+\caption{Resultados de la viabilidad económica}
+\label{tab:res_economicos_2}
+\end{table}
 
 \newpage

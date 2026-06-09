@@ -2,7 +2,141 @@
 
 \begin{document}
 
-Presupuesto
+\label{chap:presupuesto}
+
+Para el cálculo del presupuesto, este se desglosará en dos partes diferenciadas: la inversión inicial que contendrá el precio estimado del estudio teórico y el estudio experimental, y el precio de la maquinaria.
+
+\section{Inversión inicial}
+
+\subsection{Estudio teórico}
+
+Para estimar los costes del estudio teórico se han considerado tanto las horas de trabajo invertidas como el software utilizado.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Software} & \textbf{Tarifa (€)} & \textbf{Tasa de amortización} & \textbf{Total (€)} \\ \hline
+REFPROP v10 & 281.47 & 25\% & 70.37 \\ \hline
+\end{tabular}
+\caption{Costes de software utilizado}
+\label{tab:software}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Personal} & \textbf{Tarifa (€/h)} & \textbf{Tiempo (h)} & \textbf{Total (€)} \\ \hline
+Proyectista & 20 & 100 & 2000 \\ \hline
+\end{tabular}
+\caption{Costes de personal en el estudio teórico}
+\label{tab:personal_teorico}
+\end{table}
+
+\FloatBarrier
+
+El coste total del estudio teórico asciende a \textbf{2.070,37~€} (dos mil setenta euros con treinta y siete céntimos).
+
+\subsection{Estudio experimental}
+
+Para estimar los costes del estudio experimental se han considerado las instalaciones empleadas, los gases utilizados y las horas de trabajo invertidas.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Maquinaria} & \textbf{Tarifa (€)} & \textbf{Tasa de amortización} & \textbf{Total (€)} \\ \hline
+\begin{tabular}[c]{@{}c@{}}Máquina\\ térmica\end{tabular} & 7925 & 25\% & 1981.25 \\ \hline
+\end{tabular}
+\caption{Costes de la máquina en el estudio experimental}
+\label{tab:costes_maquina}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Refrigerante} & \textbf{Tarifa (€/kg)} & \textbf{Cantidad de gas usado (kg)} & \textbf{Total (€)} \\ \hline
+R290 & 1.38 & 0.43 & 0.59 \\ \hline
+RE170 & 37.2 & 1.07 & 39.8 \\ \hline
+R1270 & 1.42 & 0.12 & 0.16 \\ \hline
+\end{tabular}
+\caption{Costes de los gases en el estudio experimental}
+\label{tab:costes_gases_experimental}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Personal} & \textbf{Tarifa (€/h)} & \textbf{Tiempo (h)} & \textbf{Total (€)} \\ \hline
+Proyectista & 20 & 200 & 4000 \\ \hline
+Trabajador & 35 & 50 & 1750 \\ \hline
+\end{tabular}
+\caption{Costes de personal en el estudio experimental}
+\label{tab:personal_experimental}
+\end{table}
+
+\FloatBarrier
+
+El coste total del estudio experimental asciende a \textbf{7.771,89~€} (siete mil setecientos setenta y un euros con ochenta y nueve céntimos).
+
+Por tanto, la inversión inicial total del proyecto asciende a \textbf{9.842,15~€} (nueve mil ochocientos cuarenta y dos euros con quince céntimos).
+
+\newpage
+
+\section{Precio de la maquinaria}
+
+Para determinar el precio de la maquinaria usada, se estimará el valor de cada uno de sus componentes y después se sumarán todos.
+
+\subsection{Máquina con R290}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Componente} & \textbf{Precio estimado (€)} \\ \hline
+Compresor & 350 \\ \hline
+Válvula electrónica & 150 \\ \hline
+Intercambiadores & 300 \\ \hline
+Aislamiento y carcasa & 125 \\ \hline
+Electrónica y control & 250 \\ \hline
+Mano de obra & 60 \\ \hline
+Electricidad & 30 \\ \hline
+\begin{tabular}[c]{@{}c@{}}Refrigerante\\ R290\end{tabular} & 0.32 \\ \hline
+\textbf{TOTAL} & 1265.32 \\ \hline
+\end{tabular}
+\caption{precio estimado de la máquina con R290}
+\end{table}
+
+\FloatBarrier
+
+El precio de la máquina con R290 asciende a 1265.32€ (mil dos cientos sesnta y cinco euros con treinta y dos céntimos)
+
+\newpage
+
+\subsection{Máquina con RE170/R1270 (80\%/20\%)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Componente} & \textbf{Precio estimado (€)} \\ \hline
+Compresor & 350 \\ \hline
+Válvula electrónica & 150 \\ \hline
+Intercambiadores & 300 \\ \hline
+Aislamiento y carcasa & 125 \\ \hline
+Electrónica y control & 250 \\ \hline
+Mano de obra & 60 \\ \hline
+Electricidad & 30 \\ \hline
+\begin{tabular}[c]{@{}c@{}}Refrigerante\\ RE170/R1270 (80\%/20\%)\end{tabular} & 0.32 \\ \hline
+\textbf{TOTAL} & 1271.91 \\ \hline
+\end{tabular}
+\caption{Precio estimado de la máquina con RE170/R1270 (80\%/20\%)}
+\end{table}
+
+El precio estimado de la máquina con RE170/R1270 (80\%/20\%) asciende a \textbf{1.271,91~€} (mil doscientos setenta y un euros con noventa y un céntimos).
 
 
 
