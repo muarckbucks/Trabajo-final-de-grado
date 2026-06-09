@@ -10,6 +10,7 @@ T = a + b \cdot \ln{P} + c \cdot \left(\ln{P}\right)^{2} + d \cdot \left(\ln{P}\
 \end{equation}
 Los valores de presión y temperatura de referencia se obtienen mediante el software REFPROP, y los coeficientes a, b, c, d, e y f tanto para la curva de vapor saturado como para la de líquido saturado se determinan a través de una regresión lineal.
 Una vez obtenidos estos coeficientes, se introducen en una hoja de cálculo Excel proporcionada por el fabricante, que genera 24 enteros de 16 bits listos para ser cargados en la válvula (véase la \autoref{fig:excel_carel}).
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\textwidth]{imagenes/Excel_CAREL.png}
@@ -17,14 +18,14 @@ Una vez obtenidos estos coeficientes, se introducen en una hoja de cálculo Exce
 \label{fig:excel_carel}
 \end{figure}
 \FloatBarrier
+
 Para facilitar la introducción de estos parámetros en la válvula, se utiliza el software Visual Parameter Manager (VPM) (véase la \autoref{fig:vpm}).
-\begin{figure}[ht]
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{imagenes/VPM.png}
 \caption{Software VPM para la introducción de parámetros en la válvula}
 \label{fig:vpm}
 \end{figure}
-\FloatBarrier
-
 
 \end{document}

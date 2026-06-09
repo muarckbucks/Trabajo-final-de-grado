@@ -28,7 +28,7 @@ Para medir los beneficios, se tendrán que establecer valores de venta. Para la 
 \caption{Precios de producción y venta de las dos máquinas}
 \end{table}
 
-Para estimar el ahorro, se va a asumir una producción anual de 750 componentes, una duración del período de producción de 5 años.
+Para estimar el ahorro, se va a asumir una producción anual de 750 componentes y una duración del período de producción de 5 años.
 
 Para calcular el beneficio bruto unitario se usará la ecuación \ref{eq:bb}.
 
@@ -53,7 +53,7 @@ El flujo de caja se calculará mediante la expresión \ref{eq:fc} donde la amort
     \label{eq:fc}
 \end{equation}
 
-El beneficio bruto, beneficio neto y flujo de caja anuales se muestran en la \autoref{tab:res_economicos}
+El beneficio bruto, beneficio neto y flujo de caja anuales calculados multiplicando los valores unitarios por el número de componentes vendidos en un año se muestran en la \autoref{tab:res_economicos}
 
 \begin{table}[ht]
 \centering
@@ -70,7 +70,7 @@ Flujo de caja anual & 8088.48 \\ \hline
 
 \subsection{VAN, TIR y PR}
 
-Para calcular el VAN se usará la ecuación \ref{eq:van} donde el interés real ($i_{r}$) se calcula usando la expresión \ref{eq:ir}. En esta, el interés bancario ($i_{bancario}$) tomará un valor de 4\% ya que este es el valor promedio de la financiación bancaria a empresas en España en el año 2025 y la prima de riesgo ($prima_{riesgo}$)tomará un valor de 2\%, dando como resultado un interés real del 6\%.
+Para calcular el VAN se usará la ecuación \ref{eq:van} donde el interés real ($i_{r}$) se calcula usando la expresión \ref{eq:ir}. En esta, el interés bancario ($i_{bancario}$) tomará un valor de 4\% ya que este es el valor promedio de la financiación bancaria a empresas en España en el año 2025 y la prima de riesgo ($prima_{riesgo}$) tomará un valor de 2\%, dando como resultado un interés real del 6\%.
 
 \begin{equation}
     VAN = -I_{0} + \sum_{n=1}^{5} \frac{FC_{n}}{(1 + i_{r})^{n}}

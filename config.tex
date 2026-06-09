@@ -61,12 +61,17 @@
 % Macro para capítulos en página impar
 \makeatletter
 \newcommand{\imparchapter}[1]{
+    % Redefinimos \cleardoublepage localmente para que la página
+    % de relleno (si la hay) salga siempre con estilo empty
+    \let\origcleardoublepage\cleardoublepage
+    \renewcommand{\cleardoublepage}{%
+        \clearpage
+        \ifodd\value{page}\else
+            \hbox{}\thispagestyle{plain}\newpage
+        \fi
+    }%
     \cleardoublepage
-    \ifodd\value{page}
-        % Ya estamos en impar
-    \else
-        \hbox{}\thispagestyle{empty}\newpage
-    \fi
+    \let\cleardoublepage\origcleardoublepage
     \chapter{#1}
 }
 \makeatother
