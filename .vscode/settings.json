@@ -33,5 +33,10 @@
     "editor.wordWrap": "on",
     "editor.lineNumbers": "relative",
     "files.autoSave": "off"
-    }
+    },
+    "latex-workshop.latex.outDir": "./output",
+    "latex-workshop.latex.rootFile.useSubFile": false,
+    "latex-workshop.latex.rootFile.doNotPrompt": true,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.recipe.default": "latexmk",
 }
