@@ -31,13 +31,17 @@ El estudio experimental se realizará con una máquina completamente equipada pe
 \subsection{Descripción de las instalaciones experimentales}
 
 \subsubsection{Ciclo de compresión}
-El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa (véase el esquema en la \autoref{fig:esquema_ciclo}), este consiste de un compresor hermético de velocidad variable; dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos, el refrigerante circula por dentro y el fluido secundario por fuera; y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes, los detalles de estos componentes se pueden observar en la \autoref{tab:componentes_compresion}.
+El sistema principal de esta instalación es un ciclo de compresión de vapor simple monoetapa (véase el esquema en la \autoref{fig:esquema_ciclo}), este consiste de un compresor de R290 hermético de velocidad variable lubricado con aceites tipo ESTER con viscosidad ISO22; dos intercambiadores de calor de tubos concéntricos que corresponden al condensador y al evaporador, en estos, el refrigerante circula por dentro y el fluido secundario por fuera; y una válvula de expansión electrónica en la que se puede variar el fluido de trabajo circulante para que mantenga unas condiciones de recalentamiento constantes, los detalles de estos componentes se pueden observar en la \autoref{tab:componentes_compresion}.
 
 Se pueden ver fotografías de los componentes en las figuras \ref{fig:intercambiadores} y \ref{fig:compresor}: 
 
 Cabe destacar que en la \autoref{fig:intercambiadores} los intercambiadores no estaban aislados del ambiente. Posteriormente se ha añadido un aislamiento que cubre toda la superficie de los intercambiadores como se puede observar en la \autoref{fig:maquina_experimental}.
 
 En el documento PLANOS se incluye el plano del condensador, en el que únicamente se han acotado los elementos funcionales.
+
+Entre el condensador y la válvula de expansión se sitúa un depósito de líquido de 1,2 l de capacidad. Su función principal es almacenar refrigerante en fase líquida a alta presión a la salida del condensador, garantizando así que la válvula de expansión reciba en todo momento fluido en estado líquido. Asimismo, el depósito aporta inercia térmica al sistema, lo que permite compensar variaciones de carga derivadas de cambios en la temperatura exterior u oscilaciones en el funcionamiento de los dispositivos electrónicos.
+
+Una ventaja adicional del depósito es que elimina la necesidad de optimizar con precisión la carga de refrigerante en la planta. Sin él, sería necesario ajustarla con gran exactitud e incluso realizar múltiples ensayos para cada composición de refrigerante y rango de temperaturas de operación.
 
 \newpage
 
@@ -643,11 +647,22 @@ Como se puede apreciar, las diferencias observadas en las distintas variables de
 
 En la \autoref{fig:riley_exp} se puede observar la comparación de esta mezcla con el R290 para los ensayos resalizados de tipo 1 mediante diagramas P-H.
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{imagenes/riley_exp.png}
     \caption{\centering Diagrama P-H comparativa R290/RE170 (85\%/15\%) con R290 (Ensayos tipo 1)}
     \label{fig:riley_exp}
+\end{figure}
+
+\FloatBarrier
+
+En la \autoref{fig:evolucion_condensador} se puede observar la evolución de temperaturas del R290, RE170/R1270 (80\%/20\%) y del R290/RE170 (85\%/15\%) en el condensador.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/evolucion_condensador.png}
+    \caption{Evolución de temperaturas en el condensador (Ensayos tipo 1)}
+    \label{fig:evolucion_condensador}
 \end{figure}
 
 \FloatBarrier
