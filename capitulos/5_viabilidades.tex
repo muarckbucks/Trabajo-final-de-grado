@@ -15,7 +15,20 @@ La inversión inicial contempla únicamente el coste del estudio teórico y expe
 
 \subsection{Explotación}
 
-Para cuantificar los beneficios, es necesario establecer previamente los precios de venta de ambas máquinas. Para la máquina original con R290 se fija un margen de beneficio del 30\%. Para la máquina con la mezcla RE170/R1270 (80\%/20\%) se establece un margen del 31\%, justificado por el incremento del coeficiente de rendimiento (COP) que presenta esta mezcla, lo que se traduce en un menor consumo energético y permite fijar un precio de venta superior.
+Para cuantificar tanto los beneficios como los gastos, se simulan dos escenarios: uno con un incremento del margen de beneficio y otro con un aumento de las unidades vendidas. Este planteamiento se justifica por la mejora en la eficiencia energética, que permite tanto elevar el precio del producto como incrementar su volumen de ventas. En la \autoref{tab:escenarios_viabilidad} se recogen las variables evaluadas en cada uno de los dos escenarios.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|cc|cc|}
+\cline{2-5}
+ & \multicolumn{2}{c|}{\textbf{Escenario 1}} & \multicolumn{2}{c|}{\textbf{Escenario 2}} \\ \cline{2-5} 
+ & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Margen de\\ beneficio\end{tabular}}} & \textbf{\begin{tabular}[c]{@{}c@{}}Unidades\\ anuales\\ producidas\end{tabular}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Margen de\\ beneficio\end{tabular}}} & \textbf{\begin{tabular}[c]{@{}c@{}}Unidades\\ anuales\\ producidas\end{tabular}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{Máquina con R290}} & \multicolumn{1}{c|}{30\%} & 500 & \multicolumn{1}{c|}{30\%} & 500 \\ \hline
+\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Máquina con\\ RE170/R1270 (80\%/20\%)\end{tabular}}} & \multicolumn{1}{c|}{31\%} & 500 & \multicolumn{1}{c|}{30\%} & 550 \\ \hline
+\end{tabular}
+\caption{Escenarios de la viabilidad económica}
+\label{tab:escenarios_viabilidad}
+\end{table}
 
 \begin{table}[ht]
 \centering
@@ -28,13 +41,16 @@ Para cuantificar los beneficios, es necesario establecer previamente los precios
 \caption{Precios de producción y venta de las dos máquinas}
 \end{table}
 
-Para estimar el beneficio derivado de la sustitución, se asume una producción anual de 750 unidades y un período de producción de 5 años.
+Para estimar el beneficio derivado de la sustitución, se asume un período de producción de 5 años.
 
-El beneficio bruto unitario ($Bb$) se obtiene como la diferencia entre el incremento en el precio de venta y el incremento en el coste de producción al pasar de la máquina con R290 a la máquina con RE170/R1270 (80\%/20\%), según la ecuación \ref{eq:bb}:
+El beneficio bruto anual ($Bb$) se obtiene mediante la \ref{eq:bb} donde $V$ es el precio de venta y $P$ es el coste de producción de cada máquina.
 
 \begin{equation}
-    Bb = (V_{RE170/R1270\ (80\%/20\%)} - V_{R290}) - (P_{RE170/R1270\ (80\%/20\%)} - P_{R290})
-    \label{eq:bb}
+\begin{aligned}
+Bb_{anual} &= (V_{RE170/R1270\ (80\%/20\%)} - P_{RE170/R1270\ (80\%/20\%)}) \cdot n_{RE170/R1270 (80\%/20\%)\ anual} \\
+&\quad - (V_{R290} - P_{R290}) \cdot n_{R290\ anual}
+\end{aligned}
+\label{eq:bb}
 \end{equation}
 
 donde $V$ es el precio de venta y $P$ es el coste de producción de cada máquina.
@@ -57,12 +73,12 @@ Los resultados anuales del beneficio bruto, el beneficio neto y el flujo de caja
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-\textbf{Variable} & \textbf{Valor (€)} \\ \hline
-Beneficio bruto anual & 10.784,64 \\ \hline
-Beneficio neto anual & 8.088,48 \\ \hline
-Flujo de caja anual & 8.088,48 \\ \hline
+\textbf{Variable (€)} & \textbf{Escenario 1} & \textbf{Escenario 2} \\ \hline
+Beneficio bruto anual & 7.348,46 & 20.067,56 \\ \hline
+Beneficio neto anual & 5.511,34 & 15.050,67 \\ \hline
+Flujo de caja anual & 5.511,34 & 15.050,67 \\ \hline
 \end{tabular}
 \caption{Beneficios anuales}
 \label{tab:res_economicos}
@@ -72,7 +88,7 @@ Flujo de caja anual & 8.088,48 \\ \hline
 
 Para evaluar la rentabilidad de la inversión se calculan el Valor Actual Neto (VAN), la Tasa Interna de Retorno (TIR) y el Período de Retorno (PR).
 
-El VAN representa el valor actualizado de todos los flujos de caja generados durante el período de explotación, descontada la inversión inicial. Un VAN positivo indica que el proyecto es rentable. Se calcula mediante la ecuación \ref{eq:van}, donde el tipo de interés real ($i_{r}$) se obtiene a partir de la expresión \ref{eq:ir}, sumando el interés bancario medio de financiación a empresas en España en 2025, fijado en el 4\%, y una prima de riesgo del 2\%, lo que resulta en un tipo de interés real del 6\%:
+El VAN representa el valor actualizado de todos los flujos de caja generados durante el período de explotación, descontada la inversión inicial. Un VAN positivo indica que el proyecto es rentable. Se calcula mediante la \ref{eq:van}, donde el tipo de interés real ($i_{r}$) se obtiene a partir de la \ref{eq:ir}, sumando el interés bancario medio de financiación a empresas en España en 2025, fijado en el 4\%, y una prima de riesgo del 2\%, lo que resulta en un tipo de interés real del 6\%:
 
 \begin{equation}
     VAN = -I_{0} + \sum_{n=1}^{5} \frac{FC_{n}}{(1 + i_{r})^{n}}
@@ -102,17 +118,17 @@ Los resultados obtenidos se recogen en la \autoref{tab:res_economicos_2}.
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-\textbf{Variable} & \textbf{Valor} \\ \hline
-VAN (€) & 24.229,46 \\ \hline
-TIR & 78\% \\ \hline
-PR (años) & 1,22 \\ \hline
+\textbf{Variable} & \textbf{Escenario 1} & \textbf{Escenario 2} \\ \hline
+VAN (€) & 13.373,63 & 53.556,74 \\ \hline
+TIR & 48\% & 151\% \\ \hline
+PR (años) & 1.79 & 0.65 \\ \hline
 \end{tabular}
 \caption{Resultados de la viabilidad económica}
 \label{tab:res_economicos_2}
 \end{table}
 
-Los resultados obtenidos indican que el proyecto es económicamente viable: el VAN positivo confirma que la inversión genera valor, el TIR del 78\% supera ampliamente el tipo de interés real del 6\%, lo que refleja una rentabilidad muy elevada, y el período de retorno de 1,22 años muestra que la inversión inicial se recupera en poco más de un año de producción.
+Los resultados obtenidos indican que el proyecto es económicamente viable: el VAN positivo confirma que la inversión genera valor, el TIR del 48\% y 151\% superan ampliamente el tipo de interés real del 6\%, lo que refleja una rentabilidad muy elevada, y el período de retorno en ambas situaciones es menor a los dos años.
 
 \newpage
