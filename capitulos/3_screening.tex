@@ -12,7 +12,7 @@ El primer paso de este TFG es realizar un \textit{screening} termodinámico para
 
 El \textit{screening} consistirá en la combinación de los posibles refrigerantes de trabajo en mezclas de tres en tres. Con cada mezcla se calcularán las propiedades termodinámicas del ciclo de compresión con incrementos y decrementos en las proporciones de los refrigerantes de un 5\%, resultando en un total de 231 posibles combinaciones para cada tres refrigerantes. Posteriormente, se filtrarán los resultados en función de unas restricciones (ver \cref{subsec:restricciones} donde se muestran las restricciones) y de estos resultados se calcularán la mejora del COP y la variación de VHC.
 
-Si la mezcla resulta mejor que el propano en cuento a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (1\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de la VHC. Véase la \autoref{fig:diagrama_screening} donde se representa el diagrama de flujo del \textit{scrrening}.
+Si la mezcla resulta mejor que el propano en cuento a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (1\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de el VHC. Véase la \autoref{fig:diagrama_screening} donde se representa el diagrama de flujo del \textit{scrrening}.
 
 \newpage
 
@@ -182,8 +182,6 @@ El proceso incluye filtros que excluyen las mezclas que no cumplen los siguiente
 \end{itemize}
 Además, si la diferencia de temperatura entre el fluido y el agua en el \textit{pinch point} es menor a $1\,^{\circ}\mathrm{C}$, se volverá a calcular el ciclo pero aumentando en $0.5\,^{\circ}\mathrm{C}$ el valor del approach de temperatura del condensador hasta que el ciclo cumpla este criterio.
 
-Posteriormente, todas las mezclas que superen los filtros se reevaluarán pero ahora con una variación del 1\% en su composición para encontrar la composición que maximiza el $COP$.
-
 \newpage
 
 % ===============================================
@@ -219,9 +217,9 @@ En las tablas superiores (\autoref{tab:res_teo_alta} y \autoref{tab:res_teo_medi
 
 \subsection{Análisis de resultados}
 
-Como se puede observar en la \autoref{fig:teo_COP_VHC_alta} y en la \autoref{fig:teo_COP_VHC_media}, donde se puede visualizar y comprar el COP y la VHC de todas las mejores mezclas, la gran mayoría de los fluidos con mayor incremento de COP presentan una merma considerable de capacidad calorífica volumétrica. Esto no es deseable, ya que implica un aumento en la frecuencia de trabajo del compresor que puede derivar en una reducción de su rendimiento al alejarse del punto de operación nominal.
+Como se puede observar en la \autoref{fig:teo_COP_VHC_alta} y en la \autoref{fig:teo_COP_VHC_media}, donde se puede visualizar y comprar el COP y el VHC de todas las mejores mezclas, la gran mayoría de los fluidos con mayor incremento de COP presentan una merma considerable de capacidad calorífica volumétrica. Esto no es deseable, ya que implica un aumento en la frecuencia de trabajo del compresor que puede derivar en una reducción de su rendimiento al alejarse del punto de operación nominal.
 
-Cabe destacar que se ha añadido a los resultados la mezcla R290/RE170 (85\%/15\%), perteneciente al estudio de Mickoleit et al. \cite{Mickoleit_2026}, donde se lleva a cabo otro \textit{screening} termodinámico cuyo mejor resultado fue precisamente esta mezcla. Se ha decidido incluirla en este presente trabajo dado que el estudio de Mickoleit et al. no contiene datos experimentales, y su caracterización experimental supone un valor añadido, ya que los resultados obtenidos en banco de pruebas pueden diferir significativamente de los predichos por los modelos. Además, tal como señalan los propios autores, esta mezcla resulta de especial interés por presentar propiedades similares a las de un fluido puro sin serlo.
+Cabe destacar que se ha añadido a los resultados la mezcla R290/RE170 (85\%/15\%), perteneciente al estudio de Mickoleit et al. \cite{Mickoleit_2026}, donde se lleva a cabo otro \textit{screening} termodinámico cuyo mejor resultado fue precisamente esta mezcla. Se ha decidido incluirla en este trabajo dado que el estudio de Mickoleit et al. no contiene datos experimentales, y su caracterización experimental supone un valor añadido, ya que los resultados obtenidos en banco de pruebas pueden diferir significativamente de los predichos por los modelos. Además, tal como señalan los propios autores, esta mezcla resulta de especial interés por presentar propiedades similares a las de un fluido puro sin serlo.
 
 \begin{figure}[ht]
     \centering
@@ -324,7 +322,7 @@ A continuación se analizan las mezclas con alto contenido en dimetil éter (RE1
 
 \FloatBarrier
 
-Dado que todas las mezclas que combinan con el RE170 presentan un incremento del COP respecto al R290 similar, en torno al 10,8\%, se procede a evaluar el segundo criterio más importante: la VHC.
+Dado que todas las mezclas que combinan con el RE170 presentan un incremento del COP respecto al R290 similar, en torno al 10,8\%, se procede a evaluar el segundo criterio más importante: el VHC.
 
 En la \autoref{tab:res_teo_vhc} se muestran los fluidos ordenados por incremento en la capacidad calorífica volumétrica.
 
@@ -341,21 +339,21 @@ Para la mayoría de estas mezclas, las zonas de mayor eficiencia energética son
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/alta/CO2_RE170/t_descarga.png}
+    \includegraphics[width=0.8\textwidth]{imagenes/res_teo/diag_binarios/alta/CO2_RE170/t_descarga.png}
     \caption{Temperatura de descarga de la mezcla RE170/R744}
     \label{fig:re170_r744_t_descarga}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/alta/R1150_RE170/t_descarga.png}
+    \includegraphics[width=0.8\textwidth]{imagenes/res_teo/diag_binarios/alta/R1150_RE170/t_descarga.png}
     \caption{Temperatura de descarga de la mezcla RE170/R1150}
     \label{fig:re170_r1150_t_descarga}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{imagenes/res_teo/diag_binarios/alta/R600_RE170/VHC.png}
+    \includegraphics[width=0.8\textwidth]{imagenes/res_teo/diag_binarios/alta/R600_RE170/VHC.png}
     \caption{$\Delta$VHC de la mezcla RE170/R600}
     \label{fig:re170_r600_vhc}
 \end{figure}
@@ -471,7 +469,7 @@ Teniendo en cuenta que se necesitan en torno a cinco composiciones por mezcla pa
 
 Tras discutirlo con el equipo GIT, se ha decidido descartar la mezcla ternaria y reservarla para futuras investigaciones con mayor disponibilidad de tiempo para ensayos. Esta decisión se fundamenta en que la forma de la zona de máximo rendimiento (\autoref{fig:COP_alta_n3} y \autoref{fig:COP_media_n3}) hace sospechar de un posible error en la base de datos de REFPROP, lo que añade incertidumbre adicional a su caracterización experimental.
 
-Descartada la mezcla ternaria, las tres candidatas restantes RE170/R1270, RE170/R290 y RE170/R170 presentan un incremento de COP respecto al propano similar entre sí. Por ello, el criterio de selección recae sobre el VHC, donde la mezcla RE170/R1270 destaca por su mayor incremento respecto al propano (\autoref{tab:res_teo_vhc}), siendo esta la elegida para los ensayos experimentales.
+Descartada la mezcla ternaria, las tres candidatas restantes RE170/R1270, RE170/R290 y RE170/R170 presentan un incremento de COP respecto al propano similar entre sí. Por ello, el criterio de selección recae sobre el VHC, donde la mezcla RE170/R1270 destaca por su mayor incremento respecto al propano, siendo esta la elegida para los ensayos experimentales.
 
 A continuación, en la \autoref{fig:ph_mejor_R290_screening} se puede observar un diagrama P-H de la mezcla seleccionada en comparación con el R290.
 
