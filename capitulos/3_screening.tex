@@ -10,28 +10,19 @@
 \subsection{Descripción del modelo}
 El primer paso de este estdio es realizar un \textit{screening} termodinámico para identificar las posibles mezclas que superen al propano (R290) en rendimiento energético.
 
-El \textit{screening} consistirá en la combinación de los posibles refrigerantes de trabajo en mezclas de tres en tres. Con cada mezcla se calcularán las propiedades termodinámicas del ciclo de compresión con incrementos y decrementos en las proporciones de los refrigerantes de un 5\%, resultando en un total de 231 posibles combinaciones para cada tres refrigerantes. Posteriormente, se filtrarán los resultados en función de unas restricciones (ver \cref{subsec:restricciones} donde se muestran las restricciones) y de estos resultados se calcularán la mejora del COP y la variación de VHC.
+El \textit{screening} consistirá en la combinación de los posibles refrigerantes de trabajo en mezclas de tres en tres incluyendo mezclas binarias. Con cada mezcla se calcularán las propiedades termodinámicas del ciclo de compresión con incrementos y decrementos en las proporciones de los refrigerantes de un 5\%, resultando en un total de 231 posibles combinaciones para cada tres refrigerantes. Posteriormente, se filtrarán los resultados en función de unas restricciones (ver \cref{subsec:restricciones} donde se muestran las restricciones) y de estos resultados se calcularán la mejora del COP y la variación de VHC.
 
-Si la mezcla resulta mejor que el propano en cuento a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (1\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de el VHC. Véase la \autoref{fig:diagrama_screening} donde se representa el diagrama de flujo del \textit{scrrening}.
+Si la mezcla resulta mejor que el propano en cuanto a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (1\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de el VHC.
 
 \newpage
 
-El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de compresión de vapor. Este involucrará una compresión con un rendimiento fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica adiabática en la válvula de expansión. Cada combinación se simulará en dos escenarios diferentes tipificados por la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua. Se puede observar el diagrama del ciclo simulado en la \autoref{fig:ciclo_screening}.
+El comportamiento de cada combinación se simulará considerando su operación en un ciclo básico de compresión de vapor. Este involucrará una compresión con un rendimiento global fijo, una transformación isobárica en cada intercambiador de calor y una expansión isoentálpica adiabática en la válvula de expansión. No se considerarán ni pérdidas de calor al ambiente ni caídas de presión en ningún componente del ciclo. Cada combinación se simulará en dos escenarios diferentes tipificados por la normativa UNE-EN 14511-3 \cite{une14511} para ensayos de bombas de calor agua-agua. Se puede observar el diagrama del ciclo simulado en la \autoref{fig:ciclo_screening}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{imagenes/ciclo_screening.png}
     \caption{Ciclo simulado en el \textit{screening}}
     \label{fig:ciclo_screening}
-\end{figure}
-
-\newpage
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{imagenes/diagrama_screening.pdf}
-    \caption{Diagrama del \textit{screening} termodinámico}
-    \label{fig:diagrama_screening}
 \end{figure}
 
 \newpage
@@ -44,22 +35,22 @@ El comportamiento de cada combinación se simulará considerando su operación e
 
 \subsubsection{Fluidos}
 
-Tras considerar una gran serie fluidos naturales junto al grupo GIT, se ha considerado realizar el \textit{screening} termodinámico de los refrigerantes de la \autoref{tab:fluidos_screening} debido a su dispnibilidad tanto económica como técnica ya que son bien conocidos y sus características en la base de datos REFPROP es precisa.
+Tras considerar una amplia serie de fluidos naturales junto al grupo GIT, se ha decidido llevar a cabo el \textit{screening} termodinámico de los refrigerantes recogidos en la \autoref{tab:fluidos_screening}. La selección de estos fluidos responde tanto a su disponibilidad económica como técnica, ya que se trata de sustancias bien conocidas cuyas propiedades termodinámicas están recogidas con gran precisión en REFPROP, base de datos de referencia desarrollada por el NIST (National Institute of Standards and Technology) ampliamente utilizada para el cálculo de propiedades de fluidos.
 
 \begin{table}[ht]
     \centering
     \begin{tabular}{c|c|c|c|c|c|c|}
     \cline{2-7}
-    & \textbf{Familia} & \textbf{\begin{tabular}[c]{@{}c@{}}Código\\ ASHRAE\end{tabular}} & \textbf{GWP} & \textbf{ODP} & \textbf{NBP (ºC)} & \textbf{\begin{tabular}[c]{@{}c@{}}Código de\\ peligrosidad\end{tabular}} \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Propano}} & HC & R290 & 3.3 - 9.5 & 0 & -42.1 & A3 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Propileno}} & HC & R1270 & 1.8 & 0 & -57.62 & A3 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Butano}} & HC & R600 & 4.0 - 6.5 & 0 & -0.49 & A3 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Isobutano}} & HC & R600a & 3 & 0 & -11.75 & A3 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{CO2}} & Inorgánico & R744 & 1 & 0 & - & A1 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{dimetil éter}} & Éter & RE170 & 1 & 0 & -24.78 & A3 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Etano}} & HC & R170 & 5.5 - 10.2 & 0 & -88.58 & A3 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Etileno}} & HC & R1150 & 3.7 & 0 & -103.77 & A3 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Metano}} & HC & R50 & 28 & 0 & -161.48 & A3 \\ \hline
+    & \textbf{Familia} & \textbf{\begin{tabular}[c]{@{}c@{}}Código\\ ASHRAE\end{tabular}} & \textbf{GWP \cite{IPCC_AR6_Ch7_SM}} & \textbf{ODP} & \textbf{NBP (ºC)} & \textbf{\begin{tabular}[c]{@{}c@{}}Código de\\ peligrosidad\end{tabular}} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Propano}} & HC & R290 & 0.07 & 0 & -42.1 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Propileno}} & HC & R1270 & 2.5 & 0 & -57.62 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Butano}} & HC & R600 & 0.02 & 0 & -0.49 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Isobutano}} & HC & R600a & 0.03 & 0 & -11.75 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{CO2}} & Inorgánico & R744 & 1 & 0 & -78.46 & A1 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Dimetil éter}} & Éter & RE170 & 1 & 0 & -24.78 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Etano}} & HC & R170 & 1.6 & 0 & -88.58 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Etileno}} & HC & R1150 & 10.5 & 0 & -103.77 & A3 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Metano}} & HC & R50 & 81.2 & 0 & -161.48 & A3 \\ \hline
     \end{tabular}
     \caption{Tabla de fluidos que se estudiarán en el \textit{screening}}
     \label{tab:fluidos_screening}
@@ -74,7 +65,7 @@ En la \autoref{fig:condiciones_constantes} se muestran las variables que son con
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{SUB} & \textbf{SH} & $\textbf{Ap}_\textbf{k}$ & $\textbf{Ap}_\textbf{o}$  & $\mathbf{\eta}_\textbf{comp}$\\ \hline
+\textbf{SUB} & \textbf{SH} & $\textbf{App}_\textbf{k}$ & $\textbf{App}_\textbf{o}$  & $\mathbf{\eta}_\textbf{comp}$\\ \hline
 1 ºC & 6 ºC& 6.5 ºC& 3 ºC&0.6\\ \hline
 \end{tabular}
 \caption{Condiciones constantes en los ensayos}
@@ -88,6 +79,14 @@ En la \autoref{fig:condiciones_constantes} se muestran las variables que son con
     \label{fig:cond_une_teorico}
 \end{table}
 
+\subsubsection{Mezclas zeotrópicas}
+
+Cabe destacar que en este trabajo se van a estudiar mezclas zeotrópicas, estas presentan diferencias con las mezclas azeotrópicas o con los fluidos puros ya que tienen glide.
+
+El glide es un fenómeno que ocurre por la diferencia en las temperaturas de ebullición de los diferentes componentes de la mezcla, el resultado es una variación continua de la temperatura de condensación y evaporación donde esta disminuye en la condensación y aumenta en la evaporación.
+
+este fenómeno se puede observar en \hl{continuar aquí}
+
 \newpage
 
 % ===============================================
@@ -97,18 +96,20 @@ En la \autoref{fig:condiciones_constantes} se muestran las variables que son con
 \subsection{Ecuaciones de cálculo}
 La presión de condensación se ha encontrado usando tanto la temperatura de entrada del fluido como el approach de temperatura y el subcooling:
 \begin{equation}
-p_{k} = f(t = t_{hw\_in} + Ap_{k} + SUB,\ x_{v} = 0)
+p_{k} = f(t = t_{hw\_in} + App_{k} + SUB,\ x_{v} = 0)
 \end{equation}
 Una vez conocido el punto termodinámico de la salida del condensador, se puede hallar de forma similar el punto posterior a la válvula de expansión:
 \begin{equation}
-p_{0} = f(t = t_{cw\_out} - Ap_{0},\ h = h_{k,out})
+p_{0} = f(t = t_{cw\_out} - App_{0},\ h = h_{k,out})
 \end{equation}
 A partir de estas presiones se pueden hallar un par de magnitudes que definan termodinámicamente los puntos de salida del condensador y de entrada del evaporador.
 \begin{gather}
-\mathrm{h}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + Ap_{k})
+\mathrm{h}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + App_{k})
 \label{eq:punto_k,out}
 \\
 \mathrm{h}_{0,in} = f(p = p_{0},\ h = h_{k,out})
+\\
+x_{v} = f(p = p_{0},\ h = h_{k,out})
 \label{eq:punto_O,in}
 \end{gather}
 Obteniendo la temperatura de vapor saturado en el evaporador, se puede hallar el punto de salida del evaporador:
@@ -116,7 +117,7 @@ Obteniendo la temperatura de vapor saturado en el evaporador, se puede hallar el
 t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
 \label{eq:t_vap_sat}
 \\
-\mathrm{h}_{0,out} = f(p = p_{0},\ t = t_{vap,sat})
+\mathrm{h}_{0,out} = f(p = p_{0},\ t = t_{vap,sat} + SH)
 \label{eq:punto_O,out}
 \end{gather}
 Conociendo el rendimiento del compresor, se puede hallar el punto a la salida de este, que es el mismo que el de la entrada del condensador:
@@ -133,10 +134,10 @@ h_{comp,out} = h_{comp,in} + \frac{h_{ccomp,out,s} - h_{c,in}}{\eta_{comp}}
 
 A continuación, se muestran las expresiones que se usan para calcular los parámetros del ciclo termodinámico:
 \begin{gather}
-Glide_{0}=t(p = p_{0},\ x_{v} = 1) - t(p = p_{0},\ x_{v} = x_{v,0,in})
+Glide_{\text{efectivo},0}=t(p = p_{0},\ x_{v} = 1) - t(p = p_{0},\ x_{v} = x_{v,0,in})
 \label{eq:glide_O}
 \\
-Glide_{k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
+Glide_{\text{completo},k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
 \label{eq:glide_k}
 \\
 VHC = \frac{h_{k,in} - h_{k,ou}}{\nu_{suc}}
@@ -153,7 +154,7 @@ t_{hw,pinch} = t_{hw,out} - \frac{\dot{m}_{ref}}{\dot{m}_{hw}\cdot c_{p}} \cdot
 \left( h_{k,in} - h(p = p_{k},\ x_{v} = 1)\right)
 \label{eq:t_hw_pinch}
 \\
-t_{pinch} = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
+\Delta t_{pinch} = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
 \label{t_pinch}
 \end{gather}
 
@@ -173,14 +174,25 @@ El proceso incluye filtros que excluyen las mezclas que no cumplen los siguiente
     ($Glide_{0}$) menor a $10\,^{\circ}\mathrm{C}$, ya que la transferencia de 
     calor se reduce al pasar estos umbrales.
     \item Temperatura de descarga del compresor menor a $130\,^{\circ}\mathrm{C}$,
-    ya que este no está pensado para soportar temperaturas tan elevadas.
+    ya que esta es la temperatura límite habitual de los fabricantes.
     \item Presión de descarga del compresor menor a $28\ \mathrm{bar}$, ya que esta es
     su presión máxima de operación.
     \item Valores de $VHC$ que estén en el intervalo $\pm 30\%\ VHC_{R290}$,  
-    para ser compatibles con los compresores de propano y no afecar significativamente a su capacidad calorífica.
+    para ser compatibles con los compresores de propano y no afectar significativamente a su capacidad calorífica.
     \item Presión de descarga del compresor menor que la presión transcrítica del fluido, ya que la instalación no está preparada para este estado.
 \end{itemize}
 Además, si la diferencia de temperatura entre el fluido y el agua en el \textit{pinch point} es menor a $1\,^{\circ}\mathrm{C}$, se volverá a calcular el ciclo pero aumentando en $0.5\,^{\circ}\mathrm{C}$ el valor del approach de temperatura del condensador hasta que el ciclo cumpla este criterio.
+
+A continuación, en la \autoref{fig:diagrama_screening} se mostrará el diagrama de flujo del \textit{screening} termodinámico.
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{imagenes/diagrama_screening.pdf}
+    \caption{Diagrama del \textit{screening} termodinámico}
+    \label{fig:diagrama_screening}
+\end{figure}
 
 \newpage
 
@@ -207,7 +219,7 @@ Además, si la diferencia de temperatura entre el fluido y el agua en el \textit
 
 \FloatBarrier
 
-En las tablas superiores (\autoref{tab:res_teo_alta} y \autoref{tab:res_teo_media}) se muestran las diez mejores mezclas de cada condición de simulación.
+En las tablas superiores (\autoref{tab:res_teo_alta} y \autoref{tab:res_teo_media}) se muestran las diez mezclas con más incremento de COP respecto al propano.
 
 \newpage
 
@@ -219,7 +231,7 @@ En las tablas superiores (\autoref{tab:res_teo_alta} y \autoref{tab:res_teo_medi
 
 Como se puede observar en la \autoref{fig:teo_COP_VHC_alta} y en la \autoref{fig:teo_COP_VHC_media}, donde se puede visualizar y comprar el COP y el VHC de todas las mejores mezclas, la gran mayoría de los fluidos con mayor incremento de COP presentan una merma considerable de capacidad calorífica volumétrica. Esto no es deseable, ya que implica un aumento en la frecuencia de trabajo del compresor para alcanzar la misma capacidad calorífica. Esto puede derivar en una reducción de su rendimiento al alejarse del punto de operación nominal.
 
-Cabe destacar que se ha añadido a los resultados la mezcla R290/RE170 (85\%/15\%), perteneciente al estudio de Mickoleit et al. \cite{Mickoleit_2026}, donde se lleva a cabo otro \textit{screening} termodinámico cuyo mejor resultado fue precisamente esta mezcla. Se ha decidido incluirla en este trabajo dado que el estudio de Mickoleit et al. no contiene datos experimentales, y su caracterización experimental supone un valor añadido, ya que los resultados obtenidos en banco de pruebas pueden diferir significativamente de los predichos por los modelos. Además, tal como señalan los propios autores, esta mezcla resulta de especial interés por presentar propiedades similares a las de un fluido puro sin serlo.
+Cabe destacar que se ha añadido a los resultados la mezcla R290/RE170 (85\%/15\%), perteneciente al estudio de Mickoleit et al. \cite{Mickoleit_2026}, donde se lleva a cabo otro \textit{screening} termodinámico cuyo mejor resultado fue precisamente esta mezcla. Se ha decidido incluirla en este trabajo dado que el estudio de Mickoleit et al. no contiene datos experimentales, y su caracterización experimental supone un valor añadido, ya que los resultados obtenidos en banco de pruebas pueden diferir significativamente de los predichos por los modelos. Además, tal como señalan los propios autores, esta mezcla resulta de especial interés por ser una mezcla casi azeotrópica, es decir, presenta propiedades similares a las de un fluido puro sin serlo.
 
 \begin{figure}[ht]
     \centering
