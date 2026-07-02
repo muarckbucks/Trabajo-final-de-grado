@@ -81,11 +81,37 @@ En la \autoref{fig:condiciones_constantes} se muestran las variables que son con
 
 \subsubsection{Mezclas zeotrópicas}
 
-Cabe destacar que en este trabajo se van a estudiar mezclas zeotrópicas, estas presentan diferencias con las mezclas azeotrópicas o con los fluidos puros ya que tienen glide.
+Cabe destacar que en este trabajo se van a estudiar mezclas zeotrópicas, las cuales presentan diferencias tanto con las mezclas azeotrópicas como con los fluidos puros, ya que exhiben \textit{glide}.
 
-El glide es un fenómeno que ocurre por la diferencia en las temperaturas de ebullición de los diferentes componentes de la mezcla, el resultado es una variación continua de la temperatura de condensación y evaporación donde esta disminuye en la condensación y aumenta en la evaporación.
+El \textit{glide} es un fenómeno que se produce por la diferencia entre las temperaturas de ebullición de los distintos componentes de la mezcla. Como resultado, la temperatura de cambio de fase varía de forma continua a lo largo del proceso: disminuye durante la condensación y aumenta durante la evaporación.
 
-este fenómeno se puede observar en \hl{continuar aquí}
+Este fenómeno puede apreciarse en la \autoref{fig:mezcla_glide}, donde la temperatura desciende a lo largo del condensador, a diferencia de la \autoref{fig:mezcla_sin_glide}, donde la temperatura se mantiene constante.
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/cond_temp_glide.png}
+        \caption{\centering Evolución de temperaturas de mezcla con glide}
+        \label{fig:mezcla_glide}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/cond_temp_no_glide.png}
+        \caption{\centering Evolución de temperaturas de mezcla sin glide}
+        \label{fig:mezcla_sin_glide}
+    \end{minipage}
+\end{figure}
+\newpage
+
+Trabajar con mezclas que presenten \textit{glide} puede resultar beneficioso, ya que permite reducir el salto de temperaturas entre el refrigerante y el agua a lo largo del condensador, tal como se aprecia en las figuras anteriores mediante la superficie sombreada en morado. Esta superficie representa, de forma aproximada, la diferencia de temperatura que existe en cada punto entre ambos fluidos: cuanto mayor es esta diferencia, mayor es la energía que se pierde de forma irreversible durante el intercambio de calor. Como puede observarse, la mezcla con \textit{glide} presenta una menor superficie sombreada que la mezcla sin \textit{glide}, lo que indica que la transferencia de calor se produce con un salto de temperaturas menor y, por tanto, con menores pérdidas y una mayor eficiencia energética del proceso.
+
+Sin embargo, el uso de mezclas con \textit{glide} también presenta un inconveniente. A medida que la mezcla condensa, el vapor y el líquido que coexisten en cada instante no tienen exactamente la misma composición, ya que los componentes más volátiles tienden a concentrarse en el vapor y los menos volátiles en el líquido. Esta diferencia de composición dificulta el paso de calor entre el refrigerante y la superficie del condensador, ya que, además de transmitirse el calor, tiene que producirse un reajuste en la composición de ambas fases en la zona de contacto. Como consecuencia, el coeficiente de transferencia de calor del refrigerante disminuye, por lo que en la práctica se necesita una mayor superficie de intercambio para condensar la misma cantidad de refrigerante, lo que puede compensar, total o parcialmente, la ventaja energética descrita en el párrafo anterior.
+
+También cabe destacar la existencia del pinch point, representado con una flecha amarilla en las figuras anteriores. Este punto se localiza en la posición donde el refrigerante alcanza un título de vapor igual a 1, es decir, donde comienza a condensar.
+
+Este punto es crítico en la simulación porque es donde la diferencia de temperatura entre el refrigerante y el agua es mínima a lo largo de todo el condensador. Si en algún punto la temperatura del agua llegara a superar la del refrigerante, el intercambio de calor sería físicamente imposible y la simulación dejaría de ser válida. Dado que esta situación es más probable que ocurra precisamente en el pinch point, resulta fundamental comprobar que en este punto se mantiene una diferencia de temperatura suficiente entre ambos fluidos, posteriormente se explica cómo se ha calculado y cómo se evita este problema.
 
 \newpage
 
@@ -96,48 +122,48 @@ este fenómeno se puede observar en \hl{continuar aquí}
 \subsection{Ecuaciones de cálculo}
 La presión de condensación se ha encontrado usando tanto la temperatura de entrada del fluido como el approach de temperatura y el subcooling:
 \begin{equation}
-p_{k} = f(t = t_{hw\_in} + App_{k} + SUB,\ x_{v} = 0)
+P_{k} = f(t = t_{hw\_in} + App_{k} + SUB,\ x_{v} = 0)
 \end{equation}
 Una vez conocido el punto termodinámico de la salida del condensador, se puede hallar de forma similar el punto posterior a la válvula de expansión:
 \begin{equation}
-p_{0} = f(t = t_{cw\_out} - App_{0},\ h = h_{k,out})
+P_{0} = f(t = t_{cw\_out} - App_{0},\ h = h_{k,out})
 \end{equation}
 A partir de estas presiones se pueden hallar un par de magnitudes que definan termodinámicamente los puntos de salida del condensador y de entrada del evaporador.
 \begin{gather}
-\mathrm{h}_{k,out} = f(p = p_{k},\ t = t_{hw\_in} + App_{k})
+\mathrm{h}_{k,out} = f(P = P_{k},\ t = t_{hw\_in} + App_{k})
 \label{eq:punto_k,out}
 \\
-\mathrm{h}_{0,in} = f(p = p_{0},\ h = h_{k,out})
+\mathrm{h}_{0,in} = f(P = P_{0},\ h = h_{k,out})
 \\
-x_{v} = f(p = p_{0},\ h = h_{k,out})
+x_{v} = f(P = P_{0},\ h = h_{k,out})
 \label{eq:punto_O,in}
 \end{gather}
 Obteniendo la temperatura de vapor saturado en el evaporador, se puede hallar el punto de salida del evaporador:
 \begin{gather}
-t_{vap,sat} = f(p = p_{O},\ x_{v} = 1)
+t_{vap,sat} = f(P = P_{O},\ x_{v} = 1)
 \label{eq:t_vap_sat}
 \\
-\mathrm{h}_{0,out} = f(p = p_{0},\ t = t_{vap,sat} + SH)
+\mathrm{h}_{0,out} = f(P = P_{0},\ t = t_{vap,sat} + SH)
 \label{eq:punto_O,out}
 \end{gather}
 Conociendo el rendimiento del compresor, se puede hallar el punto a la salida de este, que es el mismo que el de la entrada del condensador:
 \begin{gather}
-h_{comp,out,s} = f(p = p_{k},\ s = s_{comp,in}),\quad
+h_{comp,out,s} = f(P = P_{k},\ s = s_{comp,in}),\quad
 \label{eq:h_c,out,s}
 \\
 h_{comp,out} = h_{comp,in} + \frac{h_{ccomp,out,s} - h_{c,in}}{\eta_{comp}}
 \label{eq:h_c,out}
 \\
-\mathrm{h}_{k,in} = f(p = p_{k},\ h = h_{comp,out})
+\mathrm{h}_{k,in} = f(P = P_{k},\ h = h_{comp,out})
 \label{eq:punto_k,in}
 \end{gather}
 
 A continuación, se muestran las expresiones que se usan para calcular los parámetros del ciclo termodinámico:
 \begin{gather}
-Glide_{\text{efectivo},0}=t(p = p_{0},\ x_{v} = 1) - t(p = p_{0},\ x_{v} = x_{v,0,in})
+Glide_{\text{efectivo},0}=t(P = P_{0},\ x_{v} = 1) - t(P = P_{0},\ x_{v} = x_{v,0,in})
 \label{eq:glide_O}
 \\
-Glide_{\text{completo},k}=t(p = p_{k},\ x_{v} = 1) - t(p = p_{k},\ x_{v} = 0)
+Glide_{\text{completo},k}=t(P = P_{k},\ x_{v} = 1) - t(P = P_{k},\ x_{v} = 0)
 \label{eq:glide_k}
 \\
 VHC = \frac{h_{k,in} - h_{k,ou}}{\nu_{suc}}
@@ -151,10 +177,10 @@ COP = \frac{h_{0,out}-h_{0,in}}{h_{k,in}-h_{k,out}}
 \label{eq:caudales}
 \\
 t_{hw,pinch} = t_{hw,out} - \frac{\dot{m}_{ref}}{\dot{m}_{hw}\cdot c_{p}} \cdot 
-\left( h_{k,in} - h(p = p_{k},\ x_{v} = 1)\right)
+\left( h_{k,in} - h(P = P_{k},\ x_{v} = 1)\right)
 \label{eq:t_hw_pinch}
 \\
-\Delta t_{pinch} = t(p = p_{k},\ x_{v} = 1) - t_{hw,pinch}
+\Delta t_{pinch} = t(P = P_{k},\ x_{v} = 1) - t_{hw,pinch}
 \label{t_pinch}
 \end{gather}
 
@@ -219,7 +245,7 @@ A continuación, en la \autoref{fig:diagrama_screening} se mostrará el diagrama
 
 \FloatBarrier
 
-En las tablas superiores (\autoref{tab:res_teo_alta} y \autoref{tab:res_teo_media}) se muestran las diez mezclas con más incremento de COP respecto al propano.
+En las tablas superiores (\autoref{tab:res_teo_alta} y \autoref{tab:res_teo_media}) se muestran las diez mezclas con más incremento de COP respecto al propano para cada configuración de temperatura.
 
 \newpage
 
@@ -323,6 +349,8 @@ En la \autoref{fig:PH_3_mejores_alta} se muestra la comparación de las tres mez
 
 \FloatBarrier
 
+Como se puede observar, las mezclas presentan beneficios debido a su mayor calor latente de condensación y menor presión tanto en condensación como en evaporación.
+
 A continuación se analizan las mezclas con alto contenido en dimetil éter (RE170). Su presencia dominante en estas formulaciones se debe, entre otros motivos, al elevado calor latente de condensación de este compuesto, fenómeno que puede observarse en la \autoref{fig:PH_fluidos_no_volatiles}, donde se comparan los diagramas P-H de los distintos fluidos con una volatilidad similar a la del propano. 
 
 \begin{figure}[ht]
@@ -333,6 +361,8 @@ A continuación se analizan las mezclas con alto contenido en dimetil éter (RE1
 \end{figure}
 
 \FloatBarrier
+
+Como puede observarse, el dimetil éter es el fluido que presenta una campana de saturación más ancha, lo que indica un mayor calor latente de cambio de fase.
 
 Dado que todas las mezclas que combinan con el RE170 presentan un incremento del COP respecto al R290 similar, en torno al 10,8\%, se procede a evaluar el segundo criterio más importante: el VHC.
 
@@ -481,7 +511,7 @@ Teniendo en cuenta que se necesitan en torno a cinco composiciones por mezcla pa
 
 Tras discutirlo con el equipo GIT, se ha decidido descartar la mezcla ternaria y reservarla para futuras investigaciones con mayor disponibilidad de tiempo para ensayos. Esta decisión se fundamenta en que la forma de la zona de máximo rendimiento (\autoref{fig:COP_alta_n3} y \autoref{fig:COP_media_n3}) hace sospechar de un posible error en la base de datos de REFPROP, lo que añade incertidumbre adicional a su caracterización experimental.
 
-Descartada la mezcla ternaria, las tres candidatas restantes RE170/R1270, RE170/R290 y RE170/R170 presentan un incremento de COP respecto al propano similar entre sí. Por ello, el criterio de selección recae sobre el VHC, donde la mezcla RE170/R1270 destaca por su mayor incremento respecto al propano, siendo esta la elegida para los ensayos experimentales.
+Descartada la mezcla ternaria, las tres candidatas restantes RE170/R1270, RE170/R290 y RE170/R170 presentan un incremento de COP respecto al propano similar entre sí. Por ello, el criterio de selección recae sobre el VHC, donde la mezcla RE170/R1270 destaca por su menor decremento respecto al propano, siendo esta la elegida para los ensayos experimentales.
 
 A continuación, en la \autoref{fig:ph_mejor_R290_screening} se puede observar un diagrama P-H de la mezcla seleccionada en comparación con el R290.
 
