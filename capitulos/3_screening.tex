@@ -12,7 +12,7 @@ El primer paso de este estdio es realizar un \textit{screening} termodinámico p
 
 El \textit{screening} consistirá en la combinación de los posibles refrigerantes de trabajo en mezclas de tres en tres incluyendo mezclas binarias. Con cada mezcla se calcularán las propiedades termodinámicas del ciclo de compresión con incrementos y decrementos en las proporciones de los refrigerantes de un 5\%, resultando en un total de 231 posibles combinaciones para cada tres refrigerantes. Posteriormente, se filtrarán los resultados en función de unas restricciones (ver \cref{subsec:restricciones} donde se muestran las restricciones) y de estos resultados se calcularán la mejora del COP y la variación de VHC.
 
-Si la mezcla resulta mejor que el propano en cuanto a eficiencia y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (1\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de el VHC.
+Si la mezcla resulta mejor que el propano en cuanto a eficiencia energética y está dentro del rango de variación de VHC, entonces, se reevaluará con incrementos de menor proporción (1\%) y de esta reevaluación se elegirá la proporción que maximice el COP y esté también dentro del rango de variación de el VHC.
 
 \newpage
 
@@ -109,7 +109,9 @@ Trabajar con mezclas que presenten \textit{glide} puede resultar beneficioso, ya
 
 Sin embargo, el uso de mezclas con \textit{glide} también presenta un inconveniente. A medida que la mezcla condensa, el vapor y el líquido que coexisten en cada instante no tienen exactamente la misma composición, ya que los componentes más volátiles tienden a concentrarse en el vapor y los menos volátiles en el líquido. Esta diferencia de composición dificulta el paso de calor entre el refrigerante y la superficie del condensador, ya que, además de transmitirse el calor, tiene que producirse un reajuste en la composición de ambas fases en la zona de contacto. Como consecuencia, el coeficiente de transferencia de calor del refrigerante disminuye, por lo que en la práctica se necesita una mayor superficie de intercambio para condensar la misma cantidad de refrigerante, lo que puede compensar, total o parcialmente, la ventaja energética descrita en el párrafo anterior.
 
-También cabe destacar la existencia del pinch point, representado con una flecha amarilla en las figuras anteriores. Este punto se localiza en la posición donde el refrigerante alcanza un título de vapor igual a 1, es decir, donde comienza a condensar.
+\subsubsection{Pinch Point}
+
+También cabe destacar la existencia del pinch point, representado con una flecha amarilla en las figuras anteriores. Este punto se localiza en la posición del condensador donde el refrigerante alcanza un título de vapor igual a 1, es decir, donde comienza a condensar.
 
 Este punto es crítico en la simulación porque es donde la diferencia de temperatura entre el refrigerante y el agua es mínima a lo largo de todo el condensador. Si en algún punto la temperatura del agua llegara a superar la del refrigerante, el intercambio de calor sería físicamente imposible y la simulación dejaría de ser válida. Dado que esta situación es más probable que ocurra precisamente en el pinch point, resulta fundamental comprobar que en este punto se mantiene una diferencia de temperatura suficiente entre ambos fluidos, posteriormente se explica cómo se ha calculado y cómo se evita este problema.
 
